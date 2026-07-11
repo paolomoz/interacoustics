@@ -81,6 +81,40 @@
   font-variant-numeric: tabular-nums;
 }
 
+.newsroom .dateline-list h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.newsroom .dateline-list h3 a:hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* teaser variant — canon magazine .blog-teaser: dateline on card ground */
+.newsroom.teaser {
+  background: var(--card);
+  border-block: 1px solid var(--hairline);
+}
+
+.newsroom.teaser .teaser-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+}
+
+.newsroom.teaser .teaser-rail h2 { margin-bottom: 4px; }
+
+.newsroom.teaser .dateline-list .excerpt { max-width: 68ch; }
+
 @media (width <= 1024px) {
   .newsroom .newsroom-grid { grid-template-columns: 1fr; }
+
+  .newsroom.teaser .teaser-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }

@@ -1,0 +1,148 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * cover-gallery — canon Made Magazine head + ruled asymmetric cover gallery
+ * (magazine .magazine), scoped .cover-gallery.
+ */
+
+.cover-gallery { padding-block: calc(var(--section-padding) + 8px) var(--section-padding); }
+
+.cover-gallery .mag-head {
+  max-width: 780px;
+  margin-bottom: 44px;
+}
+
+.cover-gallery .mag-head h1 { margin-bottom: var(--spacing-md); }
+
+.cover-gallery .mag-head h1 em {
+  font-style: italic;
+  color: var(--pine);
+}
+
+.cover-gallery .mag-head .lede {
+  max-width: 54ch;
+  margin-bottom: 18px;
+}
+
+.cover-gallery .mag-facts {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.cover-gallery .mag-facts .sep { color: var(--pine); }
+
+.cover-gallery .cover {
+  display: block;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--mist);
+  border: 1px solid var(--hairline);
+  transition: border-color var(--dur-state) var(--ease-snap);
+}
+
+.cover-gallery .cover img {
+  width: 100%;
+  height: auto;
+}
+
+.cover-gallery .cover:hover,
+.cover-gallery .cover:focus-visible { border-color: var(--pine); }
+
+/* featured issue: latest at display scale, hairline-ruled band */
+.cover-gallery .issue-featured {
+  border-block: 1px solid var(--hairline);
+  padding-block: 44px;
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: center;
+}
+
+.cover-gallery .issue-featured .kicker { margin-bottom: 10px; }
+
+.cover-gallery .issue-featured h2 {
+  margin: 0 0 12px;
+  font-size: var(--heading-xxl);
+}
+
+.cover-gallery .issue-featured .excerpt {
+  font-size: 17px;
+  max-width: 58ch;
+  margin-bottom: 6px;
+}
+
+/* prior issues: two-up band on mist (canon tinted panel: mist fill framed by hairlines) */
+.cover-gallery .issue-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: var(--mist);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding-inline: clamp(28px, 4vw, 56px);
+}
+
+.cover-gallery .issue {
+  display: grid;
+  grid-template-columns: minmax(0, 176px) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 44px);
+  align-items: center;
+  padding-block: 40px;
+}
+
+.cover-gallery .issue + .issue {
+  border-left: 1px solid var(--hairline);
+  padding-left: clamp(28px, 4vw, 56px);
+}
+
+.cover-gallery .issue:first-child { padding-right: clamp(28px, 4vw, 56px); }
+
+.cover-gallery .issue h2 {
+  font-size: var(--heading-lg);
+  margin: 0 0 8px;
+}
+
+.cover-gallery .issue .excerpt {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+}
+
+.cover-gallery .issue .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+}
+
+@media (width <= 900px) {
+  .cover-gallery .issue-featured {
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (width <= 800px) {
+  .cover-gallery .issue-row {
+    grid-template-columns: 1fr;
+    padding-inline: clamp(20px, 5vw, 32px);
+  }
+
+  .cover-gallery .issue + .issue {
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+    padding-left: 0;
+  }
+
+  .cover-gallery .issue:first-child { padding-right: 0; }
+}
+
+@media (width <= 640px) {
+  .cover-gallery .issue-featured,
+  .cover-gallery .issue { grid-template-columns: 1fr; }
+
+  .cover-gallery .issue-featured .cover,
+  .cover-gallery .issue .cover { max-width: 256px; }
+}

@@ -1,8 +1,12 @@
 /*
- * newsroom — featured story + dateline list (canon: index blog). BUILT BY
- * CLUSTER A for the home page — cluster C extends/owns (magazine blog-teaser,
- * stories-newsroom); shape recorded in eds-conversion-log.md.
- * Schema: stardust/eds-schema/index.json §blog.
+ * newsroom — featured story + dateline list (canon: index blog). Owned by
+ * cluster C; shape recorded in eds-conversion-log.md.
+ * Schema: stardust/eds-schema/index.json §blog, magazine.json §blog-teaser.
+ *
+ * Variants (block class):
+ *   (default)  featured story (img) left + dateline list right
+ *   teaser     canon magazine .blog-teaser: rail head (h2 + View All) left,
+ *              3-row thumb-less dateline right, card ground + hairlines
  *
  * Authoring rows:
  *   head row: h2 | plain <a> ("View All")
@@ -14,14 +18,14 @@ const pick = (n, sel) => (n.matches?.(sel) ? n : n.querySelector?.(sel));
 const text = (n) => (n ? n.textContent.replace(/\s+/g, ' ').trim() : '');
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-function arrowLink(a) {
+function arrowLink(a, srTitle) {
   const link = document.createElement('a');
   link.setAttribute('href', a.getAttribute('href') || '#');
   link.className = 'arrow-link';
   const t = text(a).replace(/\s*(→|&rarr;)\s*$/u, '').trim();
   const words = t.split(' ');
   const last = words.pop();
-  link.innerHTML = `${words.length ? `${esc(words.join(' '))} ` : ''}<span class="nb">${esc(last)}&nbsp;<span class="arr" aria-hidden="true">→</span></span>`;
+  link.innerHTML = `${words.length ? `${esc(words.join(' '))} ` : ''}<span class="nb">${esc(last)}&nbsp;<span class="arr" aria-hidden="true">→</span></span>${srTitle ? `<span class="sr-only">: ${esc(srTitle)}</span>` : ''}`;
   return link;
 }
 
@@ -48,7 +52,7 @@ function parseUnit(row) {
   return unit;
 }
 
-function fillArticle(article, unit, isFeature) {
+function fillArticle(article, unit, isFeature, srTitles) {
   if (isFeature && unit.img) article.append(unit.img.cloneNode(true));
   if (unit.date) article.insertAdjacentHTML('beforeend', `<span class="date">${esc(unit.date)}</span>`);
   if (unit.title) {
@@ -62,7 +66,7 @@ function fillArticle(article, unit, isFeature) {
     p.replaceChildren(...[...unit.excerpt.childNodes].map((n) => n.cloneNode(true)));
     article.append(p);
   }
-  if (unit.link) article.append(arrowLink(unit.link));
+  if (unit.link) article.append(arrowLink(unit.link, srTitles && unit.title ? text(unit.title) : ''));
 }
 
 export default async function decorate(block) {
@@ -82,6 +86,31 @@ export default async function decorate(block) {
   const shell = document.createElement('div');
   shell.className = 'shell';
   block.append(shell);
+
+  // teaser variant (canon magazine .blog-teaser): rail head + thumb-less dateline
+  if (block.classList.contains('teaser')) {
+    shell.classList.add('teaser-grid');
+    const rail = document.createElement('div');
+    rail.className = 'teaser-rail';
+    if (headTitle) {
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...headTitle.childNodes].map((n) => n.cloneNode(true)));
+      rail.append(h2);
+    }
+    if (headLink) rail.append(arrowLink(headLink));
+    shell.append(rail);
+    const ul = document.createElement('ul');
+    ul.className = 'dateline-list';
+    units.forEach((u) => {
+      const li = document.createElement('li');
+      const article = document.createElement('article');
+      fillArticle(article, u, false, true);
+      li.append(article);
+      ul.append(li);
+    });
+    shell.append(ul);
+    return;
+  }
 
   const head = document.createElement('div');
   head.className = 'blog-head';
