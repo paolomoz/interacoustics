@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
 /*
  * stat-facts — canon about trust devices: values rail + ruled ledger (mist)
  * and at-a-glance ruled display numerals, scoped .stat-facts.
@@ -95,8 +97,62 @@
   max-width: 30ch;
 }
 
+/* offices variant — canon careers .offices: card substrate, ruled rows */
+.stat-facts.offices {
+  background: var(--card);
+  border-block: 1px solid var(--hairline);
+}
+
+.stat-facts .office-sheet { margin: 0; }
+
+.stat-facts .office-head,
+.stat-facts .office-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  column-gap: 32px;
+  align-items: baseline;
+}
+
+.stat-facts .office-head {
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.stat-facts .office-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stat-facts .office-list li { border-bottom: 1px solid var(--hairline); }
+
+.stat-facts .office-row { padding-block: 28px; }
+
+.stat-facts .office-country {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.stat-facts .office-city {
+  font-size: var(--heading-lg);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.3;
+}
+
 @media (width <= 900px) {
   .stat-facts .values-grid { grid-template-columns: 1fr; }
+}
+
+@media (width <= 640px) {
+  .stat-facts .office-head,
+  .stat-facts .office-row {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
 }
 
 @media (width <= 640px) {

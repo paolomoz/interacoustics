@@ -265,3 +265,78 @@
     grid-row: 2;
   }
 }
+
+/* students variant — canon careers: internships copy + intern quote card */
+.split.students { padding-block: var(--section-padding); }
+
+.split.students .section-head { margin-bottom: var(--spacing-xl); }
+
+.split .students-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.split .students-copy h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.split .students-copy p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.split .student-quote {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: clamp(24px, 3vw, 36px);
+  margin: 0;
+}
+
+.split .student-quote .sq-head {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.split .student-quote .sq-photo,
+.split .student-quote picture img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: var(--radius-pill);
+}
+
+.split .student-quote h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+
+.split .student-quote .sq-role {
+  display: block;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+}
+
+.split .student-quote blockquote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.split .student-quote blockquote p {
+  margin: 0;
+  max-width: none;
+}
+
+@media (width <= 900px) {
+  .split .students-grid { grid-template-columns: 1fr; }
+}

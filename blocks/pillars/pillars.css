@@ -1,0 +1,70 @@
+/*
+ * pillars — canon careers mission + ruled three-column workplace pillars,
+ * scoped .pillars (canon ul class renamed .pillar-list — root collision).
+ */
+
+.pillars { padding-block: var(--section-padding); }
+
+.pillars .section-head { margin-bottom: var(--spacing-xl); }
+
+.pillars .section-head p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.pillars .pillars-head {
+  max-width: 760px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.pillars .pillars-head h2 { font-size: var(--heading-lg); }
+
+.pillars .pillars-head p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.pillars .pillar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--hairline);
+}
+
+.pillars .pillar { padding: 32px 32px 8px 0; }
+
+.pillars .pillar + .pillar {
+  border-left: 1px solid var(--hairline);
+  padding-left: 32px;
+}
+
+.pillars .pillar img {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+}
+
+.pillars .pillar h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pillars .pillar p {
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+@media (width <= 800px) {
+  .pillars .pillar-list { grid-template-columns: 1fr; }
+
+  .pillars .pillar { padding: 24px 0; }
+
+  .pillars .pillar + .pillar {
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+    padding-left: 0;
+  }
+}

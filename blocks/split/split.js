@@ -156,9 +156,84 @@ function renderPhotoPair(block, nodes, variant) {
   }
 }
 
+/* students (canon careers .students): internships copy + intern quote card */
+function renderStudents(block, nodes) {
+  const s = {
+    head: null, copyHead: null, paras: [], img: null, attrib: null, quote: null,
+  };
+  nodes.forEach((n) => {
+    const media = pick(n, 'picture, img');
+    if (media) { s.img = media; return; }
+    if (pick(n, 'h1, h2')) { s.head = pick(n, 'h1, h2'); return; }
+    if (pick(n, 'h3, h4')) { s.copyHead = pick(n, 'h3, h4'); return; }
+    const t = text(n);
+    if (!t) return;
+    const strong = pick(n, 'strong');
+    if (strong && t.startsWith(text(strong)) && text(strong) !== t) {
+      s.attrib = { who: text(strong), role: t.slice(text(strong).length).trim() };
+      return;
+    }
+    if (/[\u201c\u201d"]/.test(t)) { s.quote = n; return; }
+    s.paras.push(n);
+  });
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  if (s.head) {
+    const head = document.createElement('div');
+    head.className = 'section-head';
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...s.head.childNodes].map((n) => n.cloneNode(true)));
+    head.append(h2);
+    shell.append(head);
+  }
+  const grid = document.createElement('div');
+  grid.className = 'students-grid';
+  shell.append(grid);
+  const copy = document.createElement('div');
+  copy.className = 'students-copy';
+  if (s.copyHead) {
+    const h3 = document.createElement('h3');
+    h3.replaceChildren(...[...s.copyHead.childNodes].map((n) => n.cloneNode(true)));
+    copy.append(h3);
+  }
+  s.paras.forEach((para) => {
+    const p = document.createElement('p');
+    p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+    copy.append(p);
+  });
+  grid.append(copy);
+  const fig = document.createElement('figure');
+  fig.className = 'student-quote';
+  const head = document.createElement('div');
+  head.className = 'sq-head';
+  if (s.img) {
+    const img = s.img.cloneNode(true);
+    (img.matches('img') ? img : img.querySelector('img'))?.classList.add('sq-photo');
+    head.append(img);
+  }
+  if (s.attrib) {
+    head.insertAdjacentHTML('beforeend', `<figcaption><h3>${esc(s.attrib.who)}</h3><span class="sq-role">${esc(s.attrib.role)}</span></figcaption>`);
+  }
+  fig.append(head);
+  if (s.quote) {
+    const bq = document.createElement('blockquote');
+    const p = document.createElement('p');
+    p.replaceChildren(...[...s.quote.childNodes].map((n) => n.cloneNode(true)));
+    bq.append(p);
+    fig.append(bq);
+  }
+  grid.append(fig);
+}
+
 export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
+  if (block.classList.contains('students')) {
+    renderStudents(block, nodes);
+    return;
+  }
   if (block.classList.contains('promise') || block.classList.contains('wecare')) {
     renderPhotoPair(block, nodes, block.classList.contains('promise') ? 'promise' : 'wecare');
     return;

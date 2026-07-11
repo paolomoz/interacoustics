@@ -93,7 +93,43 @@ function renderGlance(block, nodes) {
   block.replaceChildren(shell);
 }
 
+/* offices (canon careers .offices): ruled record sheet — tracked-caps country
+   label + city per row; Country/Office column labels are template-owned */
+function renderOffices(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  const ul = document.createElement('ul');
+  ul.className = 'office-list';
+  rows.forEach((row) => {
+    const h2 = row.querySelector('h1, h2');
+    if (h2) {
+      const head = document.createElement('div');
+      head.className = 'section-head';
+      const h = document.createElement('h2');
+      h.replaceChildren(...[...h2.childNodes].map((c) => c.cloneNode(true)));
+      head.append(h);
+      shell.append(head);
+      return;
+    }
+    const cells = [...row.querySelectorAll(':scope > div')].map((c) => text(c)).filter(Boolean);
+    if (cells.length < 2) return;
+    const li = document.createElement('li');
+    li.innerHTML = `<div class="office-row"><span class="office-country">${esc(cells[0])}</span><span class="office-city">${esc(cells[1])}</span></div>`;
+    ul.append(li);
+  });
+  if (ul.children.length) {
+    const sheet = document.createElement('div');
+    sheet.className = 'office-sheet';
+    sheet.innerHTML = '<div class="office-head"><span class="meta-label">Country</span><span class="meta-label">Office</span></div>';
+    sheet.append(ul);
+    shell.append(sheet);
+  }
+  block.replaceChildren(shell);
+}
+
 export default async function decorate(block) {
+  if (block.classList.contains('offices')) { renderOffices(block); return; }
   const nodes = collectNodes(block);
   if (!nodes.length) return;
   if (block.classList.contains('glance')) renderGlance(block, nodes);

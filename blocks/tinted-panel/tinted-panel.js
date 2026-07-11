@@ -206,6 +206,35 @@ export default async function decorate(block) {
   const shell = document.createElement('div');
   shell.className = 'shell';
   block.append(shell);
+
+  // inset variant (canon careers .toronto): mist panel framed by hairlines,
+  // copy left + emphasised CTA button right
+  if (block.classList.contains('inset')) {
+    const panel = document.createElement('div');
+    panel.className = 'inset-panel';
+    shell.append(panel);
+    const copy = document.createElement('div');
+    copy.className = 'inset-copy';
+    if (heading) {
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...heading.childNodes].map((n) => n.cloneNode(true)));
+      copy.append(h2);
+    }
+    paras.forEach((para) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+      copy.append(p);
+    });
+    panel.append(copy);
+    if (route) {
+      const btn = route.cloneNode(true);
+      btn.classList.add('btn');
+      if (!btn.classList.contains('btn-primary')) btn.classList.add('btn-secondary');
+      panel.append(btn);
+    }
+    return;
+  }
+
   if (heading) {
     const h2 = document.createElement('h2');
     h2.replaceChildren(...[...heading.childNodes].map((n) => n.cloneNode(true)));

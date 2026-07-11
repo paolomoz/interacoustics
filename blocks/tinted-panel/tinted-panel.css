@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
 /*
  * tinted-panel — canon mist statement band + split tinted panels (variant B).
  * Base: index integration; row: solutions teleaudiology; split: contact
@@ -186,3 +188,38 @@
 @media (width <= 1024px) {
   .tinted-panel .pair-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== inset: mist panel framed by hairlines (canon careers .toronto) ===== */
+.tinted-panel.inset {
+  background: transparent;
+  border-block: 0;
+  padding-top: 0;
+}
+
+.tinted-panel.inset .shell { max-width: var(--max-width); }
+
+.tinted-panel .inset-panel {
+  background: var(--mist);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: clamp(32px, 4vw, 56px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 48px;
+}
+
+.tinted-panel .inset-copy { max-width: 68ch; }
+
+.tinted-panel .inset-copy h2 {
+  font-size: var(--heading-lg);
+  max-width: none;
+}
+
+.tinted-panel .inset-copy p {
+  margin-bottom: 0;
+  font-size: 17px;
+}
+
+.tinted-panel .inset-panel .btn { white-space: nowrap; }
