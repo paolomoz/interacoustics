@@ -201,6 +201,20 @@
   flex: 1 1 320px;
 }
 
+/* ===== grouped: several catalogue groups in one block (canon audiometers) ===== */
+.ledger.grouped .group-grid + .group-grid { margin-top: calc(var(--spacing-xl) + 16px); }
+
+.ledger.grouped .group-rail { top: 128px; }
+
+.ledger.grouped .group-rail h2 { margin-bottom: 6px; }
+
+/* canon .rail-note — the short qualifier under a grouped rail h2 */
+.ledger.grouped .group-rail .intro {
+  font-size: 14px;
+  max-width: 24ch;
+  margin-top: 8px;
+}
+
 /* ===== responsive (canon) ===== */
 @media (width <= 1024px) {
   .ledger .products-grid,

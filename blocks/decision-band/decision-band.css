@@ -95,6 +95,12 @@
   padding-block: 11px;
 }
 
+/* subs-left: sub-routes ruled into the copy column (canon audiometers) */
+.decision-band.subs-left .decision-subs {
+  border-top: 1px solid var(--hairline-dark);
+  margin-top: var(--spacing-md);
+}
+
 .decision-band .arrow-link { color: var(--meadow); }
 .decision-band .arrow-link:hover { color: var(--on-dark); }
 

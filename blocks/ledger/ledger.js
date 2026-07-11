@@ -8,6 +8,10 @@
  *   index      home products: duotone editorial thumbs, rail = h2 + portfolio p
  *   catalogue  solutions chapters: undoctored product renders, rail = count
  *              meta + h2 + intro + optional rail photo; `mist` adds the tinted band
+ *   grouped    audiometers catalogue (schema: stardust/eds-schema/audiometers.json
+ *              §products-ledger): SEVERAL groups in ONE block — a new group opens
+ *              on each <strong>N products</strong> count row (or h2) once the
+ *              current group has units; groups stack with the canon rhythm
  *
  * Authoring rows:
  *   [<p><code>anchor</code></p>]                — section anchor id (subnav target)
@@ -16,14 +20,15 @@
  *                                + desc p (same or next cell)
  *   [sublist row: <strong>Label:</strong> + plain <a>s]
  *   [foot row: p copy + <em><a> category route(s)]
+ *   grouped: repeat head rows + unit rows per group
  */
 
 const pick = (n, sel) => (n.matches?.(sel) ? n : n.querySelector?.(sel));
 const text = (n) => (n ? n.textContent.replace(/\s+/g, ' ').trim() : '');
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-export default async function decorate(block) {
-  const rows = [...block.querySelectorAll(':scope > div')];
+/* parse one group's rows (head/units/sublist/foot) — canon classifier */
+function parseGroup(rows) {
   const head = {
     anchor: null, count: null, h2: null, intro: [], photo: null,
   };
@@ -92,14 +97,16 @@ export default async function decorate(block) {
     });
   });
 
-  const section = block.closest('.section');
-  if (head.anchor && section && !document.getElementById(head.anchor)) section.id = head.anchor;
+  return {
+    head, units, sublist, sublistLabel, foot,
+  };
+}
 
-  block.textContent = '';
-  const isIndex = block.classList.contains('index');
-  const shell = document.createElement('div');
-  shell.className = `shell ${isIndex ? 'products-grid' : 'group-grid'}`;
-  block.append(shell);
+/* build one group's rail + body pair from a parsed group */
+function buildGroup(grid, parsed, isIndex) {
+  const {
+    head, units, sublist, sublistLabel, foot,
+  } = parsed;
 
   const rail = document.createElement('div');
   rail.className = isIndex ? 'products-rail' : 'group-rail';
@@ -118,7 +125,7 @@ export default async function decorate(block) {
     fig.append(head.photo.cloneNode(true));
     rail.append(fig);
   }
-  shell.append(rail);
+  grid.append(rail);
 
   const body = document.createElement('div');
   const ul = document.createElement('ul');
@@ -172,5 +179,47 @@ export default async function decorate(block) {
     body.append(cf);
   }
 
-  shell.append(body);
+  grid.append(body);
+}
+
+export default async function decorate(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const isIndex = block.classList.contains('index');
+  const grouped = block.classList.contains('grouped');
+
+  // segment rows into groups: a new group opens on a head row carrying a
+  // <strong>-only count (or an h2) once the current group already has units
+  const chunks = [[]];
+  rows.forEach((row) => {
+    const cur = chunks[chunks.length - 1];
+    if (grouped && cur.some((r) => r.querySelector('h3, h4'))) {
+      const t = text(row);
+      const strong = row.querySelector('strong');
+      const countRow = strong && !row.querySelector('a, h3, h4') && text(strong) === t;
+      if (countRow || row.querySelector('h2')) { chunks.push([row]); return; }
+    }
+    cur.push(row);
+  });
+
+  const groups = chunks.filter((c) => c.length).map(parseGroup);
+  if (!groups.length) return;
+  const section = block.closest('.section');
+  const anchor = groups.find((g) => g.head.anchor)?.head.anchor;
+  if (anchor && section && !document.getElementById(anchor)) section.id = anchor;
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  block.append(shell);
+  if (grouped) {
+    shell.className = 'shell';
+    groups.forEach((g) => {
+      const grid = document.createElement('div');
+      grid.className = 'group-grid';
+      buildGroup(grid, g, isIndex);
+      shell.append(grid);
+    });
+  } else {
+    shell.className = `shell ${isIndex ? 'products-grid' : 'group-grid'}`;
+    buildGroup(shell, groups[0], isIndex);
+  }
 }

@@ -10,6 +10,9 @@
  *   split   repeating panels segmented on the panel heading (h2/h3), each:
  *           [<img> media] | heading | [body p] | CTA (<strong>/<em> link) or
  *           plain link(s) (rendered as panel-links)
+ *   faq     mist Q/A band (canon audiometers faq; schema:
+ *           stardust/eds-schema/audiometers.json §faq): h2 section title |
+ *           repeating h3 question + p answer (inline <a> kept)
  *
  * Decode: flatten-first collectNodes (#62); split segments on heading
  * boundaries with pre-heading media buffered to the panel it opens (#76).
@@ -138,12 +141,53 @@ function renderSplit(block, nodes) {
   });
 }
 
+function renderFaq(block, nodes) {
+  let title = null;
+  const items = [];
+  let item = null;
+  nodes.forEach((n) => {
+    const h2 = pick(n, 'h1, h2');
+    if (h2 && !item) { title = h2; return; }
+    const h3 = pick(n, 'h2, h3, h4');
+    if (h3) { item = { q: h3, a: [] }; items.push(item); return; }
+    if (item && text(n)) item.a.push(n);
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  if (title) {
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...title.childNodes].map((n) => n.cloneNode(true)));
+    shell.append(h2);
+  }
+  items.forEach((it) => {
+    const div = document.createElement('div');
+    div.className = 'faq-item';
+    const h3 = document.createElement('h3');
+    h3.replaceChildren(...[...it.q.childNodes].map((n) => n.cloneNode(true)));
+    div.append(h3);
+    it.a.forEach((an) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...an.childNodes].map((n) => n.cloneNode(true)));
+      div.append(p);
+    });
+    shell.append(div);
+  });
+}
+
 export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
 
   if (block.classList.contains('split')) {
     renderSplit(block, nodes);
+    return;
+  }
+
+  if (block.classList.contains('faq')) {
+    renderFaq(block, nodes);
     return;
   }
 

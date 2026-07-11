@@ -9,7 +9,12 @@
  *                p of plain <a>s (proof links)
  *   quote-panel  base rows + sub-routes (h3 + p + plain <a>, repeated) +
  *                <strong>panel label | <a href> to the embedded form (iframe) |
- *                fallback p (text + link, rendered under the iframe)
+ *                fallback p (text + link, rendered under the iframe); sets the
+ *                section id `contact` (banner ask target). A sub-route link
+ *                wrapped <strong>/<em> renders as a button (canon audiometers
+ *                "Find a Distributor" btn-meadow); plain stays the arrow-link
+ *   subs-left    the sub-routes render in the LEFT copy column under the lede
+ *                (canon audiometers decision-cta), not the proof column
  *   ink          rows: h2 | body p | <ul> proof column (an <li> holding an <a>
  *                renders as the arrow-link route; plain <li>s are ruled facts)
  *
@@ -98,13 +103,14 @@ function classify(nodes) {
         || a.classList.contains('btn');
       const linkTextLen = links.reduce((sum, l) => sum + text(l).length, 0);
       const linkOnly = t.length <= linkTextLen + links.length * 3;
-      if (emphasised && !s.cta) { s.cta = a; return; }
       if (mode === 'panel') {
         if (!s.embed && linkOnly && links.length === 1) { s.embed = a; return; }
         s.fallback = n;
         return;
       }
-      if (mode === 'subs' && sub) { sub.link = a; return; }
+      // a sub owns its link (emphasised or plain) before the main-cta claim
+      if (mode === 'subs' && sub && !sub.link) { sub.link = a; sub.emph = !!emphasised; return; }
+      if (emphasised && !s.cta) { s.cta = a; return; }
       if (linkOnly) { s.proofLinks.push(...links); return; }
       s.fallback = n;
       return;
@@ -231,15 +237,18 @@ export default async function decorate(block) {
         p.replaceChildren(...[...sub.body.childNodes].map((n) => n.cloneNode(true)));
         cell.append(p);
       }
-      if (sub.link) cell.append(arrowLink(sub.link));
+      if (sub.link) cell.append(sub.emph ? btnLink(sub.link) : arrowLink(sub.link));
       subsGrid.append(cell);
     });
-    proof.append(subsGrid);
+    if (block.classList.contains('subs-left')) cta.append(subsGrid);
+    else proof.append(subsGrid);
   }
   grid.append(proof);
 
   // quote-panel variant: embedded form at full content width + fallback line
   if (s.embed) {
+    const section = block.closest('.section');
+    if (section && !document.getElementById('contact')) section.id = 'contact';
     const panel = document.createElement('div');
     panel.className = 'quote-panel';
     panel.id = 'distributor-form';

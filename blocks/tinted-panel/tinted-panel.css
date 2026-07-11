@@ -153,6 +153,35 @@
   margin-top: auto;
 }
 
+/* ===== faq: mist Q/A band, answers in the initial DOM (canon audiometers) ===== */
+.tinted-panel.faq h2 {
+  max-width: none;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tinted-panel.faq .faq-item {
+  border-top: 1px solid var(--hairline);
+  padding-block: 26px 10px;
+}
+
+.tinted-panel.faq .faq-item h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+
+.tinted-panel.faq .faq-item p { max-width: 66ch; }
+
+.tinted-panel.faq .faq-item a {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tinted-panel.faq .faq-item a:hover { color: var(--pine-hover); }
+
 /* ===== responsive (canon) ===== */
 @media (width <= 1024px) {
   .tinted-panel .pair-grid { grid-template-columns: 1fr; }

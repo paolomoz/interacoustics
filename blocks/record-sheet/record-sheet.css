@@ -67,6 +67,17 @@
 
 .record-sheet .sheet-row .btn { white-space: nowrap; }
 
+/* ===== training: type-tagged rows + head arrow-link (canon audiometers) ===== */
+.record-sheet.training .training-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.record-sheet.training .training-head h2 { margin: 0; }
+
 /* ===== responsive (canon) ===== */
 @media (width <= 800px) {
   /* the whole column-header row hides (no orphaned 'Course or webinar') */
@@ -85,6 +96,12 @@
   }
 
   .record-sheet .sheet-row .btn { justify-self: start; }
+
+  .record-sheet.training .training-head {
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+  }
 }
 
 /* a foreign-language subtitle is authored as <em> (survives DA; canon uses a
