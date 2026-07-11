@@ -1,0 +1,238 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * ledger — canon hairline whole-row-link product ledger CSS (variant B).
+ * index: home products (duotone editorial thumbs, sticky rail).
+ * catalogue: solutions chapters (undoctored product renders, count meta,
+ * optional duotone rail photo); `mist` adds the tinted band.
+ */
+
+.ledger { padding-block: var(--section-padding); }
+
+.ledger.mist {
+  background: var(--mist);
+  border-block: 1px solid var(--hairline);
+}
+
+.ledger .products-grid,
+.ledger .group-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.ledger .products-rail {
+  position: sticky;
+  top: 128px;
+}
+
+.ledger .group-rail {
+  position: sticky;
+  top: 196px;
+}
+
+.ledger .products-rail h2,
+.ledger .group-rail h2 { margin-bottom: var(--spacing-md); }
+
+.ledger .products-rail p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.ledger .group-rail .intro {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.ledger .group-count {
+  display: block;
+  margin: 0 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* rail photography: captured category duotone portraits */
+.ledger .rail-photo {
+  position: relative;
+  margin: var(--spacing-lg) 0 0;
+  max-width: 300px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--card);
+}
+
+.ledger .rail-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: grayscale(1);
+}
+
+.ledger .rail-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+.ledger .ledger-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.ledger .ledger-list li { border-bottom: 1px solid var(--hairline); }
+
+.ledger .ledger-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  column-gap: 28px;
+  align-items: center;
+  padding-block: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.ledger .thumb {
+  position: relative;
+  width: 112px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--card);
+}
+
+/* home editorial thumbs: duotone treatment + mist ground */
+.ledger.index .thumb { background: var(--mist); }
+
+.ledger.index .thumb img {
+  height: 70px;
+  filter: grayscale(1);
+}
+
+.ledger.index .thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+.ledger .thumb img {
+  width: 112px;
+  height: 84px;
+  object-fit: cover;
+}
+
+.ledger .ledger-row h3 {
+  margin: 0 0 4px;
+  font-size: var(--heading-lg);
+  letter-spacing: var(--tracking-display);
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.ledger .new-pill {
+  display: inline-block;
+  vertical-align: 4px;
+  margin-left: 6px;
+  background: var(--meadow);
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.ledger .ledger-desc {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+.ledger .ledger-arr {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink-muted);
+  transition: color var(--dur-state) var(--ease-snap), transform var(--dur-state) var(--ease-snap);
+}
+
+.ledger .ledger-row:hover h3,
+.ledger .ledger-row:focus-visible h3 { color: var(--pine); }
+
+.ledger .ledger-row:hover .ledger-arr,
+.ledger .ledger-row:focus-visible .ledger-arr {
+  color: var(--pine);
+  transform: translateX(4px);
+}
+
+/* captured sub-lists (test boxes, caloric irrigators) */
+.ledger .sublist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 24px;
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 8px;
+}
+
+.ledger .sublist .meta-label { margin: 0; }
+
+/* chapter foot: captured closing copy + category route(s) */
+.ledger .chapter-foot {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.ledger .chapter-foot p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink-muted);
+  flex: 1 1 320px;
+}
+
+/* ===== responsive (canon) ===== */
+@media (width <= 1024px) {
+  .ledger .products-grid,
+  .ledger .group-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ledger .products-rail,
+  .ledger .group-rail { position: static; }
+
+  .ledger .rail-photo { max-width: none; }
+  .ledger .rail-photo img { aspect-ratio: 16 / 7; }
+}
+
+@media (width <= 800px) {
+  .ledger .ledger-row {
+    grid-template-columns: 88px minmax(0, 1fr) auto;
+    column-gap: 20px;
+  }
+
+  .ledger .thumb { width: 88px; }
+
+  .ledger .thumb img {
+    width: 88px;
+    height: 66px;
+  }
+
+  .ledger.index .thumb img { height: 55px; }
+}
+
+@media (width <= 640px) {
+  .ledger .ledger-row { grid-template-columns: 88px minmax(0, 1fr); }
+  .ledger .ledger-arr { display: none; }
+}

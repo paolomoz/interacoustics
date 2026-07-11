@@ -1,0 +1,58 @@
+/*
+ * announcement-rail — canon promo banner strip (edge-to-edge meadow, variant B).
+ * Scoped .announcement-rail; the block paints the whole strip.
+ */
+
+.announcement-rail {
+  background: var(--meadow);
+  padding-block: 10px;
+}
+
+.announcement-rail .banner-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.announcement-rail .banner-row p {
+  margin: 0;
+  color: var(--forest);
+  font-size: 16px;
+  font-weight: 500;
+  flex: 1 1 320px;
+}
+
+.announcement-rail .btn-banner {
+  background: var(--card);
+  color: var(--forest);
+  font-size: 15px;
+  padding: 8px 20px;
+}
+
+.announcement-rail .btn-banner:hover {
+  background: var(--forest);
+  color: var(--on-dark);
+}
+
+.announcement-rail .banner-dismiss {
+  background: transparent;
+  border: 0;
+  color: var(--forest);
+  font-size: 20px;
+  line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--dur-state) var(--ease-snap);
+}
+
+.announcement-rail .banner-dismiss:hover { background: var(--hairline); }
+
+/* pine focus ring fails non-text contrast on meadow (2.80:1) — forest passes */
+.announcement-rail :focus-visible { outline-color: var(--forest); }
+
+@media (width <= 640px) {
+  .announcement-rail .banner-row p { font-size: 15px; }
+}

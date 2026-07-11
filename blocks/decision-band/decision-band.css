@@ -1,0 +1,181 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * decision-band — canon closing forest chapter CSS (variant B), scoped .decision-band.
+ * Foundation maps <strong><a> → .btn-primary → meadow-on-forest inside this block.
+ * ink variant = the canon future-safe statement (statement on ink + ruled proof column).
+ */
+
+.decision-band {
+  background: var(--forest);
+  color: var(--on-dark);
+  padding-block: var(--section-padding);
+}
+
+.decision-band h2 {
+  color: var(--on-dark);
+  max-width: 18ch;
+}
+
+.decision-band .lede {
+  color: var(--on-dark);
+  font-weight: 300;
+  max-width: 52ch;
+  margin-bottom: 28px;
+}
+
+.decision-band .decision-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: center;
+}
+
+/* solutions/ad629 shape (subs + panel) aligns the columns to the top */
+.decision-band.quote-panel .decision-grid { align-items: start; }
+
+.decision-band .trust-rule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline-dark);
+  font-weight: 600;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.decision-band .trust-rule li {
+  color: var(--on-dark);
+  padding-block: 16px;
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.decision-band .proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+  margin-top: 12px;
+}
+
+.decision-band .proof-links a {
+  color: var(--meadow);
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-block;
+  padding-block: 11px; /* 44px effective target */
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.decision-band .proof-links a:hover { color: var(--on-dark); }
+
+.decision-band .decision-subs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  padding-top: 28px;
+}
+
+.decision-band .decision-subs h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  color: var(--on-dark);
+  margin: 0 0 8px;
+}
+
+.decision-band .decision-subs p {
+  color: var(--on-dark-muted);
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.decision-band .decision-subs .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+}
+
+.decision-band .arrow-link { color: var(--meadow); }
+.decision-band .arrow-link:hover { color: var(--on-dark); }
+
+/* quote panel: captured form embedded at full content width on card ground */
+.decision-band .quote-panel {
+  margin-top: var(--spacing-xl);
+  background: var(--card);
+  border-radius: var(--radius-card);
+  padding: clamp(20px, 3vw, 32px);
+  color: var(--ink);
+}
+
+.decision-band .quote-panel .meta-label { margin: 0 0 12px; }
+
+.decision-band .quote-panel iframe {
+  display: block;
+  width: 100%;
+  height: 780px;
+  border: 0;
+  border-radius: var(--radius);
+  background: #FFF;
+}
+
+.decision-band .quote-fallback {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin: 10px 2px 0;
+}
+
+.decision-band .quote-fallback a {
+  color: var(--pine);
+  font-weight: 600;
+  display: inline-block;
+  padding-block: 10px;  /* 44px hit area… */
+  margin-block: -10px;  /* …without breaking the fallback line rhythm */
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.decision-band .quote-fallback a:hover { color: var(--pine-hover); }
+
+.decision-band .quote-fallback .arrow-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* ===== ink variant (canon future-safe) ===== */
+.decision-band.ink { background: var(--ink); }
+
+.decision-band.ink .futuresafe-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+}
+
+.decision-band.ink h2 {
+  color: var(--on-dark);
+  max-width: 20ch;
+}
+
+.decision-band.ink p {
+  color: var(--on-dark);
+  max-width: 58ch;
+  margin-bottom: 0;
+}
+
+.decision-band.ink .futuresafe-proof .proof-link { padding-block: 6px; }
+.decision-band.ink .futuresafe-proof .arrow-link { font-size: 16px; }
+
+/* ===== responsive (canon) ===== */
+@media (width <= 800px) {
+  .decision-band .decision-grid,
+  .decision-band.ink .futuresafe-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .decision-band.ink .futuresafe-grid { gap: 28px; }
+  .decision-band .quote-panel iframe { height: 1120px; }
+}
+
+@media (width <= 640px) {
+  .decision-band .decision-subs { grid-template-columns: 1fr; }
+}

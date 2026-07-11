@@ -1,0 +1,197 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * embed — canon iframe panels (variant B), scoped .embed.
+ * panel (default): quiet mist band + card quote-panel (canon contact .hq-form).
+ * locator: card substrate with duotone intro photo, continent index and the
+ * ZenLocator map panel (canon contact .distributors).
+ * Fixed iframe heights are canon — CLS-safe and an honest blocked state.
+ */
+
+.embed {
+  background: var(--mist);
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--section-padding);
+}
+
+.embed .section-head {
+  max-width: 760px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.embed .quote-panel {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.embed .quote-panel .meta-label { margin: 0 0 12px; }
+
+.embed .quote-panel iframe {
+  display: block;
+  width: 100%;
+  height: 780px;
+  border: 0;
+  border-radius: var(--radius);
+  background: #FFF;
+}
+
+.embed .map-fallback,
+.embed .quote-fallback {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin: 10px 2px 0;
+}
+
+.embed .map-fallback a,
+.embed .quote-fallback a {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-block;
+  padding-block: 10px;  /* 44px hit area… */
+  margin-block: -10px;  /* …without breaking the fallback line rhythm */
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.embed .map-fallback a:hover,
+.embed .quote-fallback a:hover { color: var(--pine-hover); }
+
+.embed .map-fallback .arrow-link,
+.embed .quote-fallback .arrow-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* ===== locator (canon .distributors): card substrate between hairlines ===== */
+.embed.locator {
+  background: var(--card);
+  border-block: 1px solid var(--hairline);
+  border-top: 1px solid var(--hairline);
+}
+
+.embed .dist-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); /* the HQ photograph is the page's architectural asset */
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.embed .dist-intro h2 { max-width: 20ch; }
+
+.embed .dist-intro p {
+  font-size: 17px;
+  color: var(--ink-muted);
+  margin-bottom: 0;
+}
+
+.embed .dist-media {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--mist);
+  min-height: 400px;
+  align-self: stretch;
+}
+
+.embed .dist-media img,
+.embed .dist-media picture img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.embed .dist-media picture {
+  position: absolute;
+  inset: 0;
+}
+
+.embed .dist-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+/* continent index: ruled tracked-caps row */
+.embed .continent-index {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 6px;
+  border-block: 1px solid var(--hairline);
+  padding-block: 4px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.embed .continent-index .meta-label { margin: 0 18px 0 0; }
+
+.embed .continent-index a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--pine);
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.embed .continent-index a:hover {
+  color: var(--pine-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* map panel: ground panel on the card substrate */
+.embed .map-head h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.embed .map-panel {
+  background: var(--ground);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: clamp(16px, 2vw, 24px);
+}
+
+.embed .map-panel iframe {
+  display: block;
+  width: 100%;
+  height: 760px;
+  border: 0;
+  border-radius: var(--radius);
+  background: #FFF;
+}
+
+/* ===== responsive (canon) ===== */
+@media (width <= 1024px) {
+  .embed .dist-intro { grid-template-columns: 1fr; }
+  .embed .dist-media { min-height: 300px; }
+}
+
+@media (width <= 800px) {
+  .embed .map-panel iframe { height: 620px; }
+  .embed .quote-panel iframe { height: 1120px; }
+}
+
+@media (width <= 640px) {
+  .embed .continent-index .meta-label {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+
+  .embed .continent-index a { padding-inline: 8px 12px; }
+}

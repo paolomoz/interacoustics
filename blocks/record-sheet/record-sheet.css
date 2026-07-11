@@ -1,0 +1,92 @@
+/*
+ * record-sheet — canon events record-sheet ledger CSS (variant B), scoped .record-sheet.
+ */
+
+.record-sheet {
+  background: var(--card);
+  border-block: 1px solid var(--hairline);
+  padding-block: var(--section-padding);
+}
+
+.record-sheet .section-head {
+  max-width: 760px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.record-sheet .sheet {
+  margin: 0 0 var(--spacing-md);
+  font-variant-numeric: tabular-nums;
+}
+
+.record-sheet .sheet-head,
+.record-sheet .sheet-row {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr) auto;
+  column-gap: 32px;
+  align-items: center;
+}
+
+.record-sheet .sheet-head {
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.record-sheet .sheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.record-sheet .sheet-list li { border-bottom: 1px solid var(--hairline); }
+
+.record-sheet .sheet-row { padding-block: 26px; }
+
+.record-sheet .sheet-date .dd {
+  display: block;
+  font-size: var(--heading-md);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.record-sheet .sheet-date .dm {
+  display: block;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+.record-sheet .sheet-row h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.record-sheet .sheet-row .btn { white-space: nowrap; }
+
+/* ===== responsive (canon) ===== */
+@media (width <= 800px) {
+  /* the whole column-header row hides (no orphaned 'Course or webinar') */
+  .record-sheet .sheet-head { display: none; }
+
+  .record-sheet .sheet-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 10px;
+  }
+
+  .record-sheet .sheet-date .dd { display: inline; }
+
+  .record-sheet .sheet-date .dm {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  .record-sheet .sheet-row .btn { justify-self: start; }
+}
+
+/* a foreign-language subtitle is authored as <em> (survives DA; canon uses a
+   lang-tagged span) — renders in the canon upright register */
+.record-sheet .sheet-row h3 em { font-style: normal; }

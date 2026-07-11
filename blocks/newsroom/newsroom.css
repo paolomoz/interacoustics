@@ -1,0 +1,86 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * newsroom — canon featured story + dateline list CSS (variant B), scoped .newsroom.
+ */
+
+.newsroom { padding-block: var(--section-padding); }
+
+.newsroom .blog-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.newsroom .blog-head h2 { margin: 0; }
+
+.newsroom .newsroom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.newsroom .feature img {
+  width: 100%;
+  border-radius: var(--radius-card);
+}
+
+.newsroom .feature .date { margin-top: 20px; }
+
+.newsroom .feature h3 {
+  font-size: var(--heading-lg);
+  font-weight: 400;
+  margin: 6px 0 10px;
+}
+
+.newsroom .feature .excerpt {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.newsroom .dateline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.newsroom .dateline-list li {
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 20px;
+}
+
+.newsroom .dateline-list h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 6px 0 4px;
+}
+
+.newsroom .dateline-list .excerpt {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+}
+
+.newsroom .dateline-list .arrow-link {
+  font-size: 15px;
+  padding-block: 11px; /* 22.5px line box + 22px = 44.5px target */
+}
+
+.newsroom .date {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (width <= 1024px) {
+  .newsroom .newsroom-grid { grid-template-columns: 1fr; }
+}

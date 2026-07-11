@@ -1,0 +1,74 @@
+/*
+ * newsletter — canon quiet mist panel form (variant B), scoped .newsletter.
+ */
+
+.newsletter {
+  background: var(--mist);
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--section-padding);
+}
+
+.newsletter .section-head {
+  max-width: 760px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.newsletter .newsletter-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: var(--spacing-lg);
+  max-width: 980px;
+}
+
+.newsletter .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.newsletter .field label {
+  font-size: var(--body-sm);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.newsletter .field input {
+  height: 44px;
+  border: 1px solid color-mix(in srgb, var(--ink) 55%, var(--ground));
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 0 14px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  color: var(--ink);
+}
+
+.newsletter .field input:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 1px;
+  border-color: var(--pine);
+}
+
+.newsletter .smallprint {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  max-width: 76ch;
+}
+
+.newsletter .smallprint a {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.newsletter .smallprint a:hover { color: var(--pine-hover); }
+
+@media (width <= 640px) {
+  .newsletter .newsletter-form {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,95 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * subnav — canon sticky slim hairline jump bar (variant B), scoped .subnav.
+ * Sticky offset = the canon chrome: 44px utility strip + 72px logo row.
+ */
+
+.subnav {
+  position: sticky;
+  top: 116px;
+  z-index: 40;
+  background: var(--card);
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 0;
+}
+
+/* the section wrapper must stick, not just the block */
+main .section:has(> .block-content > .subnav) {
+  position: sticky;
+  top: 116px;
+  z-index: 40;
+}
+
+main .section:has(> .block-content > .subnav) .subnav { position: static; }
+
+.subnav .subnav-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.2vw, 16px);
+  min-height: 56px;
+  overflow-x: auto;
+}
+
+.subnav .subnav-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.subnav .subnav-row > a:not(.btn) {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-block: 17px; /* >=44px target in the 56px bar */
+  white-space: nowrap;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.subnav .subnav-row > a:not(.btn):hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.subnav .subnav-ask {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* anchored sections land clear of the sticky chrome + bar (canon scroll-margin) */
+main .section { scroll-margin-top: 190px; }
+
+/* ===== responsive (canon) ===== */
+@media (width <= 1024px) {
+  /* scroll cue: right-edge fade on the horizontally scrolling row */
+  .subnav nav { position: relative; }
+
+  .subnav nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 56px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--card) 0%, transparent), var(--card) 78%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity var(--dur-state) var(--ease-snap);
+  }
+
+  .subnav.subnav-end nav::after { opacity: 0; }
+}
+
+@media (width <= 800px) {
+  /* the utility strip scrolls away — the bar sits under the 72px logo row */
+  .subnav,
+  main .section:has(> .block-content > .subnav) { top: 72px; }
+
+  main .section { scroll-margin-top: 145px; }
+}
