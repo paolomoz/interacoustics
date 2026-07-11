@@ -162,6 +162,42 @@ export default async function decorate(block) {
   shell.className = 'shell';
   block.append(shell);
 
+  // proof variant (canon sustainability .proof): quiet closing fact band —
+  // lede + labelled whole-row anchor index (no ask; canon has none)
+  if (block.classList.contains('proof')) {
+    const grid = document.createElement('div');
+    grid.className = 'proof-grid';
+    shell.append(grid);
+    if (s.lede) {
+      const p = document.createElement('p');
+      p.className = 'lede';
+      p.replaceChildren(...[...s.lede.childNodes].map((n) => n.cloneNode(true)));
+      grid.append(p);
+    }
+    const col = document.createElement('div');
+    if (s.panelLabel) col.insertAdjacentHTML('beforeend', `<span class="meta-label">${esc(s.panelLabel)}</span>`);
+    if (s.trust) {
+      const ul = document.createElement('ul');
+      ul.className = 'trust-rule';
+      [...s.trust.querySelectorAll('li')].forEach((li) => {
+        const item = document.createElement('li');
+        const a = li.querySelector('a');
+        if (a) {
+          const link = document.createElement('a');
+          link.setAttribute('href', a.getAttribute('href') || '#');
+          link.innerHTML = `${esc(text(a).replace(/\s*[↑↓]\s*$/u, ''))} <span class="arr" aria-hidden="true">↑</span>`;
+          item.append(link);
+        } else {
+          item.textContent = text(li);
+        }
+        ul.append(item);
+      });
+      col.append(ul);
+    }
+    grid.append(col);
+    return;
+  }
+
   // solo variant (canon about .careers): single ask, no proof column
   if (block.classList.contains('solo')) {
     if (s.heading) {

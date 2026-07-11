@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
 /*
  * pillars — canon careers mission + ruled three-column workplace pillars,
  * scoped .pillars (canon ul class renamed .pillar-list — root collision).
@@ -67,4 +69,182 @@
     border-top: 1px solid var(--hairline);
     padding-left: 0;
   }
+}
+
+/* chapter variant — canon sustainability chapters: ruled h3 blocks beside the
+   chapter photograph; mist/media-left/ethics skin classes */
+.pillars.mist {
+  background: var(--mist);
+  border-block: 1px solid var(--hairline);
+}
+
+.pillars .chapter-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(40px, 5vw, 88px);
+  align-items: start;
+}
+
+.pillars .chapter-grid.media-left { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+
+.pillars .chapter-grid.media-left > .chapter-copy { order: 2; }
+
+.pillars .chapter-grid.media-left > .chapter-media { order: 1; }
+
+.pillars .chapter-copy > p { font-size: 17px; }
+
+.pillars .chapter-media {
+  margin: 0;
+  align-self: center;
+}
+
+.pillars .chapter-media img {
+  width: 100%;
+  border-radius: var(--radius-card);
+}
+
+.pillars .chapter-media figcaption {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+.pillars .subtopics {
+  list-style: none;
+  margin: var(--spacing-lg) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.pillars .subtopics > li {
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 24px 26px;
+}
+
+.pillars .subtopics h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.pillars .subtopics p {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.pillars .subtopics .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+}
+
+.pillars .pillar-index {
+  list-style: none;
+  margin: var(--spacing-lg) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.pillars .pillar-index li { border-bottom: 1px solid var(--hairline); }
+
+.pillars .pillar-index a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding-block: 12px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.pillars .pillar-index .arr {
+  display: inline-block;
+  color: var(--ink-muted);
+  transition: color var(--dur-state) var(--ease-snap), transform var(--dur-state) var(--ease-snap);
+}
+
+.pillars .pillar-index a:hover { color: var(--pine); }
+
+.pillars .pillar-index a:hover .arr {
+  color: var(--pine);
+  transform: translateY(3px);
+}
+
+.pillars.ethics .shell { max-width: 900px; }
+
+.pillars.ethics .subtopics { max-width: 70ch; }
+
+/* stories variant — canon society: alternating story rows + community block */
+.pillars .story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(40px, 5vw, 88px);
+  align-items: center;
+  border-top: 1px solid var(--hairline);
+  padding-block: 32px;
+  margin-top: 32px;
+}
+
+.pillars .story .chapter-media { align-self: center; }
+
+.pillars .story.flip { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+
+.pillars .story.flip > .story-copy { order: 2; }
+
+.pillars .story.flip > .chapter-media { order: 1; }
+
+.pillars .story-copy p { font-size: 17px; }
+
+.pillars .community {
+  border-top: 1px solid var(--hairline);
+  padding-top: 32px;
+  margin-top: 32px;
+}
+
+.pillars .community h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pillars .community p { font-size: 17px; }
+
+.pillars .community-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 48px;
+  margin-top: var(--spacing-lg);
+}
+
+.pillars .community-logos img {
+  width: auto;
+  max-height: 180px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillars .pillar-index a:hover .arr { transform: none; }
+}
+
+@media (width <= 900px) {
+  .pillars .chapter-grid,
+  .pillars .chapter-grid.media-left { grid-template-columns: 1fr; }
+
+  .pillars .chapter-grid.media-left > .chapter-copy { order: 1; }
+
+  .pillars .chapter-grid.media-left > .chapter-media { order: 2; }
+
+  .pillars .story,
+  .pillars .story.flip {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pillars .story.flip > .story-copy { order: 1; }
+
+  .pillars .story.flip > .chapter-media { order: 2; }
 }

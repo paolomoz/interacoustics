@@ -227,3 +227,56 @@
   max-width: 62ch;
   margin-bottom: 28px;
 }
+
+/* proof variant — canon sustainability closing proof band (no ask) */
+.decision-band.proof .proof-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: center;
+}
+
+.decision-band.proof .lede {
+  color: var(--on-dark);
+  font-weight: 300;
+  max-width: 30ch;
+  margin: 0;
+}
+
+.decision-band.proof .meta-label {
+  color: var(--on-dark-muted);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.decision-band.proof .trust-rule li { padding-block: 0; }
+
+.decision-band.proof .trust-rule a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding-block: 12px;
+  color: var(--on-dark);
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.decision-band.proof .trust-rule .arr {
+  display: inline-block;
+  color: var(--meadow);
+  transition: color var(--dur-state) var(--ease-snap), transform var(--dur-state) var(--ease-snap);
+}
+
+.decision-band.proof .trust-rule a:hover { color: var(--meadow); }
+
+.decision-band.proof .trust-rule a:hover .arr { transform: translateY(-3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .decision-band.proof .trust-rule a:hover .arr { transform: none; }
+}
+
+@media (width <= 900px) {
+  .decision-band.proof .proof-grid { grid-template-columns: 1fr; }
+}
