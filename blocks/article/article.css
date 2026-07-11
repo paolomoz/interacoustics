@@ -1,0 +1,143 @@
+/* stylelint-disable no-descending-specificity -- canon cascade order lifted verbatim */
+
+/*
+ * article — canon blog reading column + hairline-ruled rail (blog/why-rem
+ * .article-wrap), scoped .article.
+ */
+
+.article { padding-block: 56px var(--section-padding); }
+
+.article .article-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+
+.article .article-body { max-width: 70ch; }
+.article .article-body h2 { margin-top: var(--spacing-xl); }
+.article .article-body h2:first-child { margin-top: 0; }
+
+.article .article-body a {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.article .article-body a:hover { color: var(--pine-hover); }
+
+.article .article-rail { border-bottom: 1px solid var(--hairline); }
+
+.article .rail-block {
+  border-top: 1px solid var(--hairline);
+  padding-block: 22px 26px;
+}
+
+.article .rail-block h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-body);
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+
+.article .byline-bio {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.article .rail-social {
+  display: flex;
+  gap: 4px;
+  margin-left: -11px;
+}
+
+.article .rail-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  color: var(--pine);
+  transition: background-color var(--dur-state) var(--ease-snap), color var(--dur-state) var(--ease-snap);
+}
+
+.article .rail-social a:hover {
+  background: var(--mist);
+  color: var(--pine-hover);
+}
+
+/* canon dateline list (newsroom pattern) tuned to the rail width */
+.article .dateline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article .dateline-list li {
+  border-top: 1px solid var(--hairline);
+  padding-block: 18px;
+}
+
+.article .dateline-list li:first-child {
+  border-top: 0;
+  padding-top: 6px;
+}
+
+.article .dateline-list h3 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-body);
+  margin: 6px 0 4px;
+}
+
+.article .dateline-list h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.article .dateline-list h3 a:hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article .dateline-list .excerpt {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin-bottom: 2px;
+}
+
+.article .dateline-list .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+}
+
+.article .date {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (width <= 1024px) {
+  .article .article-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .article .article-rail { max-width: 70ch; }
+}
+
+@media (width <= 640px) {
+  .article { padding-block: 36px var(--section-padding); }
+}

@@ -328,6 +328,63 @@
   color: var(--meadow);
 }
 
+/* article sub-variant (canon blog article-head): taller opener, crumbs pinned
+   top, kicker + h1 optically centered, dual scrim (90deg + 180deg) */
+.hero.immersive.article {
+  display: flex;
+  min-height: clamp(404px, calc(74vh - 116px), 604px);
+  padding-block: 16px 40px;
+}
+
+.hero.immersive.article .shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero.immersive.article .crumbs { margin-bottom: auto; }
+
+.hero.immersive.article .article-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: auto 0 18px;
+  font-size: 13px;
+  color: var(--on-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero.immersive.article .article-kicker .fact {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.hero.immersive.article .article-kicker .sep {
+  color: var(--meadow);
+  font-size: 14px;
+}
+
+.hero.immersive.article h1 {
+  max-width: 30ch;
+  margin-bottom: auto;
+}
+
+.hero.immersive.article::before {
+  background:
+    linear-gradient(90deg, rgb(18 42 31 / 84%) 0%, rgb(18 42 31 / 70%) 45%, rgb(18 42 31 / 30%) 76%, rgb(18 42 31 / 0%) 100%),
+    linear-gradient(180deg, rgb(18 42 31 / 88%) 0%, rgb(18 42 31 / 62%) 24%, rgb(18 42 31 / 30%) 58%, rgb(18 42 31 / 46%) 100%);
+}
+
+@media (width <= 800px) {
+  .hero.immersive.article {
+    min-height: clamp(324px, 66vh, 484px);
+    padding-block: 12px 28px;
+  }
+}
+
 /* ===== product: forest product chapter (canon ad629) ===== */
 .hero.product {
   background: var(--forest);

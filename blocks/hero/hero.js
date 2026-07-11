@@ -149,6 +149,38 @@ function classify(nodes) {
   return s;
 }
 
+/* article dateline kicker: mark "Published/Modified <date>" dates up as <time>
+   (canon device), keeping the ·-separated fact spans */
+function articleFactHtml(part) {
+  const m = part.match(/^(Published|Modified)\s+(.+)$/);
+  if (!m) return esc(part);
+  const d = new Date(m[2]);
+  const iso = Number.isNaN(d.getTime()) ? '' : ` datetime="${d.toISOString().slice(0, 10)}"`;
+  return `${esc(m[1])} <time${iso}>${esc(m[2])}</time>`;
+}
+
+function articleKickerHtml(parts) {
+  return parts.map((p, i) => (i < parts.length - 1
+    ? `<span class="fact"><span>${articleFactHtml(p)}</span><span class="sep" aria-hidden="true">·</span></span>`
+    : `<span class="fact"><span>${articleFactHtml(p)}</span></span>`)).join('');
+}
+
+/* canon no-break device: hold hyphenated compounds ("real-ear") on one line */
+function nbCompounds(el) {
+  [...el.childNodes].filter((n) => n.nodeType === 3 && /\S-\S/.test(n.textContent)).forEach((n) => {
+    const frag = document.createDocumentFragment();
+    n.textContent.split(/(\S+-\S+)/).forEach((tok) => {
+      if (/\S-\S/.test(tok)) {
+        const nb = document.createElement('span');
+        nb.className = 'nb';
+        nb.textContent = tok;
+        frag.append(nb);
+      } else if (tok) frag.append(tok);
+    });
+    n.replaceWith(frag);
+  });
+}
+
 function factsHtml(parts) {
   return parts.map((p, i) => (i < parts.length - 1
     ? `<span class="fact"><span>${esc(p)}</span><span class="sep" aria-hidden="true">·</span></span>`
@@ -305,8 +337,16 @@ function renderImmersive(block, s) {
     [k.textContent] = s.kickers;
     shell.append(k);
   }
+  // article sub-variant: the ·-split dateline kicker (Blog · author · dates)
+  if (s.facts) {
+    const p = document.createElement('p');
+    p.className = 'article-kicker meta-label';
+    p.innerHTML = articleKickerHtml(s.facts);
+    shell.append(p);
+  }
   const h1 = document.createElement('h1');
   if (s.h1) fillHeading(h1, s.h1);
+  if (block.classList.contains('article')) nbCompounds(h1);
   shell.append(h1);
   if (s.ledes.length) {
     const p = document.createElement('p');
