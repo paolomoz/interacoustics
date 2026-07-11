@@ -19,7 +19,8 @@ function collectNodes(block) {
   block.querySelectorAll(':scope > div > div').forEach((cell) => {
     const kids = [...cell.children];
     const stray = [...cell.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
-    if (kids.length && !stray) out.push(...kids);
+    const inlineRun = kids.length > 1 && kids.every((k) => k.matches('a, strong, em, code, span, u'));
+    if (kids.length && !stray && !inlineRun) out.push(...kids);
     else if (kids.length || cell.textContent.trim()) {
       // the pipeline unwraps single-<p> cells (#79) — a mixed text+element cell
       // is re-wrapped whole so stray text survives beside the elements
