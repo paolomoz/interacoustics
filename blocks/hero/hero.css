@@ -85,6 +85,14 @@
   white-space: nowrap;
 }
 
+/* light hero fact line (canon product-support): ink register, pine separator */
+.hero.light .hero-facts {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.hero.light .hero-facts .sep { color: var(--pine); }
+
 .hero .video-toggle {
   position: absolute;
   right: 24px;

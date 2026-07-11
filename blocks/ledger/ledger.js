@@ -12,6 +12,11 @@
  *              §products-ledger): SEVERAL groups in ONE block — a new group opens
  *              on each <strong>N products</strong> count row (or h2) once the
  *              current group has units; groups stack with the canon rhythm
+ *   directory  product-support family chapters (schema:
+ *              stardust/eds-schema/product-support.json §family-*): units are
+ *              name-only support routes (h3 + <a>, no thumb/desc) rendered as
+ *              the compact .dir sheet; the <code> anchor row may carry TWO
+ *              tokens ("abr directory") — section id + shell id
  *
  * Authoring rows:
  *   [<p><code>anchor</code></p>]                — section anchor id (subnav target)
@@ -103,7 +108,7 @@ function parseGroup(rows) {
 }
 
 /* build one group's rail + body pair from a parsed group */
-function buildGroup(grid, parsed, isIndex) {
+function buildGroup(grid, parsed, isIndex, isDir) {
   const {
     head, units, sublist, sublistLabel, foot,
   } = parsed;
@@ -129,12 +134,23 @@ function buildGroup(grid, parsed, isIndex) {
 
   const body = document.createElement('div');
   const ul = document.createElement('ul');
-  ul.className = 'ledger-list';
+  ul.className = isDir ? 'dir' : 'ledger-list';
   units.forEach((u) => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.className = 'ledger-row';
     a.setAttribute('href', u.href);
+    if (isDir) {
+      // compact support-directory row: name + arrow, no thumb/desc
+      a.className = 'dir-row';
+      const h3 = document.createElement('h3');
+      h3.textContent = u.name;
+      a.append(h3);
+      a.insertAdjacentHTML('beforeend', '<span class="dir-arr" aria-hidden="true">→</span>');
+      li.append(a);
+      ul.append(li);
+      return;
+    }
+    a.className = 'ledger-row';
     const thumb = document.createElement('span');
     thumb.className = 'thumb';
     if (u.img) thumb.append(u.img.cloneNode(true));
@@ -203,7 +219,10 @@ export default async function decorate(block) {
 
   const groups = chunks.filter((c) => c.length).map(parseGroup);
   if (!groups.length) return;
-  const anchor = groups.find((g) => g.head.anchor)?.head.anchor;
+  const isDir = block.classList.contains('directory');
+  // anchor row may carry TWO tokens: "<section-id> <shell-id>" (directory "All" target)
+  const tokens = (groups.find((g) => g.head.anchor)?.head.anchor || '').split(/\s+/).filter(Boolean);
+  const [anchor, shellAnchor] = tokens;
   if (anchor) {
     // the pipeline auto-slugs headings — a heading whose text equals the
     // anchor must yield its id to the section (subnav target)
@@ -216,16 +235,17 @@ export default async function decorate(block) {
   block.textContent = '';
   const shell = document.createElement('div');
   block.append(shell);
+  if (shellAnchor && !document.getElementById(shellAnchor)) shell.id = shellAnchor;
   if (grouped) {
     shell.className = 'shell';
     groups.forEach((g) => {
       const grid = document.createElement('div');
       grid.className = 'group-grid';
-      buildGroup(grid, g, isIndex);
+      buildGroup(grid, g, isIndex, isDir);
       shell.append(grid);
     });
   } else {
     shell.className = `shell ${isIndex ? 'products-grid' : 'group-grid'}`;
-    buildGroup(shell, groups[0], isIndex);
+    buildGroup(shell, groups[0], isIndex, isDir);
   }
 }

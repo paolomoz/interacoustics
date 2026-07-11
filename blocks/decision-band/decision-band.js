@@ -204,6 +204,12 @@ export default async function decorate(block) {
     return;
   }
 
+  // canon decision sections carry id="contact" (banner ask target); the ink
+  // variant (future-safe statement) never claims it — on solutions it precedes
+  // the real contact band in DOM order
+  const section = block.closest('.section');
+  if (section && !document.getElementById('contact')) section.id = 'contact';
+
   const grid = document.createElement('div');
   grid.className = 'decision-grid';
   shell.append(grid);
@@ -268,8 +274,6 @@ export default async function decorate(block) {
 
   // quote-panel variant: embedded form at full content width + fallback line
   if (s.embed) {
-    const section = block.closest('.section');
-    if (section && !document.getElementById('contact')) section.id = 'contact';
     const panel = document.createElement('div');
     panel.className = 'quote-panel';
     panel.id = 'distributor-form';
