@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity -- variant-scoped canon cascades (.doc-list/.battery `a` rules never co-match) */
+
 /*
  * record-sheet — canon events record-sheet ledger CSS (variant B), scoped .record-sheet.
  */
@@ -67,6 +69,110 @@
 
 .record-sheet .sheet-row .btn { white-space: nowrap; }
 
+/* ===== doc-list: typed document/training ledger on mist (canon ad629) ===== */
+.record-sheet.doc-list { background: var(--mist); }
+
+.record-sheet.doc-list .section-head { margin-bottom: var(--spacing-lg); }
+
+.record-sheet.doc-list .doc-ledger {
+  list-style: none;
+  margin: 0 0 var(--spacing-md);
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+  max-width: 900px;
+}
+
+.record-sheet.doc-list .doc-ledger li { border-bottom: 1px solid var(--hairline); }
+
+.record-sheet.doc-list .doc-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: baseline;
+  padding-block: 4px;
+}
+
+.record-sheet.doc-list .doc-row a {
+  color: var(--pine);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  padding-block: 10px; /* >=44px target */
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.record-sheet.doc-list .doc-row a:hover {
+  color: var(--pine-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===== battery: record-sheet double columns + software screens (canon ad629) ===== */
+.record-sheet.battery .section-head { margin-bottom: var(--spacing-lg); }
+
+.record-sheet.battery .battery-screens {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  margin-bottom: var(--spacing-xl);
+}
+
+.record-sheet.battery .battery-screens img { width: 100%; }
+
+.record-sheet.battery .sheet-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px clamp(32px, 4vw, 72px);
+  font-variant-numeric: tabular-nums;
+}
+
+.record-sheet.battery .sheet-col h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin: 0;
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.record-sheet.battery .sheet-col .col-intro {
+  font-size: 16px;
+  color: var(--ink-muted);
+  margin: 0;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.record-sheet.battery .sheet-col a {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.record-sheet.battery .sheet-col a:hover { color: var(--pine-hover); }
+
+.record-sheet.battery .sheet-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.record-sheet.battery .sheet-rows li {
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 12px;
+  font-size: 16px;
+}
+
+.record-sheet.battery .battery-2 { margin-top: var(--spacing-2xl); }
+
+.record-sheet.battery .battery-2 h2 {
+  font-size: var(--heading-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
 /* ===== training: type-tagged rows + head arrow-link (canon audiometers) ===== */
 .record-sheet.training .training-head {
   display: flex;
@@ -101,6 +207,21 @@
     flex-direction: column;
     align-items: start;
     gap: 4px;
+  }
+
+  .record-sheet.battery .sheet-cols { grid-template-columns: 1fr; }
+
+  .record-sheet.doc-list .doc-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+    padding-block: 10px;
+  }
+
+  .record-sheet.doc-list .doc-row a {
+    padding-block: 6px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 

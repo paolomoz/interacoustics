@@ -106,10 +106,60 @@
   mix-blend-mode: multiply;
 }
 
+/* ===== features: ink chapter ledger + sticky render (canon ad629 overview) ===== */
+.split.features {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.split.features .overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+}
+
+.split.features .overview-media {
+  position: sticky;
+  top: 200px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.split.features .overview-media img { width: 100%; }
+
+.split.features .feature-ledger { border-top: 1px solid var(--hairline-dark); }
+
+.split.features .feature {
+  border-bottom: 1px solid var(--hairline-dark);
+  padding-block: 34px;
+}
+
+.split.features .feature h2 {
+  font-size: var(--heading-lg);
+  color: var(--on-dark);
+  margin-bottom: 10px;
+}
+
+.split.features .feature p {
+  font-size: 17px;
+  color: var(--on-dark-muted);
+  margin: 0;
+  max-width: 62ch;
+}
+
 /* ===== responsive (canon) ===== */
 @media (width <= 1024px) {
   .split .affinity-grid { grid-template-columns: 1fr; }
   .split .affinity-media { min-height: 320px; }
+
+  .split.features .overview-grid { grid-template-columns: 1fr; }
+
+  .split.features .overview-media {
+    position: static;
+    max-width: 560px;
+  }
 
   .split .academy-grid {
     grid-template-columns: 1fr;

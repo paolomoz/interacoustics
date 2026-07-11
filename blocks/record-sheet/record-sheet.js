@@ -11,6 +11,17 @@
  *   foot row: plain <a> ("All upcoming events")
  * The Date / Course-or-webinar column labels are template chrome (canon).
  *
+ * Variant `battery` (canon ad629 test-battery; schema:
+ * stardust/eds-schema/ad629.json §test-battery): h2 + intro p section head |
+ * <img> software screens | per column h3 [+ intro p] + <ul> spec rows (inline
+ * <a> kept); a SECOND h2 opens the "battery-2" column group. Columns pair in
+ * the canon 2-up sheet grid.
+ *
+ * Variant `doc-list` (canon ad629 support-training; schema:
+ * stardust/eds-schema/ad629.json §support-training): h2 + intro p head |
+ * unit rows of TWO cells: type meta ("PDF"/"Training") | plain <a> title |
+ * foot row: single plain <a> (arrow-link).
+ *
  * Variant `training` (canon audiometers training; schema:
  * stardust/eds-schema/audiometers.json §training): the first cell of a unit
  * row is a meta tag ("Type: Reading") rendered as a tracked-caps label (no
@@ -40,7 +51,187 @@ function splitDate(full) {
   return { dd: full, dm: '' };
 }
 
+/* flatten-first collector (#62/#79) for the battery variant */
+function collectNodes(block) {
+  const out = [];
+  block.querySelectorAll(':scope > div > div').forEach((cell) => {
+    const kids = [...cell.children];
+    const stray = [...cell.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+    const inlineRun = kids.length > 1 && kids.every((k) => k.matches('a, strong, em, code, span, u'));
+    if (kids.length && !stray && !inlineRun) out.push(...kids);
+    else if (kids.length || cell.textContent.trim()) {
+      const p = document.createElement('p');
+      p.append(...[...cell.childNodes].map((n) => n.cloneNode(true)));
+      out.push(p);
+    }
+  });
+  return out.length ? out : [...block.children];
+}
+
+/* battery: section head + screens + h3 columns in 2-up sheet grids (ad629) */
+function renderBattery(block) {
+  const nodes = collectNodes(block);
+  const head = { h2: null, intro: [] };
+  let screens = null;
+  const groups = [];
+  let group = null;
+  let col = null;
+  const openGroup = (h2) => { group = { h2, cols: [] }; groups.push(group); col = null; };
+  nodes.forEach((n) => {
+    const media = pick(n, 'picture, img');
+    if (media) { screens = media; return; }
+    const h2 = n.matches('h1, h2') ? n : null;
+    if (h2) {
+      if (!head.h2) head.h2 = h2;
+      else openGroup(h2);
+      return;
+    }
+    const h3 = pick(n, 'h3, h4');
+    if (h3) {
+      if (!group) openGroup(null);
+      col = { h3, intro: null, rows: [] };
+      group.cols.push(col);
+      return;
+    }
+    if (n.matches('ul, ol')) {
+      if (col) col.rows.push(...n.querySelectorAll(':scope > li'));
+      return;
+    }
+    if (!text(n)) return;
+    if (col && !col.rows.length) col.intro = n;
+    else if (!group) head.intro.push(n);
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  if (head.h2 || head.intro.length) {
+    const sh = document.createElement('div');
+    sh.className = 'section-head';
+    if (head.h2) {
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...head.h2.childNodes].map((n) => n.cloneNode(true)));
+      sh.append(h2);
+    }
+    head.intro.forEach((n) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...n.childNodes].map((c) => c.cloneNode(true)));
+      sh.append(p);
+    });
+    shell.append(sh);
+  }
+  if (screens) {
+    const div = document.createElement('div');
+    div.className = 'battery-screens';
+    div.append(screens.cloneNode(true));
+    shell.append(div);
+  }
+  groups.forEach((g) => {
+    const cols = document.createElement('div');
+    cols.className = 'sheet-cols';
+    g.cols.forEach((c) => {
+      const colEl = document.createElement('div');
+      colEl.className = 'sheet-col';
+      const h3 = document.createElement('h3');
+      h3.replaceChildren(...[...c.h3.childNodes].map((n) => n.cloneNode(true)));
+      colEl.append(h3);
+      if (c.intro) {
+        const p = document.createElement('p');
+        p.className = 'col-intro';
+        p.replaceChildren(...[...c.intro.childNodes].map((n) => n.cloneNode(true)));
+        colEl.append(p);
+      }
+      const ul = document.createElement('ul');
+      ul.className = 'sheet-rows';
+      c.rows.forEach((li) => ul.append(li.cloneNode(true)));
+      colEl.append(ul);
+      cols.append(colEl);
+    });
+    if (g.h2) {
+      const wrap = document.createElement('div');
+      wrap.className = 'battery-2';
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...g.h2.childNodes].map((n) => n.cloneNode(true)));
+      wrap.append(h2);
+      wrap.append(cols);
+      shell.append(wrap);
+    } else shell.append(cols);
+  });
+}
+
+/* doc-list: typed document/training ledger on mist (ad629 support).
+   An optional leading <p><code>anchor</code></p> row sets the section id. */
+function renderDocList(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const head = { h2: null, intro: [] };
+  const units = [];
+  let foot = null;
+  rows.forEach((row) => {
+    const code = row.querySelector('code');
+    if (code && !units.length && !head.h2) {
+      const section = block.closest('.section');
+      const anchor = text(code);
+      if (section && anchor && !document.getElementById(anchor)) section.id = anchor;
+      return;
+    }
+    const cells = [...row.children];
+    const a = row.querySelector('a');
+    if (cells.length >= 2 && a) {
+      const meta = cells.map(text).find((t) => t && t !== text(a));
+      units.push({ meta: meta || '', a });
+      return;
+    }
+    cells.forEach((cell) => {
+      const kids = [...cell.children].length ? [...cell.children] : [cell];
+      kids.forEach((n) => {
+        const h2 = pick(n, 'h1, h2');
+        if (h2) { head.h2 = h2; return; }
+        const link = pick(n, 'a');
+        if (link) { foot = link; return; }
+        if (text(n)) head.intro.push(n);
+      });
+    });
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  if (head.h2 || head.intro.length) {
+    const sh = document.createElement('div');
+    sh.className = 'section-head';
+    if (head.h2) {
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...head.h2.childNodes].map((n) => n.cloneNode(true)));
+      sh.append(h2);
+    }
+    head.intro.forEach((n) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...n.childNodes].map((c) => c.cloneNode(true)));
+      sh.append(p);
+    });
+    shell.append(sh);
+  }
+  const ul = document.createElement('ul');
+  ul.className = 'doc-ledger';
+  units.forEach((u) => {
+    const li = document.createElement('li');
+    li.className = 'doc-row';
+    li.insertAdjacentHTML('beforeend', `<span class="meta-label">${esc(u.meta)}</span>`);
+    const a = document.createElement('a');
+    a.setAttribute('href', u.a.getAttribute('href') || '#');
+    a.textContent = text(u.a);
+    li.append(a);
+    ul.append(li);
+  });
+  shell.append(ul);
+  if (foot) shell.append(makeArrowLink(foot));
+}
+
 export default async function decorate(block) {
+  if (block.classList.contains('battery')) { renderBattery(block); return; }
+  if (block.classList.contains('doc-list')) { renderDocList(block); return; }
   const rows = [...block.querySelectorAll(':scope > div')];
   const head = { h2: null, intro: [] };
   const units = [];

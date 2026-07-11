@@ -101,6 +101,34 @@
   margin-top: var(--spacing-md);
 }
 
+/* routing: sub-routes below the quote panel (canon ad629) */
+.decision-band .decision-routing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px clamp(32px, 4vw, 72px);
+  border-top: 1px solid var(--hairline-dark);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+}
+
+.decision-band .decision-routing h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  color: var(--on-dark);
+  margin-bottom: 6px;
+}
+
+.decision-band .decision-routing p {
+  font-size: 16px;
+  color: var(--on-dark-muted);
+  margin-bottom: 4px;
+}
+
+.decision-band .decision-routing .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+}
+
 .decision-band .arrow-link { color: var(--meadow); }
 .decision-band .arrow-link:hover { color: var(--on-dark); }
 
@@ -184,4 +212,6 @@
 
 @media (width <= 640px) {
   .decision-band .decision-subs { grid-template-columns: 1fr; }
+
+  .decision-band .decision-routing { grid-template-columns: 1fr; }
 }

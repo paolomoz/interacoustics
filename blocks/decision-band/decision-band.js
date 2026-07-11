@@ -15,6 +15,8 @@
  *                "Find a Distributor" btn-meadow); plain stays the arrow-link
  *   subs-left    the sub-routes render in the LEFT copy column under the lede
  *                (canon audiometers decision-cta), not the proof column
+ *   routing      the sub-routes render BELOW the quote panel as the full-width
+ *                ruled .decision-routing grid (canon ad629)
  *   ink          rows: h2 | body p | <ul> proof column (an <li> holding an <a>
  *                renders as the arrow-link route; plain <li>s are ruled facts)
  *
@@ -224,9 +226,11 @@ export default async function decorate(block) {
     });
     proof.append(wrap);
   }
+  const routing = block.classList.contains('routing');
+  let subsGrid = null;
   if (s.subs.length) {
-    const subsGrid = document.createElement('div');
-    subsGrid.className = 'decision-subs';
+    subsGrid = document.createElement('div');
+    subsGrid.className = routing ? 'decision-routing' : 'decision-subs';
     s.subs.forEach((sub) => {
       const cell = document.createElement('div');
       const h3 = document.createElement('h3');
@@ -240,7 +244,7 @@ export default async function decorate(block) {
       if (sub.link) cell.append(sub.emph ? btnLink(sub.link) : arrowLink(sub.link));
       subsGrid.append(cell);
     });
-    if (block.classList.contains('subs-left')) cta.append(subsGrid);
+    if (routing) { /* appended below the quote panel */ } else if (block.classList.contains('subs-left')) cta.append(subsGrid);
     else proof.append(subsGrid);
   }
   grid.append(proof);
@@ -266,4 +270,5 @@ export default async function decorate(block) {
     if (s.fallback) panel.append(fallbackLine(s.fallback, 'quote-fallback'));
     shell.append(panel);
   }
+  if (routing && subsGrid) shell.append(subsGrid);
 }

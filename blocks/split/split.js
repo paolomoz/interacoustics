@@ -8,6 +8,10 @@
  *   affinity  duotone media left / kicker+h3+p+plain <a> right, then the
  *             full-range ruled row (h2 + <em><a> route)
  *   academy   copy left (h2+p+plain <a>) / duotone media bleeding right
+ *   features  ink feature-chapter ledger beside a sticky product render
+ *             (canon ad629 overview; schema: stardust/eds-schema/ad629.json
+ *             §feature-chapters) — rows: <img> render, then per chapter
+ *             h2 | body p (heading-boundary segmentation)
  *
  * Authoring rows: <img> | [<strong> kicker] | h3 | p | plain <a> |
  *                 [ruled row: h2 | <em><a> route]
@@ -46,9 +50,61 @@ function arrowLink(a) {
   return link;
 }
 
+/* features: sticky render + ruled chapter ledger (canon ad629 overview) */
+function renderFeatures(block, nodes) {
+  let img = null;
+  const features = [];
+  let cur = null;
+  nodes.forEach((n) => {
+    const code = pick(n, 'code');
+    if (code && !features.length) {
+      const section = block.closest('.section');
+      const anchor = text(code);
+      if (section && anchor && !document.getElementById(anchor)) section.id = anchor;
+      return;
+    }
+    const media = pick(n, 'picture, img');
+    if (media) { img = media; return; }
+    const h = pick(n, 'h2, h3');
+    if (h) { cur = { h, paras: [] }; features.push(cur); return; }
+    if (cur && text(n)) cur.paras.push(n);
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell overview-grid';
+  block.append(shell);
+  if (img) {
+    const media = document.createElement('div');
+    media.className = 'overview-media';
+    media.append(img.cloneNode(true));
+    shell.append(media);
+  }
+  const ledger = document.createElement('div');
+  ledger.className = 'feature-ledger';
+  features.forEach((f) => {
+    const div = document.createElement('div');
+    div.className = 'feature';
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...f.h.childNodes].map((n) => n.cloneNode(true)));
+    div.append(h2);
+    f.paras.forEach((para) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+      div.append(p);
+    });
+    ledger.append(div);
+  });
+  shell.append(ledger);
+}
+
 export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
+  if (block.classList.contains('features')) {
+    renderFeatures(block, nodes);
+    return;
+  }
   const s = {
     img: null, kicker: null, h2: null, h3: null, paras: [], link: null, cta: null,
   };
