@@ -22,6 +22,13 @@
  * unit rows of TWO cells: type meta ("PDF"/"Training") | plain <a> title |
  * foot row: single plain <a> (arrow-link).
  *
+ * Variant `timeline` (canon our-history timeline; schema:
+ * stardust/eds-schema/our-history.json §timeline): decade head rows of TWO
+ * cells (h2 "2020s" | count "1 milestone") open a decade group (id
+ * decade-<h2>, subnav target); milestone rows of THREE cells (year "2025" |
+ * h3 (em kept) + desc p | <img> archive photo). Year/Milestone/From-the-archive
+ * column labels are template chrome.
+ *
  * Variant `training` (canon audiometers training; schema:
  * stardust/eds-schema/audiometers.json §training): the first cell of a unit
  * row is a meta tag ("Type: Reading") rendered as a tracked-caps label (no
@@ -239,9 +246,93 @@ function renderDocList(block) {
   if (foot) shell.append(makeArrowLink(foot));
 }
 
+/* timeline: decade-grouped archive record sheet (our-history) */
+function renderTimeline(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const decades = [];
+  let decade = null;
+  rows.forEach((row) => {
+    const h3 = row.querySelector('h3, h4');
+    if (h3) {
+      const cells = [...row.children];
+      const year = cells.map(text).find((t) => /^\d{4}/.test(t)) || '';
+      const descs = [...row.querySelectorAll('p')].filter((p) => {
+        const t = text(p);
+        return t && t !== year && t !== text(h3);
+      });
+      const img = row.querySelector('picture, img');
+      if (!decade) { decade = { h2: null, meta: '', milestones: [] }; decades.push(decade); }
+      decade.milestones.push({
+        year, h3, descs, img,
+      });
+      return;
+    }
+    const h2 = row.querySelector('h1, h2');
+    if (h2) {
+      const meta = [...row.children].map(text).find((t) => t && t !== text(h2)) || '';
+      decade = { h2, meta, milestones: [] };
+      decades.push(decade);
+    }
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  shell.insertAdjacentHTML('beforeend', `
+    <div class="sheet-colhead" aria-hidden="true">
+      <span class="meta-label">Year</span>
+      <span class="meta-label">Milestone</span>
+      <span class="meta-label col-photo">From the archive</span>
+    </div>`);
+  decades.forEach((d) => {
+    const div = document.createElement('div');
+    div.className = 'decade';
+    if (d.h2) {
+      const slug = `decade-${text(d.h2).toLowerCase().replace(/[^0-9a-z]+/g, '-')}`;
+      if (!document.getElementById(slug)) div.id = slug;
+      const rail = document.createElement('div');
+      rail.className = 'decade-rail';
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...d.h2.childNodes].map((n) => n.cloneNode(true)));
+      rail.append(h2);
+      if (d.meta) rail.insertAdjacentHTML('beforeend', `<span class="meta-label">${esc(d.meta)}</span>`);
+      div.append(rail);
+    }
+    d.milestones.forEach((m) => {
+      const art = document.createElement('article');
+      art.className = 'milestone';
+      art.insertAdjacentHTML('beforeend', `<p class="year">${esc(m.year)}</p>`);
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+      const h3 = document.createElement('h3');
+      h3.replaceChildren(...[...m.h3.childNodes].map((n) => n.cloneNode(true)));
+      entry.append(h3);
+      m.descs.forEach((p) => {
+        const desc = document.createElement('p');
+        desc.className = 'desc';
+        desc.replaceChildren(...[...p.childNodes].map((n) => n.cloneNode(true)));
+        entry.append(desc);
+      });
+      art.append(entry);
+      if (m.img) {
+        const media = document.createElement('div');
+        media.className = 'media';
+        const img = m.img.cloneNode(true);
+        (img.matches('img') ? img : img.querySelector('img'))?.classList.add('photo');
+        media.append(img);
+        art.append(media);
+      }
+      div.append(art);
+    });
+    shell.append(div);
+  });
+}
+
 export default async function decorate(block) {
   if (block.classList.contains('battery')) { renderBattery(block); return; }
   if (block.classList.contains('doc-list')) { renderDocList(block); return; }
+  if (block.classList.contains('timeline')) { renderTimeline(block); return; }
   const rows = [...block.querySelectorAll(':scope > div')];
   const head = { h2: null, intro: [] };
   const units = [];

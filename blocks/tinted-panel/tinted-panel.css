@@ -184,9 +184,72 @@
 
 .tinted-panel.faq .faq-item a:hover { color: var(--pine-hover); }
 
+/* ===== close: quiet ruled close band (canon our-history quiet-close) ===== */
+.tinted-panel.close {
+  background: transparent;
+  border-block: 0;
+  border-top: 2px solid var(--ink);
+}
+
+.tinted-panel.close .shell { max-width: var(--max-width); }
+
+.tinted-panel .close-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+}
+
+.tinted-panel .close-lede {
+  font-size: var(--heading-md);
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: var(--tracking-body);
+  max-width: 30em;
+  margin: 0;
+}
+
+.tinted-panel .close-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.tinted-panel .close-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  min-height: 60px;
+  padding-block: 8px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-body);
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.tinted-panel .close-links a:hover { color: var(--pine); }
+
+.tinted-panel .close-links .arr {
+  display: inline-block;
+  color: var(--pine);
+  transition: transform var(--dur-state) var(--ease-snap);
+}
+
+.tinted-panel .close-links a:hover .arr { transform: translateX(4px); }
+
 /* ===== responsive (canon) ===== */
 @media (width <= 1024px) {
   .tinted-panel .pair-grid { grid-template-columns: 1fr; }
+
+  .tinted-panel .close-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
 }
 
 /* ===== inset: mist panel framed by hairlines (canon careers .toronto) ===== */

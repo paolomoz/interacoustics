@@ -173,6 +173,96 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* ===== timeline: the record sheet at archive scale (canon our-history) ===== */
+.record-sheet.timeline {
+  background: transparent;
+  border-block: 0;
+  padding-block: var(--section-padding) calc(var(--section-padding) + 16px);
+}
+
+.record-sheet.timeline .sheet-colhead {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) clamp(240px, 26vw, 340px);
+  column-gap: clamp(28px, 4vw, 56px);
+  padding-bottom: 12px;
+}
+
+.record-sheet.timeline .decade { scroll-margin-top: 190px; }
+
+.record-sheet.timeline .decade-rail {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  border-top: 2px solid var(--ink);
+  padding-top: 14px;
+  margin-top: var(--spacing-xl);
+}
+
+.record-sheet.timeline .sheet-colhead + .decade .decade-rail { margin-top: 0; }
+
+.record-sheet.timeline .decade-rail h2 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  letter-spacing: var(--tracking-body);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.record-sheet.timeline .milestone {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) clamp(240px, 26vw, 340px);
+  column-gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+  border-top: 1px solid var(--hairline);
+  margin-top: 28px;
+  padding-block: 36px 8px;
+}
+
+.record-sheet.timeline .decade-rail + .milestone {
+  border-top: 0;
+  margin-top: 14px;
+}
+
+.record-sheet.timeline .milestone .year {
+  font-size: var(--heading-xxl);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: var(--tracking-display);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  margin: 0;
+}
+
+.record-sheet.timeline .milestone h3 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-body);
+  margin: 8px 0 12px;
+  max-width: 26em;
+}
+
+/* the captured brand emphasis device ("… made …") — italic em, pine on light */
+.record-sheet.timeline .milestone h3 em {
+  font-style: italic;
+  color: var(--pine);
+}
+
+.record-sheet.timeline .milestone .desc {
+  font-size: var(--body);
+  color: var(--ink);
+  max-width: 58ch;
+  margin: 0;
+}
+
+.record-sheet.timeline .milestone .photo,
+.record-sheet.timeline .milestone .media img {
+  width: 100%;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--hairline);
+  background: var(--card);
+}
+
 /* ===== training: type-tagged rows + head arrow-link (canon audiometers) ===== */
 .record-sheet.training .training-head {
   display: flex;
@@ -185,6 +275,19 @@
 .record-sheet.training .training-head h2 { margin: 0; }
 
 /* ===== responsive (canon) ===== */
+@media (width <= 1024px) {
+  .record-sheet.timeline .sheet-colhead,
+  .record-sheet.timeline .milestone { grid-template-columns: 110px minmax(0, 1fr); }
+
+  .record-sheet.timeline .sheet-colhead .col-photo { display: none; }
+
+  .record-sheet.timeline .milestone .media {
+    grid-column: 2;
+    max-width: 480px;
+    margin-top: 20px;
+  }
+}
+
 @media (width <= 800px) {
   /* the whole column-header row hides (no orphaned 'Course or webinar') */
   .record-sheet .sheet-head { display: none; }
@@ -222,6 +325,29 @@
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+  }
+
+  .record-sheet.timeline .sheet-colhead { display: none; }
+  .record-sheet.timeline .decade-rail { margin-top: 40px; }
+  .record-sheet.timeline .decade:first-of-type .decade-rail { margin-top: 0; }
+}
+
+@media (width <= 640px) {
+  .record-sheet.timeline .sheet-colhead,
+  .record-sheet.timeline .milestone { grid-template-columns: minmax(0, 1fr); }
+
+  .record-sheet.timeline .milestone { padding-block: 28px 4px; }
+  .record-sheet.timeline .milestone .year { font-size: 36px; }
+
+  .record-sheet.timeline .milestone h3 {
+    margin-top: 10px;
+    font-size: 21px;
+  }
+
+  .record-sheet.timeline .milestone .media {
+    grid-column: 1;
+    max-width: 480px;
+    margin-top: 18px;
   }
 }
 

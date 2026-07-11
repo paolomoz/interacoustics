@@ -13,6 +13,9 @@
  *   faq     mist Q/A band (canon audiometers faq; schema:
  *           stardust/eds-schema/audiometers.json §faq): h2 section title |
  *           repeating h3 question + p answer (inline <a> kept)
+ *   close   quiet ruled close band (canon our-history quiet-close; schema:
+ *           stardust/eds-schema/our-history.json §quiet-close): lede p |
+ *           <ul> of forward links (ledger-row style, arrow right)
  *
  * Decode: flatten-first collectNodes (#62); split segments on heading
  * boundaries with pre-heading media buffered to the panel it opens (#76).
@@ -177,6 +180,41 @@ function renderFaq(block, nodes) {
   });
 }
 
+function renderClose(block, nodes) {
+  const paras = [];
+  const links = [];
+  nodes.forEach((n) => {
+    if (n.matches('ul, ol')) { links.push(...n.querySelectorAll('a')); return; }
+    const a = pick(n, 'a');
+    if (a) { links.push(...(n.matches('a') ? [n] : n.querySelectorAll('a'))); return; }
+    if (text(n)) paras.push(n);
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell close-grid';
+  block.append(shell);
+  paras.forEach((para) => {
+    const p = document.createElement('p');
+    p.className = 'close-lede';
+    p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+    shell.append(p);
+  });
+  if (links.length) {
+    const ul = document.createElement('ul');
+    ul.className = 'close-links';
+    links.forEach((a) => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.setAttribute('href', a.getAttribute('href') || '#');
+      link.innerHTML = `${esc(text(a).replace(/\s*→\s*$/u, ''))} <span class="arr" aria-hidden="true">→</span>`;
+      li.append(link);
+      ul.append(li);
+    });
+    shell.append(ul);
+  }
+}
+
 export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
@@ -188,6 +226,11 @@ export default async function decorate(block) {
 
   if (block.classList.contains('faq')) {
     renderFaq(block, nodes);
+    return;
+  }
+
+  if (block.classList.contains('close')) {
+    renderClose(block, nodes);
     return;
   }
 
