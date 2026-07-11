@@ -1,0 +1,29 @@
+{
+  "/contact": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-11T16:43:39.794Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/index": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-11T16:43:39.794Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/solutions": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-11T16:43:39.794Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  }
+}

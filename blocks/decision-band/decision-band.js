@@ -22,10 +22,13 @@ function collectNodes(block) {
   const out = [];
   block.querySelectorAll(':scope > div > div').forEach((cell) => {
     const kids = [...cell.children];
-    if (kids.length) out.push(...kids);
-    else if (cell.textContent.trim()) {
+    const stray = [...cell.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+    if (kids.length && !stray) out.push(...kids);
+    else if (kids.length || cell.textContent.trim()) {
+      // the pipeline unwraps single-<p> cells (#79) — a mixed text+element cell
+      // is re-wrapped whole so stray text survives beside the elements
       const p = document.createElement('p');
-      p.textContent = cell.textContent.trim();
+      p.append(...[...cell.childNodes].map((n) => n.cloneNode(true)));
       out.push(p);
     }
   });
