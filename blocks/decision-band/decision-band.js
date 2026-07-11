@@ -162,6 +162,23 @@ export default async function decorate(block) {
   shell.className = 'shell';
   block.append(shell);
 
+  // solo variant (canon about .careers): single ask, no proof column
+  if (block.classList.contains('solo')) {
+    if (s.heading) {
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...s.heading.childNodes].map((n) => n.cloneNode(true)));
+      shell.append(h2);
+    }
+    if (s.lede) {
+      const p = document.createElement('p');
+      p.className = 'lede';
+      p.replaceChildren(...[...s.lede.childNodes].map((n) => n.cloneNode(true)));
+      shell.append(p);
+    }
+    if (s.cta) shell.append(btnLink(s.cta));
+    return;
+  }
+
   if (block.classList.contains('ink')) {
     const grid = document.createElement('div');
     grid.className = 'futuresafe-grid';

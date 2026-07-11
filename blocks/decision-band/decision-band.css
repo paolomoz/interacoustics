@@ -215,3 +215,15 @@
 
   .decision-band .decision-routing { grid-template-columns: 1fr; }
 }
+
+/* solo variant — canon about .careers: single ask, no proof column */
+.decision-band.solo h2 {
+  font-size: clamp(35px, 3.6vw, 44px);
+  max-width: 20ch;
+}
+
+.decision-band.solo .lede {
+  color: var(--on-dark);
+  max-width: 62ch;
+  margin-bottom: 28px;
+}

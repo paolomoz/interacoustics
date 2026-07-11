@@ -315,9 +315,60 @@ function renderLight(block, s) {
     p.replaceChildren(...[...lede.node.childNodes].map((n) => n.cloneNode(true)));
     copy.append(p);
   }
+  // inventory fact line (canon product-support "45 products · 7 product families")
+  if (s.facts) {
+    const p = document.createElement('p');
+    p.className = 'hero-facts';
+    p.innerHTML = factsHtml(s.facts);
+    copy.append(p);
+  }
   if (s.ctas.length) copy.append(btnLink(s.ctas[0]));
   if (s.imgs.length) media.append(s.imgs[0].cloneNode(true));
   else media.remove();
+}
+
+/* collage (canon about .about-hero): copy left, 4-photo two-column collage right */
+function renderCollage(block, s) {
+  block.innerHTML = '<div class="shell"></div>';
+  const shell = block.querySelector('.shell');
+  if (s.crumbs) shell.insertAdjacentHTML('beforeend', crumbsOl(s.crumbs, text(s.crumbs.node).split(' / ').pop()));
+  const grid = document.createElement('div');
+  grid.className = 'about-hero-grid';
+  shell.append(grid);
+  const copy = document.createElement('div');
+  copy.className = 'about-hero-copy';
+  const h1 = document.createElement('h1');
+  if (s.h1) fillHeading(h1, s.h1);
+  nbCompounds(h1);
+  copy.append(h1);
+  if (s.ledes.length) {
+    const p = document.createElement('p');
+    p.className = 'lede';
+    p.replaceChildren(...[...s.ledes[0].node.childNodes].map((n) => n.cloneNode(true)));
+    copy.append(p);
+  }
+  if (s.ctas.length) {
+    const btn = btnLink(s.ctas[0], 'btn-secondary');
+    btn.classList.add('btn-video');
+    btn.insertAdjacentHTML('afterbegin', '<svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 1.5v9l8-4.5z"/></svg> ');
+    copy.append(btn);
+  }
+  grid.append(copy);
+  if (s.imgs.length) {
+    const fig = document.createElement('figure');
+    fig.className = 'collage';
+    fig.id = 'hero-collage';
+    fig.setAttribute('tabindex', '-1');
+    const half = Math.ceil(s.imgs.length / 2);
+    [s.imgs.slice(0, half), s.imgs.slice(half)].forEach((col) => {
+      if (!col.length) return;
+      const div = document.createElement('div');
+      div.className = 'collage-col';
+      col.forEach((img) => div.append(img.cloneNode(true)));
+      fig.append(div);
+    });
+    grid.append(fig);
+  }
 }
 
 /* opener (canon customer-stories .opener): contained h1 + lede on ground */
@@ -530,6 +581,7 @@ export default async function decorate(block) {
   const s = classify(nodes);
   if (block.classList.contains('contact')) renderContact(block, s);
   else if (block.classList.contains('opener')) renderOpener(block, s);
+  else if (block.classList.contains('collage')) renderCollage(block, s);
   else if (block.classList.contains('light')) renderLight(block, s);
   else if (block.classList.contains('immersive')) renderImmersive(block, s);
   else if (block.classList.contains('product')) renderProduct(block, s);

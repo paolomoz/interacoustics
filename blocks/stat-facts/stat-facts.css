@@ -1,0 +1,123 @@
+/*
+ * stat-facts — canon about trust devices: values rail + ruled ledger (mist)
+ * and at-a-glance ruled display numerals, scoped .stat-facts.
+ */
+
+.stat-facts { padding-block: var(--section-padding); }
+
+/* values variant: rail + ruled 2x2 ledger on a mist tinted panel */
+.stat-facts.values {
+  background: var(--mist);
+  border-block: 1px solid var(--hairline);
+}
+
+.stat-facts .values-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.stat-facts .values-rail h2 { margin-bottom: var(--spacing-md); }
+
+.stat-facts .values-rail p {
+  font-size: 17px;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.stat-facts .value-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--hairline);
+}
+
+.stat-facts .value {
+  border-bottom: 1px solid var(--hairline);
+  padding: 26px 32px 26px 0;
+}
+
+.stat-facts .value:nth-child(odd) { border-right: 1px solid var(--hairline); }
+
+.stat-facts .value:nth-child(even) {
+  padding-left: 32px;
+  padding-right: 0;
+}
+
+.stat-facts .value h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stat-facts .value p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+/* glance variant: ruled trust facts at display scale (tabular numerals) */
+.stat-facts .section-head { margin-bottom: var(--spacing-xl); }
+
+.stat-facts .glance-rule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--hairline);
+}
+
+.stat-facts .glance-rule li { padding: 36px 32px 36px 0; }
+
+.stat-facts .glance-rule li + li {
+  border-left: 1px solid var(--hairline);
+  padding-left: 32px;
+}
+
+.stat-facts .glance-num {
+  display: block;
+  font-size: clamp(44px, 4.6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--pine);
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-facts .glance-cap {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ink-muted);
+  max-width: 30ch;
+}
+
+@media (width <= 900px) {
+  .stat-facts .values-grid { grid-template-columns: 1fr; }
+}
+
+@media (width <= 640px) {
+  .stat-facts .value-grid { grid-template-columns: 1fr; }
+
+  .stat-facts .value {
+    padding: 22px 0;
+    border-right: 0;
+  }
+
+  .stat-facts .value:nth-child(odd) { border-right: 0; }
+
+  .stat-facts .value:nth-child(even) { padding-left: 0; }
+
+  .stat-facts .glance-rule { grid-template-columns: 1fr; }
+
+  .stat-facts .glance-rule li { padding: 24px 0; }
+
+  .stat-facts .glance-rule li + li {
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+    padding-left: 0;
+  }
+}
