@@ -1,285 +1,356 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ * Interacoustics — EDS foundation
+ * Canon: stardust/migrated/index.html (variant B "record sheet", approved 2026-07-10)
+ * Tokens lifted verbatim from the canon :root (DESIGN.md / DESIGN-B.json).
  *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * FONTS: system-ui brand — NO @font-face, NO webfonts, NO body.session gating.
+ * The captured brand renders on the -apple-system stack directly; there is no
+ * webfont swap, therefore no font CLS work is needed (deploy-skill Step 4 is moot).
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* ---- canon color tokens ---- */
+  --ground: #F6F9F8;
+  --mist: #ECF2F0;
+  --card: #FBFCFC;
+  --meadow: #7DC4A3;
+  --meadow-deep: #59A181;
+  --pine: #2A7354;
+  --forest: #122A1F;
+  --ink: #222428;
+  --on-dark: #F6F9F8;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* ---- token-contract interface ---- */
+  --heading-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+  --body-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+  --heading-xxl: 44px;   /* display */
+  --heading-xl: 35px;    /* h2 */
+  --heading-lg: 28px;    /* h3 */
+  --heading-md: 22px;    /* lede */
+  --body: 18px;
+  --body-sm: 14px;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  --color-bg: var(--ground);
+  --color-fg: var(--ink);
+  --color-accent: var(--pine);
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 96px;
+  --section-padding: 64px;
+  --max-width: 1240px;
+  --radius: 8px;         /* button */
+  --radius-card: 12px;
+  --radius-pill: 500px;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* ---- variant B system: hairlines + background-shift depth; NO neumorphic shadows ---- */
+  --hairline: color-mix(in srgb, var(--ink) 12%, transparent);
+  --hairline-dark: color-mix(in srgb, var(--on-dark) 22%, transparent);
+  --pine-hover: #256A4D;
+  --ink-muted: color-mix(in srgb, var(--ink) 82%, var(--ground));
+  --on-dark-muted: color-mix(in srgb, var(--on-dark) 88%, var(--forest));
+  --scrim-deep: color-mix(in srgb, var(--forest) 94%, transparent);
+  --scrim-mid: color-mix(in srgb, var(--forest) 72%, transparent);
+  --scrim-soft: color-mix(in srgb, var(--forest) 42%, transparent);
+  --tracking-display: -0.5px;
+  --tracking-body: -0.2px;
+  --tracking-meta: 1.5px;
+  --dur-state: 180ms;
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
-  /* nav height */
-  --nav-height: 64px;
+  /* ---- AuthorKit compat aliases (referenced by the stock section-metadata block;
+     token-completeness gate #91 — undefined vars silently drop whole declarations) ---- */
+  --color-dark: var(--ink);
+  --color-light: var(--on-dark);
+  --grid-container-width: var(--max-width);
+  --grid-column-width: calc(var(--max-width) / 12);
+  --spacing-s: var(--spacing-sm);
+  --spacing-m: var(--spacing-md);
+  --spacing-l: var(--spacing-lg);
+  --spacing-xxl: var(--spacing-2xl);
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
+/* === Base / reset === */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  /* display:none gate removed by bootstrap (#40) */
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-size: var(--body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--ink);
+  background: var(--ground);
+  -webkit-font-smoothing: antialiased;
 }
 
-header {
-  height: var(--nav-height);
-}
-
-header .header,
-footer .footer {
-  visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-  font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  scroll-margin: 40px;
-}
-
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
-
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-}
-
-code,
-pre {
-  font-size: var(--body-font-size-s);
-}
-
-pre {
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
-  overflow-x: auto;
-  white-space: pre;
-}
-
-main > div {
-  margin: 40px 16px;
+/* #36: EDS pipeline emits width/height attrs — height:auto prevents vertical stretch */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 input,
 textarea,
 select,
-button {
-  font: inherit;
+button { font: inherit; }
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  line-height: var(--line-height-heading);
+  margin: 0 0 var(--spacing-md);
+  text-wrap: balance;
 }
 
-/* links */
-a:any-link {
-  color: var(--link-color);
+h1 {
+  font-size: var(--heading-xxl);
+  letter-spacing: var(--tracking-display);
+}
+
+h2 {
+  font-size: var(--heading-xl);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: var(--heading-lg);
+  line-height: 1.3;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 var(--spacing-md);
+}
+
+h4 { font-size: var(--heading-md); }
+h5 { font-size: var(--body); }
+h6 { font-size: var(--body-sm); }
+
+p {
+  margin: 0 0 var(--spacing-md);
+  text-wrap: pretty;
+  max-width: 70ch;
+}
+
+a {
+  color: var(--pine);
   text-decoration: none;
-  overflow-wrap: break-word;
 }
 
-a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+a:hover { color: var(--pine-hover); }
+
+.lede {
+  font-size: var(--heading-md);
+  font-weight: 300;
+  line-height: 1.5;
 }
 
-/* buttons */
-p.button-wrapper {
-  margin: 12px 0;
+.shell {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 32px;
 }
 
-a.button:any-link,
-button.button {
-  box-sizing: border-box;
+/* tabular numerals on all dates, counts and stats (canon rule, cross-block class names) */
+.date,
+.meta,
+.trust-rule,
+.sheet,
+.sheet-date,
+.hero-facts { font-variant-numeric: tabular-nums; }
+
+/* meta label — the lab-notebook voice: case + tracking only, system-ui (no mono) */
+.meta-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+
+[data-dark] :focus-visible,
+main .section.dark :focus-visible { outline-color: var(--on-dark); }
+
+/* === EDS scaffold === */
+main .section { display: block; }
+main .section:empty { display: none; }
+
+main .section > .default-content,
+main .section > .block-content { display: block; }
+
+main > div,
+.has-template,
+div[data-status] { display: none; }
+
+/* === Header CLS reservation (#81) ===
+   postlcp.js injects fragments/header.html after first paint; reserve the chrome's
+   height on the bare element so the first section never jumps.
+   44px utility strip + 72px logo/nav row = 116px at EVERY width (measured 320-1440):
+   on mobile the utility strip still occupies layout at load — it only scrolls away
+   via the sticky top:-44px — so the reservation stays 116px, NOT 72px.
+   Known 3px wrap zone ~820-900px (nav renders 119px) — negligible, accepted. */
+header {
+  min-height: 116px;
+  background: var(--card);
+}
+
+/* === Buttons (canon .btn system; decorateButton maps strong→primary, em→secondary) === */
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
-  line-height: 1.25;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  border: 0;
+  transition: background-color var(--dur-state) var(--ease-snap), border-color var(--dur-state) var(--ease-snap), color var(--dur-state) var(--ease-snap);
 }
 
-a.button[aria-disabled="true"],
-button.button:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
+.btn-primary {
+  background: var(--pine);
+  color: #FFF;
 }
 
-a.button.primary,
-button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
+.btn-primary:hover {
+  background: var(--pine-hover);
+  color: #FFF;
 }
 
-a.button.primary:hover,
-a.button.primary:focus-visible,
-button.button.primary:hover,
-button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+.btn-secondary {
+  background: transparent;
+  color: var(--pine);
+  border: 2px solid var(--pine);
 }
 
-a.button.primary[aria-disabled="true"],
-a.button.primary[aria-disabled="true"]:hover,
-a.button.primary[aria-disabled="true"]:focus-visible,
-button.button.primary:disabled,
-button.button.primary:disabled:hover,
-button.button.primary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+.btn-secondary:hover {
+  background: var(--pine);
+  color: #FFF;
 }
 
-a.button.secondary,
-button.button.secondary {
-  border-color: var(--text-color);
-  background-color: transparent;
-  color: var(--text-color);
+.btn-meadow {
+  background: var(--meadow);
+  color: var(--forest);
 }
 
-a.button.secondary:hover,
-a.button.secondary:focus-visible,
-button.button.secondary:hover,
-button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
+.btn-meadow:hover {
+  background: var(--meadow-deep);
+  color: var(--forest);
 }
 
-a.button.secondary[aria-disabled="true"],
-a.button.secondary[aria-disabled="true"]:hover,
-a.button.secondary[aria-disabled="true"]:focus-visible,
-button.button.secondary:disabled,
-button.button.secondary:disabled:hover,
-button.button.secondary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+/* On-dark scopes (#41): the dark-surface cue becomes a BLOCK class after conversion,
+   so scope to both the section style and the dark block classes. */
+main .hero a.btn-secondary,
+main .statement a.btn-secondary,
+main .decision-band a.btn-secondary,
+main .section.dark a.btn-secondary {
+  color: var(--on-dark);
+  border-color: var(--on-dark);
 }
 
-/* high-impact call-to-action */
-a.button.accent,
-button.button.accent {
-  border-color: var(--link-color);
-  background-color: var(--link-color);
-  color: var(--background-color);
+main .hero a.btn-secondary:hover,
+main .statement a.btn-secondary:hover,
+main .decision-band a.btn-secondary:hover,
+main .section.dark a.btn-secondary:hover {
+  background: var(--on-dark);
+  color: var(--forest);
 }
 
-a.button.accent:hover,
-a.button.accent:focus-visible,
-button.button.accent:hover,
-button.button.accent:focus-visible {
-  border-color: var(--link-hover-color);
-  background-color: var(--link-hover-color);
+/* Primary ask on forest grounds is solid meadow with forest label (7.48:1).
+   NOT scoped to .hero — the canon hero keeps the pine primary. */
+main .statement a.btn-primary,
+main .decision-band a.btn-primary,
+main .section.dark a.btn-primary {
+  background: var(--meadow);
+  color: var(--forest);
 }
 
-a.button.accent[aria-disabled="true"],
-a.button.accent[aria-disabled="true"]:hover,
-a.button.accent[aria-disabled="true"]:focus-visible,
-button.button.accent:disabled,
-button.button.accent:disabled:hover,
-button.button.accent:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+main .statement a.btn-primary:hover,
+main .decision-band a.btn-primary:hover,
+main .section.dark a.btn-primary:hover {
+  background: var(--meadow-deep);
+  color: var(--forest);
 }
 
-main img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
+.btn-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
 }
 
+/* === Arrow link (canon link device: arrow bound to the last word via .nb) === */
+.arrow-link {
+  display: inline-block;
+  padding-block: 10px; /* 44px effective target with the 24px line box */
+  color: var(--pine);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.nb { white-space: nowrap; }
+
+.arrow-link .arr {
+  display: inline-block;
+  transition: transform var(--dur-state) var(--ease-snap);
+}
+
+.arrow-link:hover {
+  color: var(--pine-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.arrow-link:hover .arr { transform: translateX(3px); }
+
+[data-dark] .arrow-link { color: var(--meadow); }
+[data-dark] .arrow-link:hover { color: var(--on-dark); }
+main .section.dark .arrow-link { color: var(--meadow); }
+main .section.dark .arrow-link:hover { color: var(--on-dark); }
+
+/* === Icons === */
 .icon {
   display: inline-block;
   height: 24px;
@@ -291,31 +362,27 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main > .section {
-  margin: 40px 0;
+/* === Responsive token retune (canon breakpoints) === */
+@media (width <= 1024px) {
+  :root { --section-padding: 48px; }
 }
 
-main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
+@media (width <= 640px) {
+  :root {
+    --section-padding: 32px;
+    --heading-xxl: 36px;
+    --heading-xl: 29px;
+    --heading-lg: 24px;
+    --heading-md: 20px;
   }
+
+  .shell { padding-inline: 20px; }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after { transition: none !important; }
 }

@@ -1,0 +1,230 @@
+<style>
+/* Interacoustics chrome — footer (lifted verbatim from stardust/migrated/index.html canon).
+   Injected by scripts/postlcp.js into <footer class="footer"> via innerHTML.
+   The canon <footer> element's own box styles (background, border-top, padding) are lifted
+   onto footer.footer (#31) — the whole gap between the last section and the chrome lives here. */
+
+footer.footer {
+  display: block;
+  background: var(--ground);
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--section-padding) 32px;
+}
+
+footer.footer .shell {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.colhead {
+  font-size: var(--body-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+a.colhead {
+  display: block;
+  text-decoration: none;
+}
+
+a.colhead:hover { color: var(--pine); }
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col li { margin: 0; }
+
+.footer-col a {
+  color: var(--ink-muted);
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 0;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.footer-col a:hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* canon fix #1: (0,2,0) beats .footer-col a (0,1,1) — all four colheads (p + a) render identically */
+.footer-col .colhead {
+  display: block;
+  margin: 0 0 14px;
+  padding: 0;
+  color: var(--ink);
+  font-size: var(--body-sm);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 28px;
+}
+
+footer.footer .brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+footer.footer .brand img {
+  width: 160px;
+  height: 36px;
+}
+
+.footer-bottom .social {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  color: var(--pine);
+  transition: background-color var(--dur-state) var(--ease-snap), color var(--dur-state) var(--ease-snap);
+}
+
+.social a:hover {
+  background: var(--mist);
+  color: var(--pine-hover);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 24px;
+  width: 100%;
+}
+
+.legal a {
+  color: var(--ink-muted);
+  font-size: var(--body-sm);
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 0;
+}
+
+.legal a:hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.copyright {
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  footer.footer .shell { padding-inline: 20px; }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom .social { margin-left: 0; }
+}
+</style>
+<div class="shell">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a class="colhead" href="/solutions">Products</a>
+      <ul>
+        <li><a href="/audiometers">Audiometers</a></li>
+        <li><a href="https://www.interacoustics.com/abr-equipment">ABR Equipment</a></li>
+        <li><a href="https://www.interacoustics.com/oae-devices">OAE Devices</a></li>
+        <li><a href="https://www.interacoustics.com/hearing-aid-fitting">Hearing Aid Fitting Systems</a></li>
+        <li><a href="https://www.interacoustics.com/balance-testing-equipment">Balance Testing Equipment</a></li>
+        <li><a href="https://www.interacoustics.com/rehabilitation-equipment">Rehabilitation Equipment</a></li>
+        <li><a href="https://www.interacoustics.com/tympanometers">Tympanometers</a></li>
+        <li><a href="https://www.interacoustics.com/otoaccess">Integration Software</a></li>
+        <li><a href="https://www.interacoustics.com/solutions/research-systems">Research Systems</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <a class="colhead" href="/academy">Academy</a>
+      <ul>
+        <li><a href="https://www.interacoustics.com/en/academy/training/academy">Clinical Training</a></li>
+        <li><a href="https://www.interacoustics.com/academy/courses">Online Courses</a></li>
+        <li><a href="/academy/clinical-diploma">ABR Diploma</a></li>
+        <li><a href="https://www.interacoustics.com/academy/clinical-diploma-vng">VNG Diploma</a></li>
+        <li><a href="https://www.interacoustics.com/academy/virtual-clinic">Virtual Clinic</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="colhead">Resources</p>
+      <ul>
+        <li><a href="/product-support">Product Support</a></li>
+        <li><a href="/activities">Events</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/customer-stories">Customer Stories</a></li>
+        <li><a href="/magazine">Made Magazine</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <a class="colhead" href="/about">About</a>
+      <ul>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/our-history">History</a></li>
+        <li><a href="/careers">Careers</a></li>
+        <li><a href="/sustainability">Sustainability</a></li>
+        <li><a href="https://www.interacoustics.com/environmental-sustainability">Environmental Sustainability</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="https://www.interacoustics.com/certification">Certificates</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a class="brand" href="/">
+      <img src="/icons/logo-dark.svg" alt="Interacoustics — hearing and balance diagnosis and rehabilitation" width="160" height="36" loading="lazy">
+    </a>
+    <div class="social">
+      <a href="https://www.facebook.com/interacoustics" aria-label="Interacoustics on Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3-.04-1.3-.12-2.45-.12-2.4 0-4.05 1.46-4.05 4.15v2.27H7.5V13h2.7v8h3.3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/user/interacoustics" aria-label="Interacoustics on YouTube">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8L15.6 12 10 15.2z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/interacoustics" aria-label="Interacoustics on LinkedIn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM3.2 9.3h3.6V21H3.2V9.3zm5.7 0h3.45v1.6h.05c.48-.9 1.65-1.85 3.4-1.85 3.64 0 4.3 2.4 4.3 5.5V21h-3.6v-5.8c0-1.38-.02-3.16-1.92-3.16-1.93 0-2.22 1.5-2.22 3.06V21H8.9V9.3z"/></svg>
+      </a>
+    </div>
+    <div class="legal">
+      <p class="copyright">Copyright &#169; 2026 Interacoustics A/S. All rights reserved.</p>
+      <a href="https://www.interacoustics.com/cookie-policy">Cookie Policy</a>
+      <a href="https://www.interacoustics.com/privacy-policy">Privacy Policy</a>
+    </div>
+  </div>
+</div>

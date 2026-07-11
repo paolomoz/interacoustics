@@ -1,0 +1,253 @@
+<style>
+/* Interacoustics chrome — header (lifted verbatim from stardust/migrated/index.html canon).
+   Injected by scripts/postlcp.js into <header class="header"> via innerHTML — fragments are
+   inert: the canon's aria-sync script (aria-expanded mirror, Enter/Space on the label,
+   Escape-to-close) is dropped. The menu stays CSS-driven via the checkbox hack; the checkbox
+   itself is keyboard-focusable (canon's tabindex="-1" removed) so Space toggles it natively,
+   with a visible focus ring forwarded to the burger label. */
+
+header.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--card);
+  box-shadow: 0 1px 0 var(--hairline);
+}
+
+header.header .shell {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.ds-nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* JS-free a11y: forward the hidden checkbox's focus ring onto the burger label */
+.ds-nav-toggle:focus-visible + .ds-nav-burger {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+
+.ds-nav-burger { display: none; }
+
+.ds-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+  font-family: var(--body-font-family);
+}
+
+.ds-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-body);
+  padding: 12px 2px;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.ds-nav a:hover { color: var(--pine); }
+
+.utility { background: var(--forest); }
+
+.utility :focus-visible { outline-color: var(--on-dark); }
+
+.utility-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+}
+
+.utility-row a {
+  color: var(--on-dark);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  padding: 12px 2px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.utility-row a:hover { color: var(--meadow); }
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 40px);
+  min-height: 72px;
+}
+
+header.header .brand {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+header.header .brand img {
+  width: 160px;
+  height: 36px;
+}
+
+.header-row .ds-nav { margin-left: auto; }
+
+.header-cta { white-space: nowrap; }
+
+@media (max-width: 800px) {
+  /* burger takes over */
+  .ds-nav-burger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px 14px;
+    min-height: 44px;
+    font-size: var(--body-sm);
+    font-weight: 600;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: var(--radius);
+    user-select: none;
+    order: 3;
+  }
+
+  .ds-nav-burger-icon {
+    width: 16px;
+    height: 12px;
+    position: relative;
+  }
+
+  .ds-nav-burger-icon::before,
+  .ds-nav-burger-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .ds-nav-burger-icon::before { top: 0; }
+  .ds-nav-burger-icon::after { bottom: 0; }
+
+  .header-row .ds-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-left: 0;
+    padding: var(--spacing-md) 32px;
+    background: var(--card);
+    border-top: 1px solid var(--hairline);
+    box-shadow: 0 12px 24px var(--hairline);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform var(--dur-state) var(--ease-snap),
+                opacity var(--dur-state) var(--ease-snap),
+                visibility 0s linear var(--dur-state);
+  }
+
+  .header-row .ds-nav a {
+    padding: 12px 0;
+    font-size: 16px;
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  }
+
+  .header-row .ds-nav a:last-child { border-bottom: 0; }
+
+  .ds-nav-toggle:checked ~ .ds-nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform var(--dur-state) var(--ease-snap),
+                opacity var(--dur-state) var(--ease-snap),
+                visibility 0s linear 0s;
+  }
+
+  .header-cta {
+    order: 2;
+    margin-left: auto;
+  }
+
+  /* utility strip scrolls away; only the logo/nav row stays stuck (strip is 44px tall) */
+  header.header { top: -44px; }
+}
+
+@media (max-width: 640px) {
+  header.header .shell { padding-inline: 20px; }
+  .header-row .ds-nav { padding-inline: 20px; }
+}
+
+@media (max-width: 420px) {
+  header.header .brand img {
+    width: 132px;
+    height: 30px;
+  }
+
+  .header-cta {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .ds-nav-burger {
+    padding: 10px;
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .ds-nav-burger-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}
+</style>
+<div class="utility">
+  <div class="shell utility-row">
+    <a href="https://www.interacoustics.com/change-language">SELECT LANGUAGE</a>
+    <a href="https://extranet.interacoustics.com/extranet">EXTRANET</a>
+  </div>
+</div>
+<div class="shell header-row">
+  <a class="brand" href="/">
+    <img src="/icons/logo-dark.svg" alt="Interacoustics — hearing and balance diagnosis and rehabilitation" width="160" height="36">
+  </a>
+  <input type="checkbox" id="ds-nav-toggle" class="ds-nav-toggle">
+  <label class="ds-nav-burger" for="ds-nav-toggle">
+    <span class="ds-nav-burger-icon" aria-hidden="true"></span>
+    <span class="ds-nav-burger-label">Menu</span>
+  </label>
+  <nav id="ds-nav-list" class="ds-nav" aria-label="Main">
+    <a href="/solutions">Solutions</a>
+    <a href="/academy">Academy</a>
+    <a href="/product-support">Support</a>
+    <a href="/activities">Events</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About us</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a class="btn btn-primary header-cta" href="/contact">Find a distributor</a>
+</div>
