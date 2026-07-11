@@ -50,6 +50,18 @@ function arrowLink(a) {
   return link;
 }
 
+/* set the authored <code> anchor as the section id — the pipeline auto-slugs
+   headings, so a heading whose text equals the anchor (e.g. an h3 "Support"
+   → id="support") must yield its id to the section (subnav target) */
+function setSectionAnchor(block, anchor) {
+  if (!anchor) return;
+  const section = block.closest('.section');
+  if (!section) return;
+  const existing = document.getElementById(anchor);
+  if (existing && existing !== section && /^H[1-6]$/.test(existing.tagName)) existing.removeAttribute('id');
+  if (!document.getElementById(anchor)) section.id = anchor;
+}
+
 /* features: sticky render + ruled chapter ledger (canon ad629 overview) */
 function renderFeatures(block, nodes) {
   let img = null;
@@ -58,9 +70,7 @@ function renderFeatures(block, nodes) {
   nodes.forEach((n) => {
     const code = pick(n, 'code');
     if (code && !features.length) {
-      const section = block.closest('.section');
-      const anchor = text(code);
-      if (section && anchor && !document.getElementById(anchor)) section.id = anchor;
+      setSectionAnchor(block, text(code));
       return;
     }
     const media = pick(n, 'picture, img');
@@ -98,9 +108,61 @@ function renderFeatures(block, nodes) {
   shell.append(ledger);
 }
 
+/* promise / wecare (canon about): kicker + h2 + prose [+ ruled care-list]
+   beside a two-photo pair; wecare mirrors (media left via CSS grid placement) */
+function renderPhotoPair(block, nodes, variant) {
+  const s = {
+    kicker: null, h2: null, paras: [], list: null, imgs: [],
+  };
+  nodes.forEach((n) => {
+    const media = pick(n, 'picture, img');
+    if (media) { s.imgs.push(media); return; }
+    if (pick(n, 'h2, h3')) { s.h2 = pick(n, 'h2, h3'); return; }
+    if (n.matches('ul, ol')) { s.list = n; return; }
+    const t = text(n);
+    if (!t) return;
+    const strong = pick(n, 'strong');
+    if (strong && text(strong) === t) { s.kicker = t; return; }
+    s.paras.push(n);
+  });
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = `shell ${variant}-grid`;
+  block.append(shell);
+  const copy = document.createElement('div');
+  copy.className = `${variant}-copy`;
+  if (s.kicker) copy.insertAdjacentHTML('beforeend', `<p class="kicker meta-label">${esc(s.kicker)}</p>`);
+  if (s.h2) {
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...s.h2.childNodes].map((n) => n.cloneNode(true)));
+    copy.append(h2);
+  }
+  s.paras.forEach((para) => {
+    const p = document.createElement('p');
+    p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+    copy.append(p);
+  });
+  if (s.list) {
+    const ul = s.list.cloneNode(true);
+    ul.classList.add('care-list');
+    copy.append(ul);
+  }
+  shell.append(copy);
+  if (s.imgs.length) {
+    const media = document.createElement('div');
+    media.className = `photo-pair ${variant}-media`;
+    s.imgs.forEach((img) => media.append(img.cloneNode(true)));
+    shell.append(media);
+  }
+}
+
 export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
+  if (block.classList.contains('promise') || block.classList.contains('wecare')) {
+    renderPhotoPair(block, nodes, block.classList.contains('promise') ? 'promise' : 'wecare');
+    return;
+  }
   if (block.classList.contains('features')) {
     renderFeatures(block, nodes);
     return;

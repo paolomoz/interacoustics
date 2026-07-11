@@ -34,6 +34,18 @@ const pick = (n, sel) => (n.matches?.(sel) ? n : n.querySelector?.(sel));
 const text = (n) => (n ? n.textContent.replace(/\s+/g, ' ').trim() : '');
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+/* set the authored <code> anchor as the section id — the pipeline auto-slugs
+   headings, so a heading whose text equals the anchor (e.g. an h3 "Support"
+   → id="support") must yield its id to the section (subnav target) */
+function setSectionAnchor(block, anchor) {
+  if (!anchor) return;
+  const section = block.closest('.section');
+  if (!section) return;
+  const existing = document.getElementById(anchor);
+  if (existing && existing !== section && /^H[1-6]$/.test(existing.tagName)) existing.removeAttribute('id');
+  if (!document.getElementById(anchor)) section.id = anchor;
+}
+
 function makeArrowLink(foot) {
   const link = document.createElement('a');
   link.className = 'arrow-link';
@@ -170,9 +182,7 @@ function renderDocList(block) {
   rows.forEach((row) => {
     const code = row.querySelector('code');
     if (code && !units.length && !head.h2) {
-      const section = block.closest('.section');
-      const anchor = text(code);
-      if (section && anchor && !document.getElementById(anchor)) section.id = anchor;
+      setSectionAnchor(block, text(code));
       return;
     }
     const cells = [...row.children];

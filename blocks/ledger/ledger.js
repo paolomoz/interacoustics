@@ -203,9 +203,15 @@ export default async function decorate(block) {
 
   const groups = chunks.filter((c) => c.length).map(parseGroup);
   if (!groups.length) return;
-  const section = block.closest('.section');
   const anchor = groups.find((g) => g.head.anchor)?.head.anchor;
-  if (anchor && section && !document.getElementById(anchor)) section.id = anchor;
+  if (anchor) {
+    // the pipeline auto-slugs headings — a heading whose text equals the
+    // anchor must yield its id to the section (subnav target)
+    const section = block.closest('.section');
+    const existing = document.getElementById(anchor);
+    if (existing && existing !== section && /^H[1-6]$/.test(existing.tagName)) existing.removeAttribute('id');
+    if (section && !document.getElementById(anchor)) section.id = anchor;
+  }
 
   block.textContent = '';
   const shell = document.createElement('div');
