@@ -93,6 +93,87 @@
   text-underline-offset: 3px;
 }
 
+.newsroom .feature h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.newsroom .feature h3 a:hover {
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* stories variant — canon customer-stories: thumbnailed whole-row ledger */
+.newsroom.stories .stories-head {
+  max-width: 760px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.newsroom.stories .stories-head h2 { margin: 0; }
+
+.newsroom .story-ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.newsroom .story-ledger li { border-bottom: 1px solid var(--hairline); }
+
+.newsroom .story-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  column-gap: 24px;
+  align-items: center;
+  padding-block: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.newsroom .story-thumb {
+  width: 112px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--mist);
+}
+
+.newsroom .story-thumb img {
+  width: 112px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.newsroom .story-row h3 {
+  margin: 6px 0 0;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: var(--tracking-body);
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.newsroom .story-arr {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--ink-muted);
+  transition: color var(--dur-state) var(--ease-snap), transform var(--dur-state) var(--ease-snap);
+}
+
+.newsroom .story-row:hover h3,
+.newsroom .story-row:focus-visible h3 { color: var(--pine); }
+
+.newsroom .story-row:hover .story-arr,
+.newsroom .story-row:focus-visible .story-arr {
+  color: var(--pine);
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsroom .story-row:hover .story-arr { transform: none; }
+}
+
 /* teaser variant — canon magazine .blog-teaser: dateline on card ground */
 .newsroom.teaser {
   background: var(--card);

@@ -112,6 +112,61 @@ export default async function decorate(block) {
     return;
   }
 
+  // stories variant (canon customer-stories): feature + thumbnailed whole-row
+  // ledger (story-row: thumb | date + h3 | arrow), head is the h2 alone
+  if (block.classList.contains('stories')) {
+    if (headTitle) {
+      const sh = document.createElement('div');
+      sh.className = 'stories-head';
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...headTitle.childNodes].map((n) => n.cloneNode(true)));
+      sh.append(h2);
+      shell.append(sh);
+    }
+    const grid = document.createElement('div');
+    grid.className = 'newsroom-grid';
+    shell.append(grid);
+    const feature = units.find((u) => u.excerpt) || units[0];
+    if (feature) {
+      const article = document.createElement('article');
+      article.className = 'feature';
+      fillArticle(article, feature, true);
+      grid.append(article);
+    }
+    const rest = units.filter((u) => u !== feature);
+    if (rest.length) {
+      const ul = document.createElement('ul');
+      ul.className = 'story-ledger';
+      rest.forEach((u) => {
+        const li = document.createElement('li');
+        const titleA = u.title ? u.title.querySelector('a') : null;
+        const href = (titleA && titleA.getAttribute('href')) || (u.link && u.link.getAttribute('href')) || '#';
+        const row = document.createElement('a');
+        row.className = 'story-row';
+        row.setAttribute('href', href);
+        if (u.img) {
+          const thumb = document.createElement('span');
+          thumb.className = 'story-thumb';
+          thumb.append(u.img.cloneNode(true));
+          row.append(thumb);
+        }
+        const copy = document.createElement('span');
+        if (u.date) copy.insertAdjacentHTML('beforeend', `<span class="date">${esc(u.date)}</span>`);
+        if (u.title) {
+          const h3 = document.createElement('h3');
+          h3.textContent = text(u.title);
+          copy.append(h3);
+        }
+        row.append(copy);
+        row.insertAdjacentHTML('beforeend', '<span class="story-arr" aria-hidden="true">→</span>');
+        li.append(row);
+        ul.append(li);
+      });
+      grid.append(ul);
+    }
+    return;
+  }
+
   const head = document.createElement('div');
   head.className = 'blog-head';
   if (headTitle) {

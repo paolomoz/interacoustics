@@ -268,6 +268,20 @@
   mix-blend-mode: multiply;
 }
 
+/* ===== opener: contained h1 + lede on ground (canon customer-stories) ===== */
+.hero.opener { padding-block: calc(var(--section-padding) + 16px) var(--section-padding); }
+
+.hero.opener h1 {
+  max-width: 20ch;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero.opener .lede {
+  color: var(--ink);
+  max-width: 56ch;
+  margin: 0;
+}
+
 /* ===== immersive: statement chapter over the authored photo (canon our-history) ===== */
 .hero.immersive {
   position: relative;

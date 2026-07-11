@@ -1,0 +1,76 @@
+/*
+ * quote-sheet — canon testimonial sheet: two ruled quote columns on ground
+ * (customer-stories .voices-sheet), scoped .quote-sheet.
+ */
+
+.quote-sheet {
+  padding-block: var(--section-padding);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.quote-sheet .sheet-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0 clamp(40px, 5vw, 72px);
+}
+
+.quote-sheet .sheet-cols > figure {
+  margin: 0;
+  padding-block: 8px;
+}
+
+.quote-sheet .sheet-cols > figure + figure {
+  border-left: 1px solid var(--hairline);
+  padding-left: clamp(40px, 5vw, 72px);
+}
+
+.quote-sheet blockquote {
+  margin: 20px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  text-wrap: pretty;
+  max-width: 60ch;
+}
+
+.quote-sheet blockquote p { margin: 0; }
+
+.quote-sheet .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+}
+
+.quote-sheet .attrib {
+  margin: 20px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  max-width: 28em;
+}
+
+.quote-sheet .attrib .who {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.quote-sheet .attrib .role {
+  display: block;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+@media (width <= 800px) {
+  .quote-sheet .sheet-cols { grid-template-columns: 1fr; }
+
+  .quote-sheet .sheet-cols > figure + figure {
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+    padding-left: 0;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+}

@@ -320,6 +320,21 @@ function renderLight(block, s) {
   else media.remove();
 }
 
+/* opener (canon customer-stories .opener): contained h1 + lede on ground */
+function renderOpener(block, s) {
+  block.innerHTML = '<div class="shell"></div>';
+  const shell = block.querySelector('.shell');
+  const h1 = document.createElement('h1');
+  if (s.h1) fillHeading(h1, s.h1);
+  shell.append(h1);
+  if (s.ledes.length) {
+    const p = document.createElement('p');
+    p.className = 'lede';
+    p.replaceChildren(...[...s.ledes[0].node.childNodes].map((n) => n.cloneNode(true)));
+    shell.append(p);
+  }
+}
+
 function renderImmersive(block, s) {
   block.innerHTML = '<div class="shell"></div>';
   const shell = block.querySelector('.shell');
@@ -514,6 +529,7 @@ export default async function decorate(block) {
   if (!nodes.length) return;
   const s = classify(nodes);
   if (block.classList.contains('contact')) renderContact(block, s);
+  else if (block.classList.contains('opener')) renderOpener(block, s);
   else if (block.classList.contains('light')) renderLight(block, s);
   else if (block.classList.contains('immersive')) renderImmersive(block, s);
   else if (block.classList.contains('product')) renderProduct(block, s);
