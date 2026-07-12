@@ -71,6 +71,42 @@
   color: var(--pine-hover);
 }
 
+/* academy course-meta rail: fact rows + Start Course button (CPD/CEU card) */
+.article .course-meta .meta-facts {
+  margin: 0 0 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.article .course-meta .meta-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.article .course-meta .meta-facts > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.article .course-meta .meta-facts dt {
+  font-size: 12px;
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.article .course-meta .meta-facts dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.article .course-meta .meta-cta { width: 100%; }
+
 /* canon dateline list (newsroom pattern) tuned to the rail width */
 .article .dateline-list {
   list-style: none;

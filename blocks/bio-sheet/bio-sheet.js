@@ -58,8 +58,11 @@ export default async function decorate(block) {
     }
     const media = pick(n, 'picture, img');
     if (media) {
-      if (cur) cur.img = media;
-      else pendingImg = media;
+      // canon authoring shape is [<img>] BEFORE the h3 — always buffer the
+      // portrait to the NEXT unit (never assign to the current one, or a later
+      // unit's portrait would overwrite the previous unit and a portrait-less
+      // unit would inherit its neighbour's — the pre-fix cross-assignment bug).
+      pendingImg = media;
       return;
     }
     if (n.matches?.('ul, ol')) {

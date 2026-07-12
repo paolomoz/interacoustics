@@ -10,6 +10,13 @@
  *     follow:  h3 "Follow Us" | p of social <a>s (icon derived from hostname)
  *     similar: h3 head, then per story: date p | h4 <a> title | excerpt p |
  *              plain <a> "Read more" (date precedes its h4 — buffered, #76)
+ *
+ * Variant `academy` (covers the 483 academy course/article pages): the reading
+ * column keeps ALL headings (h2 lessons + h3 "Learning objectives" etc. flow
+ * in-body — NOT pulled to the rail). The course-meta rail is authored explicitly
+ * AFTER a <p><code>rail</code></p> marker cell; rail groups still segment on h3.
+ * A rail group whose body carries "Key: value" list items and/or a CTA renders
+ * as a `course-meta` card (fact <dl> + Start Course button — the CPD/CEU rail).
  */
 
 const ICONS = {
@@ -94,7 +101,52 @@ function renderSimilar(section, nodes) {
   section.append(ul);
 }
 
-function renderRailBlock(group, rail) {
+/* course-meta rail (academy): a fact <dl> from "Key: value" list items +
+   an optional Start Course CTA button (the CPD/CEU card). */
+function renderMetaBlock(group, rail) {
+  const section = document.createElement('section');
+  section.className = 'rail-block course-meta';
+  const h2 = document.createElement('h2');
+  h2.textContent = text(group.head);
+  section.append(h2);
+  const items = group.rest.flatMap((n) => (n.matches('ul, ol') ? [...n.querySelectorAll('li')] : []));
+  const facts = items.length ? items : group.rest.filter((n) => /^[^:]+:\s+\S/.test(text(n)));
+  if (facts.length) {
+    const dl = document.createElement('dl');
+    dl.className = 'meta-facts';
+    facts.forEach((li) => {
+      const t = text(li);
+      const i = t.indexOf(':');
+      if (i < 0) return;
+      const row = document.createElement('div');
+      const dt = document.createElement('dt');
+      dt.className = 'meta-label';
+      dt.textContent = t.slice(0, i).trim();
+      const dd = document.createElement('dd');
+      dd.textContent = t.slice(i + 1).trim();
+      row.append(dt, dd);
+      dl.append(row);
+    });
+    section.append(dl);
+  }
+  const cta = group.rest.map((n) => (n.matches('a') ? n : n.querySelector?.('a'))).find(Boolean);
+  if (cta) {
+    const btn = cta.cloneNode(true);
+    btn.className = 'btn btn-primary meta-cta';
+    section.append(btn);
+  }
+  rail.append(section);
+}
+
+function isMetaGroup(group) {
+  const hasKv = group.rest.some((n) => (n.matches('ul, ol') && [...n.querySelectorAll('li')].some((li) => /^[^:]+:\s+\S/.test(text(li))))
+    || /^[^:]+:\s+\S/.test(text(n)));
+  const hasCta = group.rest.some((n) => n.matches('a') || n.querySelector?.('a'));
+  return hasKv || (hasCta && !group.rest.some((n) => n.matches('h4') || n.querySelector?.('h4')));
+}
+
+function renderRailBlock(group, rail, academy) {
+  if (academy && isMetaGroup(group)) { renderMetaBlock(group, rail); return; }
   const links = group.rest.flatMap((n) => (n.matches('a') ? [n] : [...n.querySelectorAll('a')]));
   const social = links.length >= 2 && links.every((a) => iconFor(a.getAttribute('href') || ''));
   const hasUnits = group.rest.some((n) => n.matches('h4') || n.querySelector?.('h4'));
@@ -143,17 +195,33 @@ export default async function decorate(block) {
   rail.setAttribute('aria-label', 'About this article');
   shell.append(body, rail);
 
+  const academy = block.classList.contains('academy');
+  // academy: the reading column keeps ALL headings; the rail begins only at an
+  // explicit <code>rail</code> marker cell (so h3 lesson sub-heads stay in-body).
+  const markerIdx = academy
+    ? nodes.findIndex((n) => { const c = n.matches?.('code') ? n : n.querySelector?.('code'); return c && text(c).toLowerCase() === 'rail'; })
+    : -1;
+  const bodyNodes = academy && markerIdx >= 0 ? nodes.slice(0, markerIdx) : nodes;
+  const railNodes = academy && markerIdx >= 0 ? nodes.slice(markerIdx + 1) : nodes;
+
   const groups = [];
   let current = null;
-  nodes.forEach((n) => {
-    if (n.matches('h3')) {
+  bodyNodes.forEach((n) => {
+    // in academy mode all body nodes flow into the reading column
+    if (!academy && n.matches('h3')) {
       current = { head: n, rest: [] };
       groups.push(current);
       return;
     }
-    if (current) current.rest.push(n);
-    else body.append(n.cloneNode(true));
+    if (!academy && current) { current.rest.push(n); return; }
+    body.append(n.cloneNode(true));
   });
-  groups.forEach((g) => renderRailBlock(g, rail));
+  if (academy) {
+    railNodes.forEach((n) => {
+      if (n.matches?.('h3')) { current = { head: n, rest: [] }; groups.push(current); return; }
+      if (current) current.rest.push(n);
+    });
+  }
+  groups.forEach((g) => renderRailBlock(g, rail, academy));
   if (!rail.children.length) rail.remove();
 }
