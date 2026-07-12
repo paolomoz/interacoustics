@@ -63,27 +63,35 @@ function zenScriptUrl(a) {
 }
 
 /* OpenStreetMap tile fallback centred on the Interacoustics HQ (Audiometer
-   Allé 1, Middelfart, DK) — a working, cross-origin-safe map when ZenLocator
-   can't mount on the aem.page host. */
-function osmFallbackFrame() {
+   Allé 1, Middelfart, DK) — a working, cross-origin-safe map for when the
+   ZenLocator widget is domain-locked and won't mount on the aem.page host.
+   Carries a "find your distributor" link to the live distributor finder. */
+function osmFallback() {
+  const box = document.createElement('div');
+  box.className = 'osm-map';
   const iframe = document.createElement('iframe');
   iframe.src = 'https://www.openstreetmap.org/export/embed.html?bbox=9.55%2C55.43%2C9.90%2C55.58&layer=mapnik&marker=55.5065%2C9.7285';
   iframe.title = 'Interacoustics headquarters — Middelfart, Denmark';
   iframe.loading = 'lazy';
-  return iframe;
+  box.append(iframe);
+  box.insertAdjacentHTML('beforeend', '<a class="osm-cta" href="https://www.interacoustics.com/contact" target="_blank" rel="noopener">Find your distributor <span class="arr" aria-hidden="true">→</span></a>');
+  return box;
 }
 
 /* Mount the ZenLocator widget: a container div + the injected async script.
-   A dynamically inserted <script src> executes on attach. If the script fails
-   to load, swap in the OSM fallback map. */
+   A dynamically inserted <script src> executes on attach. ZenLocator widgets
+   are domain-locked, so if the script errors OR never injects its map into the
+   mount shortly after load, swap in the OSM fallback map. */
 function buildLocatorMap(a) {
   const scriptUrl = zenScriptUrl(a);
   const wrap = document.createElement('div');
   wrap.className = 'map-embed';
-  if (!scriptUrl) {
-    wrap.append(osmFallbackFrame());
-    return wrap;
-  }
+  const fallback = () => {
+    if (wrap.querySelector('.osm-map')) return;
+    wrap.textContent = '';
+    wrap.append(osmFallback());
+  };
+  if (!scriptUrl) { fallback(); return wrap; }
   const key = scriptUrl.match(/([a-z0-9]+)\.min\.js/i)?.[1];
   const mount = document.createElement('div');
   mount.className = 'zl-mount';
@@ -92,10 +100,13 @@ function buildLocatorMap(a) {
   const script = document.createElement('script');
   script.src = scriptUrl;
   script.async = true;
-  script.onerror = () => {
-    if (!wrap.querySelector('iframe')) wrap.append(osmFallbackFrame());
-  };
+  script.onerror = fallback;
   mount.append(script);
+  // if the widget hasn't injected any map element within a few seconds, the
+  // host isn't on ZenLocator's allow-list — show the working OSM map instead
+  setTimeout(() => {
+    if (!mount.querySelector('div, iframe, canvas, svg, img')) fallback();
+  }, 2500);
   return wrap;
 }
 
