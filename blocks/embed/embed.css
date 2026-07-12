@@ -176,6 +176,22 @@
   background: #FFF;
 }
 
+/* ZenLocator self-mounting widget container (script injects the map here) */
+.embed .map-panel .map-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #FFF;
+}
+
+.embed .map-panel .zl-mount {
+  display: block;
+  min-height: 620px;
+}
+
+.embed .map-panel .map-embed iframe {
+  min-height: 620px;
+}
+
 /* ===== responsive (canon) ===== */
 @media (width <= 1024px) {
   .embed .dist-intro { grid-template-columns: 1fr; }

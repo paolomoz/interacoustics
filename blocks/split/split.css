@@ -390,6 +390,12 @@
   border-top: 1px solid var(--hairline);
 }
 
+/* safety net: a step with no icon must still fill the column, never collapse
+   into the 56px icon track */
+.split .steps li:not(:has(img)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .split .steps li img {
   width: 56px;
   height: 56px;

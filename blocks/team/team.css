@@ -28,10 +28,36 @@
   background: var(--mist);
 }
 
+.team .team-facade {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+.team .team-facade:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+
 .team .team-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.team .team-media iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .team .play-badge {
@@ -73,35 +99,11 @@
   max-width: 40ch;
 }
 
-.team .team-watch {
-  display: inline-block;
-  padding-block: 10px;
-  color: var(--pine);
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.team .team-watch .arr {
-  display: inline-block;
-  transition: transform var(--dur-state) var(--ease-snap);
-}
-
 .team .team-card:hover h3,
-.team .team-card:focus-visible h3 { color: var(--pine); }
+.team .team-media:focus-within ~ h3 { color: var(--pine); }
 
-.team .team-card:hover .team-watch {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.team .team-card:hover .team-watch .arr { transform: translateX(3px); }
-
-.team .team-card:hover .play-badge { background: var(--forest); }
-
-@media (prefers-reduced-motion: reduce) {
-  .team .team-card:hover .team-watch .arr { transform: none; }
-}
+.team .team-facade:hover .play-badge,
+.team .team-facade:focus-visible .play-badge { background: var(--forest); }
 
 @media (width <= 900px) {
   .team .team-grid { grid-template-columns: 1fr; }

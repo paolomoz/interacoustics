@@ -44,6 +44,61 @@ function buildIframe(a) {
   return iframe;
 }
 
+/* ZenLocator ships a self-mounting widget script, NOT an embeddable URL. The
+   internal channel URL (js.zenlocator.com/m?...&widget=MAP) renders blank in an
+   iframe; the real embed is <script src=".../<key>.min.js"> which injects the
+   map into the page. Detect the key and return the script URL, or null. */
+function zenScriptUrl(a) {
+  const href = a.getAttribute('href') || '';
+  if (!/zenlocator\.com/i.test(href)) return null;
+  try {
+    const u = new URL(href);
+    const src = u.searchParams.get('src');
+    if (src && /\.min\.js/i.test(src)) return src;
+  } catch { /* fall through to path match */ }
+  const m = href.match(/([a-z0-9]+)\.min\.js/i);
+  if (m) return `https://js.zenlocator.com/${m[1]}.min.js`;
+  const key = href.match(/zenlocator\.com\/(?:m\/)?([a-z0-9]{6,})(?:[/?.]|$)/i);
+  return key ? `https://js.zenlocator.com/${key[1]}.min.js` : null;
+}
+
+/* OpenStreetMap tile fallback centred on the Interacoustics HQ (Audiometer
+   Allé 1, Middelfart, DK) — a working, cross-origin-safe map when ZenLocator
+   can't mount on the aem.page host. */
+function osmFallbackFrame() {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.openstreetmap.org/export/embed.html?bbox=9.55%2C55.43%2C9.90%2C55.58&layer=mapnik&marker=55.5065%2C9.7285';
+  iframe.title = 'Interacoustics headquarters — Middelfart, Denmark';
+  iframe.loading = 'lazy';
+  return iframe;
+}
+
+/* Mount the ZenLocator widget: a container div + the injected async script.
+   A dynamically inserted <script src> executes on attach. If the script fails
+   to load, swap in the OSM fallback map. */
+function buildLocatorMap(a) {
+  const scriptUrl = zenScriptUrl(a);
+  const wrap = document.createElement('div');
+  wrap.className = 'map-embed';
+  if (!scriptUrl) {
+    wrap.append(osmFallbackFrame());
+    return wrap;
+  }
+  const key = scriptUrl.match(/([a-z0-9]+)\.min\.js/i)?.[1];
+  const mount = document.createElement('div');
+  mount.className = 'zl-mount';
+  if (key) mount.id = `zl-${key}`;
+  wrap.append(mount);
+  const script = document.createElement('script');
+  script.src = scriptUrl;
+  script.async = true;
+  script.onerror = () => {
+    if (!wrap.querySelector('iframe')) wrap.append(osmFallbackFrame());
+  };
+  mount.append(script);
+  return wrap;
+}
+
 function fallbackLine(node, cls) {
   const p = document.createElement('p');
   p.className = cls;
@@ -166,7 +221,8 @@ export default async function decorate(block) {
     if (s.embed) {
       const panel = document.createElement('div');
       panel.className = 'map-panel';
-      panel.append(buildIframe(s.embed));
+      // ZenLocator is a self-mounting script widget, not an iframe URL
+      panel.append(zenScriptUrl(s.embed) ? buildLocatorMap(s.embed) : buildIframe(s.embed));
       if (s.fallback) panel.append(fallbackLine(s.fallback, 'map-fallback'));
       shell.append(panel);
     }

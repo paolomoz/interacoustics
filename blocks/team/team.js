@@ -13,6 +13,13 @@ const pick = (n, sel) => (n.matches?.(sel) ? n : n.querySelector?.(sel));
 const text = (n) => (n ? n.textContent.replace(/\s+/g, ' ').trim() : '');
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+/* pull the 11-char YouTube id out of youtu.be/<id>, watch?v=<id> or embed/<id> */
+function youTubeId(href) {
+  if (!href) return null;
+  const m = href.match(/(?:youtu\.be\/|[?&]v=|\/embed\/)([\w-]{6,})/);
+  return m ? m[1] : null;
+}
+
 function parseUnit(row) {
   const u = {
     img: pick(row, 'picture, img'), name: null, role: null, link: null,
@@ -58,26 +65,48 @@ export default async function decorate(block) {
   grid.className = 'team-grid';
   shell.append(grid);
   units.forEach((u) => {
-    const card = document.createElement('a');
+    const card = document.createElement('div');
     card.className = 'team-card';
-    card.setAttribute('href', (u.link && u.link.getAttribute('href')) || '#');
+    const href = (u.link && u.link.getAttribute('href')) || '';
+    const id = youTubeId(href);
+    const name = u.name ? text(u.name) : 'team member';
+
     if (u.img) {
-      const media = document.createElement('span');
+      const media = document.createElement('div');
       media.className = 'team-media';
-      media.append(u.img.cloneNode(true));
-      media.insertAdjacentHTML('beforeend', '<span class="play-badge" aria-hidden="true"></span>');
+      if (id) {
+        // privacy/perf-friendly facade: poster + play button, swapped for a
+        // playing YouTube iframe on activation (click or keyboard)
+        const facade = document.createElement('button');
+        facade.type = 'button';
+        facade.className = 'team-facade';
+        facade.setAttribute('aria-label', `Play video: ${name}`);
+        facade.append(u.img.cloneNode(true));
+        facade.insertAdjacentHTML('beforeend', '<span class="play-badge" aria-hidden="true"></span>');
+        facade.addEventListener('click', () => {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+          iframe.title = `${name} video`;
+          iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.loading = 'lazy';
+          facade.replaceWith(iframe);
+          iframe.focus();
+        });
+        media.append(facade);
+      } else {
+        // no video id → static poster (no dead play affordance)
+        media.append(u.img.cloneNode(true));
+      }
       card.append(media);
     }
+
     if (u.name) {
       const h3 = document.createElement('h3');
       h3.replaceChildren(...[...u.name.childNodes].map((n) => n.cloneNode(true)));
       card.append(h3);
     }
     if (u.role) card.insertAdjacentHTML('beforeend', `<span class="team-role">${esc(text(u.role))}</span>`);
-    const label = u.link ? text(u.link).replace(/\s*(→|&rarr;)\s*$/u, '') : 'Watch video';
-    const words = label.split(' ');
-    const last = words.pop();
-    card.insertAdjacentHTML('beforeend', `<span class="team-watch">${words.length ? `${esc(words.join(' '))} ` : ''}<span class="nb">${esc(last)}&nbsp;<span class="arr" aria-hidden="true">→</span></span></span>`);
     grid.append(card);
   });
 }

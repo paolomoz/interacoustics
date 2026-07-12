@@ -232,6 +232,7 @@ function renderStudents(block, nodes) {
 function renderProcess(block, nodes) {
   const head = { h2: null, lede: null };
   let heroImg = null;
+  let pendingImg = null;
   const steps = [];
   const closing = [];
   let cur = null;
@@ -242,14 +243,19 @@ function renderProcess(block, nodes) {
       head.h2 = h; return;
     }
     if (h && (h.matches('h3') || h.matches('h4'))) {
-      cur = { h3: h, img: null, body: null };
+      // each step row authors <img> icon BEFORE its h3 — the icon buffered as
+      // pendingImg belongs to THIS step (previously it leaked onto the prior
+      // step, so the last step got no icon and collapsed into the 56px track)
+      cur = { h3: h, img: pendingImg, body: null };
+      pendingImg = null;
       steps.push(cur);
       return;
     }
     const media = pick(n, 'picture, img');
     if (media) {
-      if (cur) cur.img = media;
-      else if (!heroImg && head.h2) heroImg = media;
+      // first image is the hero; every later image is a step icon awaiting its h3
+      if (!heroImg && head.h2 && !steps.length && !pendingImg) heroImg = media;
+      else pendingImg = media;
       return;
     }
     const t = text(n);

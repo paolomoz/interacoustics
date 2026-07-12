@@ -213,6 +213,7 @@ main .section > .default-content,
 main .section > .block-content { display: block; }
 
 /* default-content containment (mirrors .shell) */
+main .section > .default-content,
 main .section > .default-content-wrapper {
   max-width: var(--max-width);
   margin-inline: auto;
@@ -220,13 +221,17 @@ main .section > .default-content-wrapper {
   padding-block: var(--section-padding);
 }
 
+main .section > .default-content h2,
 main .section > .default-content-wrapper h2 { margin-bottom: var(--spacing-md); }
 
+main .section > .default-content p,
 main .section > .default-content-wrapper p {
   max-width: 70ch;
   margin-block: 0 var(--spacing-md);
 }
 
+main .section > .default-content ul,
+main .section > .default-content ol,
 main .section > .default-content-wrapper ul,
 main .section > .default-content-wrapper ol {
   max-width: 70ch;
@@ -234,6 +239,7 @@ main .section > .default-content-wrapper ol {
   margin-block: 0 var(--spacing-md);
 }
 
+main .section > .default-content li,
 main .section > .default-content-wrapper li { margin-bottom: 6px; }
 
 main > div,
