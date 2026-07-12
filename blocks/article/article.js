@@ -223,5 +223,6 @@ export default async function decorate(block) {
     });
   }
   groups.forEach((g) => renderRailBlock(g, rail, academy));
-  if (!rail.children.length) rail.remove();
+  // no rail (e.g. legal-thin prose): drop the empty 320px track, keep one 70ch column
+  if (!rail.children.length) { rail.remove(); shell.classList.add('article-solo'); }
 }
