@@ -391,10 +391,16 @@ export default async function decorate(block) {
   const sheet = document.createElement('div');
   sheet.className = 'sheet';
   if (!isTraining) {
+    // column-head chrome varies by canon page: base = home/activities/workshop
+    // events; `event` = canon academy events; `congresses` = canon activities
+    // congress sheet (Date & place)
+    let cols = ['Date', 'Course or webinar'];
+    if (block.classList.contains('event')) cols = ['Date', 'Event'];
+    else if (block.classList.contains('congresses')) cols = ['Date &amp; place', 'Congress'];
     sheet.insertAdjacentHTML('beforeend', `
     <div class="sheet-head" aria-hidden="false">
-      <span class="meta-label sh-date">Date</span>
-      <span class="meta-label">Course or webinar</span>
+      <span class="meta-label sh-date">${cols[0]}</span>
+      <span class="meta-label">${cols[1]}</span>
       <span class="sh-empty"></span>
     </div>`);
   }

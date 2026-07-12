@@ -215,6 +215,57 @@
   margin-top: 8px;
 }
 
+/* ===== courses: academy thumbnail course ledger (canon online-courses) ===== */
+.ledger.courses .group-rail { top: 148px; }
+
+.ledger.courses .ledger-head {
+  display: flex;
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.ledger.courses .ledger-list { border-top: 0; }
+
+.ledger.courses .thumb {
+  width: 160px;
+  background: var(--mist);
+}
+
+.ledger.courses .thumb img {
+  width: 160px;
+  height: 72px;
+  filter: grayscale(1);
+}
+
+.ledger.courses .thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+.ledger.courses .ledger-row { grid-template-columns: 160px minmax(0, 1fr) auto; }
+
+.ledger.courses .ledger-row h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.ledger.courses .ledger-meta {
+  margin: 4px 0 0;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+}
+
+.ledger.courses .sublist {
+  border-bottom: 0;
+  padding-block: 0;
+  margin-top: var(--spacing-md);
+}
+
 /* ===== directory: compact support-route sheet (canon product-support) ===== */
 .ledger.directory .dir {
   list-style: none;

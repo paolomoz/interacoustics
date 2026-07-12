@@ -156,6 +156,72 @@
   margin-top: 2px;
 }
 
+/* ===== stay (canon academy stay-ahead): solid-forest split, film still → YouTube ===== */
+.statement.stay { padding-block: var(--section-padding); }
+
+.statement.stay::before { content: none; }
+
+.statement.stay .stay-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.statement.stay .stay-media {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--forest);
+}
+
+.statement.stay .stay-media img {
+  width: 100%;
+  filter: grayscale(1);
+}
+
+.statement.stay .stay-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+.statement.stay .play-badge {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--forest) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--on-dark) 55%, transparent);
+  transition: background-color var(--dur-state) var(--ease-snap);
+}
+
+.statement.stay .play-badge::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent var(--on-dark);
+}
+
+.statement.stay .stay-media:hover .play-badge,
+.statement.stay .stay-media:focus-visible .play-badge { background: var(--forest); }
+
+.statement.stay h2 { max-width: 16ch; }
+.statement.stay .stay-copy p { color: var(--on-dark-muted); }
+
 /* ===== responsive (canon) ===== */
 @media (width <= 800px) {
   .statement::before {
@@ -163,6 +229,11 @@
   }
 
   .statement .voices-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .statement.stay .stay-grid {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 24px;
   }

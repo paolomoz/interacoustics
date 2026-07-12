@@ -88,8 +88,10 @@ function renderSplit(block, nodes) {
     const a = pick(n, 'a');
     if (a) {
       const emphasised = a.closest('strong, em') || a.querySelector('strong, em') || a.classList.contains('btn');
-      if (emphasised) panel.cta = a;
-      else panel.links.push(...(n.matches('a') ? [n] : n.querySelectorAll('a')));
+      if (emphasised) {
+        panel.cta = a;
+        panel.ctaEm = !!(a.closest('em') || a.querySelector('em'));
+      } else panel.links.push(...(n.matches('a') ? [n] : n.querySelectorAll('a')));
       return;
     }
     if (text(n)) panel.body.push(n);
@@ -135,7 +137,10 @@ function renderSplit(block, nodes) {
     if (p.cta) {
       const btn = p.cta.cloneNode(true);
       btn.classList.add('btn');
-      if (!btn.classList.contains('btn-secondary')) btn.classList.add('btn-primary');
+      // authored emphasis decides the family: <em> = secondary (canon academy
+      // "Enter Virtual Clinic"), <strong> = primary (canon contact routing)
+      const secondary = p.ctaEm || btn.classList.contains('btn-secondary');
+      btn.classList.add(secondary ? 'btn-secondary' : 'btn-primary');
       body.append(btn);
     }
     if (p.media) art.append(body);

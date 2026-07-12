@@ -12,6 +12,9 @@
  *   pause     rows: <img> photo | one p (the pause line)
  *   quote     rows: <img> scene photo | <img> avatar | quote p ("…") |
  *             attribution p (<strong>who</strong> role)
+ *   stay      rows: <img> film still | h2 | body p | plain <a> (YouTube) —
+ *             canon academy stay-ahead: solid-forest split, the still wrapped
+ *             in the route link with a play badge (schema: academy.json §stay-ahead)
  *
  * The photo is EDITORIAL (authored content, swappable); the scrim is CSS.
  * Decode: flatten-first collectNodes (#62), self-or-descendant matching (#53/#72).
@@ -57,6 +60,7 @@ export default async function decorate(block) {
   const isQuote = block.classList.contains('quote');
   const isPause = block.classList.contains('pause');
   const isParallax = block.classList.contains('parallax');
+  const isStay = block.classList.contains('stay');
 
   const imgs = [];
   let heading = null;
@@ -75,8 +79,9 @@ export default async function decorate(block) {
   block.textContent = '';
 
   // photo layer: quote keeps its LAST img as the avatar; anything earlier is scene
+  // (stay renders its still inside the route link instead of a bg layer)
   const avatar = isQuote ? imgs.pop() : null;
-  if (imgs.length) {
+  if (imgs.length && !isStay) {
     const bg = document.createElement('div');
     bg.className = 'statement-bg';
     bg.setAttribute('aria-hidden', 'true');
@@ -128,6 +133,38 @@ export default async function decorate(block) {
     }
     fig.append(body);
     shell.append(fig);
+    return;
+  }
+
+  if (isStay) {
+    const grid = document.createElement('div');
+    grid.className = 'stay-grid';
+    const href = route ? route.getAttribute('href') : '#';
+    if (imgs.length) {
+      const media = document.createElement('a');
+      media.className = 'stay-media';
+      media.setAttribute('href', href);
+      media.setAttribute('aria-label', heading ? `Watch the video: ${text(heading)}` : 'Watch the video');
+      media.append(imgs[0].cloneNode(true));
+      media.insertAdjacentHTML('beforeend', '<span class="play-badge" aria-hidden="true"></span>');
+      grid.append(media);
+    }
+    const copy = document.createElement('div');
+    copy.className = 'stay-copy';
+    if (heading) {
+      const h2 = document.createElement('h2');
+      const inner = heading.matches('h1,h2,h3') ? heading : heading.querySelector('h1,h2,h3') || heading;
+      h2.replaceChildren(...[...inner.childNodes].map((n) => n.cloneNode(true)));
+      copy.append(h2);
+    }
+    paras.forEach((para) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+      copy.append(p);
+    });
+    if (route) copy.append(arrowLink(route));
+    grid.append(copy);
+    shell.append(grid);
     return;
   }
 

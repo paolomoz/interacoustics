@@ -1,0 +1,89 @@
+/*
+ * syllabus-index — canon academy clinical-areas ruled typographic index,
+ * scoped .syllabus-index.
+ */
+
+.syllabus-index { padding-block: var(--section-padding); }
+
+.syllabus-index .section-head {
+  max-width: 760px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.syllabus-index .section-head p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.syllabus-index .clinical-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(32px, 5vw, 88px);
+  border-top: 1px solid var(--hairline);
+}
+
+.syllabus-index .clinical-index li { border-bottom: 1px solid var(--hairline); }
+
+.syllabus-index .index-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 20px;
+  align-items: center;
+  padding-block: 24px;
+  min-height: 44px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.syllabus-index .index-row h3 {
+  margin: 0 0 6px;
+  font-size: var(--heading-lg);
+  letter-spacing: var(--tracking-display);
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.syllabus-index .index-caps {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-muted);
+  max-width: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.syllabus-index .index-tail {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  transition: color var(--dur-state) var(--ease-snap);
+}
+
+.syllabus-index .index-tail .arr {
+  display: inline-block;
+  transition: transform var(--dur-state) var(--ease-snap);
+}
+
+.syllabus-index .index-row:hover h3,
+.syllabus-index .index-row:focus-visible h3 { color: var(--pine); }
+
+.syllabus-index .index-row:hover .index-tail,
+.syllabus-index .index-row:focus-visible .index-tail { color: var(--pine); }
+
+.syllabus-index .index-row:hover .index-tail .arr,
+.syllabus-index .index-row:focus-visible .index-tail .arr { transform: translateX(3px); }
+
+@media (width <= 800px) {
+  .syllabus-index .clinical-index { grid-template-columns: 1fr; }
+}
+
+@media (width <= 640px) {
+  .syllabus-index .index-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 6px;
+  }
+
+  .syllabus-index .index-tail { justify-self: start; }
+}

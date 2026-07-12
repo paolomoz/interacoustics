@@ -17,6 +17,11 @@
  *              name-only support routes (h3 + <a>, no thumb/desc) rendered as
  *              the compact .dir sheet; the <code> anchor row may carry TWO
  *              tokens ("abr directory") — section id + shell id
+ *   courses    academy online-courses (schema: stardust/eds-schema/academy.json
+ *              §online-courses): the <strong> label ("Our latest courses")
+ *              renders as a ruled .ledger-head ABOVE the list (not in the
+ *              rail); unit desc = the author|topic meta line; wide 160x72
+ *              course-banner thumbs; the plain foot link renders alone
  *
  * Authoring rows:
  *   [<p><code>anchor</code></p>]                — section anchor id (subnav target)
@@ -108,14 +113,14 @@ function parseGroup(rows) {
 }
 
 /* build one group's rail + body pair from a parsed group */
-function buildGroup(grid, parsed, isIndex, isDir) {
+function buildGroup(grid, parsed, isIndex, isDir, isCourses) {
   const {
     head, units, sublist, sublistLabel, foot,
   } = parsed;
 
   const rail = document.createElement('div');
   rail.className = isIndex ? 'products-rail' : 'group-rail';
-  if (head.count) rail.insertAdjacentHTML('beforeend', `<p class="meta-label group-count">${esc(head.count)}</p>`);
+  if (head.count && !isCourses) rail.insertAdjacentHTML('beforeend', `<p class="meta-label group-count">${esc(head.count)}</p>`);
   if (head.h2) {
     const h2 = document.createElement('h2');
     h2.replaceChildren(...[...head.h2.childNodes].map((n) => n.cloneNode(true)));
@@ -133,6 +138,9 @@ function buildGroup(grid, parsed, isIndex, isDir) {
   grid.append(rail);
 
   const body = document.createElement('div');
+  if (isCourses && head.count) {
+    body.insertAdjacentHTML('beforeend', `<div class="ledger-head"><span class="meta-label">${esc(head.count)}</span></div>`);
+  }
   const ul = document.createElement('ul');
   ul.className = isDir ? 'dir' : 'ledger-list';
   units.forEach((u) => {
@@ -160,7 +168,7 @@ function buildGroup(grid, parsed, isIndex, isDir) {
     h3.textContent = u.name;
     if (u.pill) h3.insertAdjacentHTML('beforeend', ` <span class="new-pill">${esc(u.pill)}</span>`);
     copy.append(h3);
-    if (u.desc) copy.insertAdjacentHTML('beforeend', `<p class="ledger-desc">${esc(u.desc)}</p>`);
+    if (u.desc) copy.insertAdjacentHTML('beforeend', `<p class="${isCourses ? 'ledger-meta' : 'ledger-desc'}">${esc(u.desc)}</p>`);
     a.append(copy);
     a.insertAdjacentHTML('beforeend', '<span class="ledger-arr" aria-hidden="true">→</span>');
     li.append(a);
@@ -220,6 +228,7 @@ export default async function decorate(block) {
   const groups = chunks.filter((c) => c.length).map(parseGroup);
   if (!groups.length) return;
   const isDir = block.classList.contains('directory');
+  const isCourses = block.classList.contains('courses');
   // anchor row may carry TWO tokens: "<section-id> <shell-id>" (directory "All" target)
   const tokens = (groups.find((g) => g.head.anchor)?.head.anchor || '').split(/\s+/).filter(Boolean);
   const [anchor, shellAnchor] = tokens;
@@ -241,11 +250,11 @@ export default async function decorate(block) {
     groups.forEach((g) => {
       const grid = document.createElement('div');
       grid.className = 'group-grid';
-      buildGroup(grid, g, isIndex, isDir);
+      buildGroup(grid, g, isIndex, isDir, isCourses);
       shell.append(grid);
     });
   } else {
     shell.className = `shell ${isIndex ? 'products-grid' : 'group-grid'}`;
-    buildGroup(shell, groups[0], isIndex, isDir);
+    buildGroup(shell, groups[0], isIndex, isDir, isCourses);
   }
 }
