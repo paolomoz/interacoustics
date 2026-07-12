@@ -105,6 +105,34 @@
 .team .team-facade:hover .play-badge,
 .team .team-facade:focus-visible .play-badge { background: var(--forest); }
 
+/* non-embeddable card: whole-poster link out to YouTube (new tab) */
+.team .team-poster-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.team .team-poster-link:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 2px;
+}
+
+.team .team-poster-link:hover .play-badge,
+.team .team-poster-link:focus-visible .play-badge { background: var(--forest); }
+
+.team .team-watch {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pine);
+  text-decoration: none;
+}
+
+.team .team-watch:hover { text-decoration: underline; }
+
+.team .team-watch .ext-arr { font-weight: 400; }
+
 @media (width <= 900px) {
   .team .team-grid { grid-template-columns: 1fr; }
 }

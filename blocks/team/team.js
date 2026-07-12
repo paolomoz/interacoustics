@@ -6,7 +6,15 @@
  * Authoring rows:
  *   head row: h2
  *   unit rows (one per story): <img> poster | h3 name | role p |
- *     plain <a href=youtube> ("Watch video") — the card's whole-surface href
+ *     plain <a href=youtube> whose TEXT selects the play mode:
+ *       "Watch video"      → inline click-to-play facade (poster → iframe)
+ *       "Watch on YouTube" → non-embeddable card: static poster + an external
+ *                            "Watch on YouTube ↗" link opening youtu.be/<id> in
+ *                            a new tab (no inline facade). Use this signal for a
+ *                            video whose owner has disabled embedding (a bare
+ *                            youtu.be embed renders YouTube's error box), e.g.
+ *                            Jonathan Wolsing-Hansen (fgLOg4UYhDc), which is
+ *                            embed-disabled at the source.
  */
 
 const pick = (n, sel) => (n.matches?.(sel) ? n : n.querySelector?.(sel));
@@ -70,11 +78,15 @@ export default async function decorate(block) {
     const href = (u.link && u.link.getAttribute('href')) || '';
     const id = youTubeId(href);
     const name = u.name ? text(u.name) : 'team member';
+    // authored "Watch on YouTube" text marks a non-embeddable video: skip the
+    // inline facade (its embed renders YouTube's error box) and link out instead
+    const external = !!id && /youtube/i.test(text(u.link));
+    const watchUrl = id ? `https://youtu.be/${id}` : href;
 
     if (u.img) {
       const media = document.createElement('div');
       media.className = 'team-media';
-      if (id) {
+      if (id && !external) {
         // privacy/perf-friendly facade: poster + play button, swapped for a
         // playing YouTube iframe on activation (click or keyboard)
         const facade = document.createElement('button');
@@ -94,6 +106,18 @@ export default async function decorate(block) {
           iframe.focus();
         });
         media.append(facade);
+      } else if (external) {
+        // non-embeddable → static poster as a whole-surface link that opens
+        // YouTube in a new tab (no dead inline facade / error box)
+        const poster = document.createElement('a');
+        poster.className = 'team-poster-link';
+        poster.href = watchUrl;
+        poster.target = '_blank';
+        poster.rel = 'noopener';
+        poster.setAttribute('aria-label', `Watch on YouTube: ${name} (opens in a new tab)`);
+        poster.append(u.img.cloneNode(true));
+        poster.insertAdjacentHTML('beforeend', '<span class="play-badge external" aria-hidden="true"></span>');
+        media.append(poster);
       } else {
         // no video id → static poster (no dead play affordance)
         media.append(u.img.cloneNode(true));
@@ -107,6 +131,9 @@ export default async function decorate(block) {
       card.append(h3);
     }
     if (u.role) card.insertAdjacentHTML('beforeend', `<span class="team-role">${esc(text(u.role))}</span>`);
+    if (external) {
+      card.insertAdjacentHTML('beforeend', `<a class="team-watch" href="${watchUrl}" target="_blank" rel="noopener">Watch on YouTube <span class="ext-arr" aria-hidden="true">↗</span></a>`);
+    }
     grid.append(card);
   });
 }
