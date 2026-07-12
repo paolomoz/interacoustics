@@ -266,6 +266,11 @@
   margin-top: var(--spacing-md);
 }
 
+/* flat: typographic course list for academy area-listing pages (no per-course
+   thumbnail captured) — drop the thumb column, keep title + level meta + arrow */
+.ledger.courses.flat .thumb { display: none; }
+.ledger.courses.flat .ledger-row { grid-template-columns: minmax(0, 1fr) auto; }
+
 /* ===== directory: compact support-route sheet (canon product-support) ===== */
 .ledger.directory .dir {
   list-style: none;
@@ -344,6 +349,7 @@
 
 @media (width <= 640px) {
   .ledger .ledger-row { grid-template-columns: 88px minmax(0, 1fr); }
+  .ledger.courses.flat .ledger-row { grid-template-columns: minmax(0, 1fr); }
   .ledger .ledger-arr { display: none; }
 
   .ledger.directory .dir-row { column-gap: 16px; }
