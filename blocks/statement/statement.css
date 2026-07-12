@@ -238,3 +238,43 @@
     row-gap: 24px;
   }
 }
+
+/* ===== testimonial (canon activities): meadow attribution + display-scale quote ===== */
+.statement.testimonial::before {
+  background: linear-gradient(90deg, var(--scrim-deep) 0%, var(--scrim-deep) 40%, var(--scrim-mid) 70%, var(--scrim-soft) 100%);
+}
+
+.statement.testimonial figure {
+  margin: 0;
+  max-width: 760px;
+}
+
+.statement.testimonial .attribution {
+  color: var(--meadow);
+  margin-bottom: 14px;
+}
+
+.statement.testimonial blockquote {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+.statement.testimonial blockquote p {
+  margin: 0;
+  max-width: 24ch;
+}
+
+.statement.testimonial .arrow-link {
+  font-size: 15px;
+  padding-block: 11px; /* 22.5px line box + 22px = 44.5px target */
+}
+
+@media (width <= 800px) {
+  .statement.testimonial::before {
+    background: linear-gradient(180deg, var(--scrim-deep) 0%, var(--scrim-mid) 100%);
+  }
+}

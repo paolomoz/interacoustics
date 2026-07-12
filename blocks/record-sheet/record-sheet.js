@@ -29,6 +29,15 @@
  * h3 (em kept) + desc p | <img> archive photo). Year/Milestone/From-the-archive
  * column labels are template chrome.
  *
+ * Variant `congresses` (canon activities tradeshows; schema:
+ * stardust/eds-schema/activities.json §tradeshows): head rows: h2 | intro p(s) |
+ * <img> booth photo (sticky rail); unit rows (one per congress): <h3>Name</h3> |
+ * date-and-place text ("May 25-27, Seoul, Korea") | plain <a> (Read more).
+ * Congress / Date-and-place column labels are template chrome.
+ *
+ * Events unit rows may carry a "Location: …" p beside the h3 (canon activities
+ * events-sheet) — rendered as the .loc line under the title.
+ *
  * Variant `training` (canon audiometers training; schema:
  * stardust/eds-schema/audiometers.json §training): the first cell of a unit
  * row is a meta tag ("Type: Reading") rendered as a tracked-caps label (no
@@ -329,10 +338,91 @@ function renderTimeline(block) {
   });
 }
 
+/* congresses (canon activities tradeshows): sticky copy rail + congress sheet */
+function renderCongresses(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const head = { h2: null, intro: [], photo: null };
+  const units = [];
+  rows.forEach((row) => {
+    const h3 = row.querySelector('h3, h4');
+    if (h3) {
+      const a = row.querySelector('a');
+      const when = [...row.querySelectorAll(':scope > div')]
+        .map(text)
+        .find((t) => t && t !== text(h3) && (!a || t !== text(a)));
+      units.push({ title: h3.cloneNode(true), when: when || '', a });
+      return;
+    }
+    [...row.querySelectorAll(':scope > div')].forEach((cell) => {
+      const kids = [...cell.children].length ? [...cell.children] : [cell];
+      kids.forEach((n) => {
+        const media = pick(n, 'picture, img');
+        if (media) { head.photo = media; return; }
+        const h2 = pick(n, 'h1, h2');
+        if (h2) { head.h2 = h2; return; }
+        if (text(n)) head.intro.push(n);
+      });
+    });
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell tradeshows-grid';
+  block.append(shell);
+
+  const rail = document.createElement('div');
+  rail.className = 'tradeshows-rail';
+  if (head.h2) {
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...head.h2.childNodes].map((n) => n.cloneNode(true)));
+    rail.append(h2);
+  }
+  head.intro.forEach((n) => {
+    const p = document.createElement('p');
+    p.replaceChildren(...[...n.childNodes].map((c) => c.cloneNode(true)));
+    rail.append(p);
+  });
+  if (head.photo) {
+    const media = document.createElement('div');
+    media.className = 'rail-media';
+    media.append(head.photo.cloneNode(true));
+    rail.append(media);
+  }
+  shell.append(rail);
+
+  const sheet = document.createElement('div');
+  sheet.className = 'congress-sheet';
+  sheet.insertAdjacentHTML('beforeend', `
+  <div class="congress-head">
+    <span class="meta-label">Congress</span>
+    <span class="meta-label">Date &amp; place</span>
+    <span></span>
+  </div>`);
+  const ul = document.createElement('ul');
+  ul.className = 'congress-list';
+  units.forEach((u) => {
+    const li = document.createElement('li');
+    const row = document.createElement('div');
+    row.className = 'congress-row';
+    row.append(u.title);
+    row.insertAdjacentHTML('beforeend', `<p class="congress-when">${esc(u.when)}</p>`);
+    if (u.a) {
+      const link = makeArrowLink(u.a);
+      link.insertAdjacentHTML('beforeend', `<span class="sr-only"> about ${esc(text(u.title))}</span>`);
+      row.append(link);
+    }
+    li.append(row);
+    ul.append(li);
+  });
+  sheet.append(ul);
+  shell.append(sheet);
+}
+
 export default async function decorate(block) {
   if (block.classList.contains('battery')) { renderBattery(block); return; }
   if (block.classList.contains('doc-list')) { renderDocList(block); return; }
   if (block.classList.contains('timeline')) { renderTimeline(block); return; }
+  if (block.classList.contains('congresses')) { renderCongresses(block); return; }
   const rows = [...block.querySelectorAll(':scope > div')];
   const head = { h2: null, intro: [] };
   const units = [];
@@ -343,10 +433,13 @@ export default async function decorate(block) {
     if (h3) {
       const a = row.querySelector('a');
       const titleNode = h3.cloneNode(true);
+      const loc = [...row.querySelectorAll('p')].map(text).find((t) => /^location\s*:/i.test(t));
       const date = [...row.querySelectorAll(':scope > div')]
         .map(text)
-        .find((t) => t && t !== text(h3) && (!a || t !== text(a)));
-      units.push({ date: date || '', titleNode, a });
+        .find((t) => t && t !== text(h3) && !t.includes(text(h3)) && (!a || t !== text(a)));
+      units.push({
+        date: date || '', titleNode, a, loc,
+      });
       return;
     }
     [...row.querySelectorAll(':scope > div')].forEach((cell) => {
@@ -396,7 +489,6 @@ export default async function decorate(block) {
     // congress sheet (Date & place)
     let cols = ['Date', 'Course or webinar'];
     if (block.classList.contains('event')) cols = ['Date', 'Event'];
-    else if (block.classList.contains('congresses')) cols = ['Date &amp; place', 'Congress'];
     sheet.insertAdjacentHTML('beforeend', `
     <div class="sheet-head" aria-hidden="false">
       <span class="meta-label sh-date">${cols[0]}</span>
@@ -423,7 +515,13 @@ export default async function decorate(block) {
     }
     const h3 = document.createElement('h3');
     h3.replaceChildren(...[...u.titleNode.childNodes].map((n) => n.cloneNode(true)));
-    row.append(h3);
+    if (u.loc) {
+      // canon activities: title + Location line share the middle column
+      const mid = document.createElement('div');
+      mid.append(h3);
+      mid.insertAdjacentHTML('beforeend', `<p class="loc">${esc(u.loc)}</p>`);
+      row.append(mid);
+    } else row.append(h3);
     if (u.a) {
       const btn = u.a.cloneNode(true);
       btn.classList.add('btn');

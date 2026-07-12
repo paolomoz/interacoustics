@@ -286,3 +286,17 @@
 }
 
 .tinted-panel .inset-panel .btn { white-space: nowrap; }
+
+/* ===== notice: quiet legal smallprint band (canon activities photo-notice) ===== */
+.tinted-panel.notice {
+  background: var(--mist);
+  border-block: 1px solid var(--hairline);
+  padding-block: 40px;
+}
+
+.tinted-panel.notice .smallprint {
+  margin: 0;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+  max-width: 76ch;
+}

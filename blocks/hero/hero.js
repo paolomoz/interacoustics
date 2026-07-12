@@ -248,6 +248,10 @@ function renderForestVideo(block, s) {
     <button class="video-toggle" type="button" aria-pressed="false"><span class="vt-label">Play video</span></button>`;
   block.innerHTML = html;
   const shell = block.querySelector('.hero-main .shell');
+  // featured-event record rail (canon activities): kv rows + h2 → the rail
+  // claims the LAST cta (Sign up) before the hero-actions render
+  const recordRail = s.kv.length > 0 && s.h2s.length > 0;
+  const railCta = recordRail && s.ctas.length ? s.ctas.pop() : null;
   if (s.h1) fillHeading(block.querySelector('h1'), s.h1);
   const lede = s.ledes.find((l) => !l.afterH2);
   if (lede) {
@@ -286,6 +290,51 @@ function renderForestVideo(block, s) {
   } else {
     block.querySelector('.hero-video').remove();
     block.querySelector('.video-toggle').remove();
+  }
+  // featured-event record rail (canon activities featured-event)
+  if (recordRail) {
+    const kicker = s.kickers.length ? s.kickers[0] : 'Next course';
+    const dateRow = s.kv.find((r) => r.key.toLowerCase() === 'date');
+    const locRow = s.kv.find((r) => r.key.toLowerCase() === 'location');
+    const rail = document.createElement('aside');
+    rail.className = 'hero-rail hero-rail-record';
+    rail.setAttribute('aria-label', kicker);
+    const grid = document.createElement('div');
+    grid.className = 'shell featured-grid';
+    rail.append(grid);
+    if (dateRow) {
+      const val = (dateRow.value || text(dateRow.node).replace(/^[^:]+:\s*/, '')).trim();
+      const m = val.match(/^(\w+\s+\d{1,2})[,\s]*(.*)$/);
+      const dd = m ? m[1] : val;
+      const dm = m ? m[2] : '';
+      grid.insertAdjacentHTML('beforeend', `
+      <div class="featured-date">
+        <p class="meta-label kicker-line">${esc(kicker)}</p>
+        <span class="sr-only">Begins ${esc(val)}</span>
+        <span class="dd" aria-hidden="true">${esc(dd)}</span>
+        <span class="dm" aria-hidden="true">${esc(dm)}</span>
+      </div>`);
+    }
+    const info = document.createElement('div');
+    info.className = 'featured-info';
+    const title = document.createElement('h2');
+    fillHeading(title, s.h2s[0]);
+    info.append(title);
+    if (locRow) {
+      const p = document.createElement('p');
+      p.className = 'loc';
+      p.textContent = text(locRow.node) || `${locRow.key}: ${locRow.value}`;
+      info.append(p);
+    }
+    grid.append(info);
+    if (railCta) {
+      const btn = railCta.cloneNode(true);
+      btn.classList.add('btn', 'btn-meadow', 'featured-cta');
+      grid.append(btn);
+    }
+    block.append(rail);
+    wireVideo(block);
+    return;
   }
   // campaign rail slot (home): pill + h2 title + lede + arrow link
   if (s.h2s.length) {

@@ -15,6 +15,10 @@
  *   stay      rows: <img> film still | h2 | body p | plain <a> (YouTube) —
  *             canon academy stay-ahead: solid-forest split, the still wrapped
  *             in the route link with a play badge (schema: academy.json §stay-ahead)
+ *   testimonial  rows: <img> scene photo | attribution p (ends with ":") |
+ *             quote p | plain <a> — canon activities testimonial: meadow
+ *             meta-label attribution over a display-scale quote
+ *             (schema: activities.json §testimonial)
  *
  * The photo is EDITORIAL (authored content, swappable); the scrim is CSS.
  * Decode: flatten-first collectNodes (#62), self-or-descendant matching (#53/#72).
@@ -61,6 +65,7 @@ export default async function decorate(block) {
   const isPause = block.classList.contains('pause');
   const isParallax = block.classList.contains('parallax');
   const isStay = block.classList.contains('stay');
+  const isTestimonial = block.classList.contains('testimonial');
 
   const imgs = [];
   let heading = null;
@@ -133,6 +138,25 @@ export default async function decorate(block) {
     }
     fig.append(body);
     shell.append(fig);
+    return;
+  }
+
+  if (isTestimonial) {
+    const fig = document.createElement('figure');
+    const attribP = paras.find((p) => /:\s*$/.test(text(p)));
+    const quoteP = paras.find((p) => p !== attribP);
+    if (attribP) fig.insertAdjacentHTML('beforeend', `<p class="meta-label attribution">${esc(text(attribP))}</p>`);
+    if (quoteP) {
+      const bq = document.createElement('blockquote');
+      const p = document.createElement('p');
+      p.replaceChildren(...[...quoteP.childNodes].map((n) => n.cloneNode(true)));
+      bq.append(p);
+      fig.append(bq);
+    }
+    const capText = attribP ? text(attribP).replace(/:\s*$/, '') : 'Testimonial';
+    fig.insertAdjacentHTML('beforeend', `<figcaption class="sr-only">${esc(capText)} testimonial</figcaption>`);
+    shell.append(fig);
+    if (route) shell.append(arrowLink(route));
     return;
   }
 

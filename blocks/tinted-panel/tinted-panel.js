@@ -16,6 +16,9 @@
  *   close   quiet ruled close band (canon our-history quiet-close; schema:
  *           stardust/eds-schema/our-history.json §quiet-close): lede p |
  *           <ul> of forward links (ledger-row style, arrow right)
+ *   notice  quiet legal smallprint band on mist (canon activities
+ *           photography-notice; schema: activities.json §photography-notice):
+ *           smallprint p(s), verbatim
  *
  * Decode: flatten-first collectNodes (#62); split segments on heading
  * boundaries with pre-heading media buffered to the panel it opens (#76).
@@ -280,6 +283,17 @@ export default async function decorate(block) {
       if (!btn.classList.contains('btn-primary')) btn.classList.add('btn-secondary');
       panel.append(btn);
     }
+    return;
+  }
+
+  // notice variant (canon activities photography-notice): quiet legal smallprint
+  if (block.classList.contains('notice')) {
+    paras.forEach((para) => {
+      const p = document.createElement('p');
+      p.className = 'smallprint';
+      p.replaceChildren(...[...para.childNodes].map((n) => n.cloneNode(true)));
+      shell.append(p);
+    });
     return;
   }
 

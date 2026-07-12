@@ -354,3 +354,123 @@
 /* a foreign-language subtitle is authored as <em> (survives DA; canon uses a
    lang-tagged span) — renders in the canon upright register */
 .record-sheet .sheet-row h3 em { font-style: normal; }
+
+/* an events row may carry a Location line under its title (canon activities) */
+.record-sheet .sheet-row .loc {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--ink-muted);
+  max-width: none;
+}
+
+/* ===== congresses: sticky copy rail + congress record sheet (canon activities) ===== */
+.record-sheet.congresses .tradeshows-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+.record-sheet.congresses .tradeshows-rail {
+  position: sticky;
+  top: 128px;
+}
+
+.record-sheet.congresses .tradeshows-rail h2 { margin-bottom: var(--spacing-md); }
+
+.record-sheet.congresses .tradeshows-rail p {
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+
+.record-sheet.congresses .rail-media {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--mist);
+  margin-top: var(--spacing-lg);
+  max-width: 420px;
+}
+
+.record-sheet.congresses .rail-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 610 / 500;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(1);
+}
+
+.record-sheet.congresses .rail-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--meadow);
+  mix-blend-mode: multiply;
+}
+
+.record-sheet.congresses .congress-head,
+.record-sheet.congresses .congress-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) auto;
+  column-gap: 28px;
+  align-items: center;
+}
+
+.record-sheet.congresses .congress-head {
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.record-sheet.congresses .congress-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.record-sheet.congresses .congress-list li { border-bottom: 1px solid var(--hairline); }
+
+.record-sheet.congresses .congress-row { padding-block: 18px; }
+
+.record-sheet.congresses .congress-row h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.record-sheet.congresses .congress-when {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-muted);
+  max-width: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.record-sheet.congresses .congress-row .arrow-link {
+  font-size: 15px;
+  padding-block: 11px;
+  white-space: nowrap;
+}
+
+@media (width <= 1024px) {
+  .record-sheet.congresses .tradeshows-grid { grid-template-columns: 1fr; }
+  .record-sheet.congresses .tradeshows-rail { position: static; }
+  .record-sheet.congresses .rail-media { display: none; }
+}
+
+@media (width <= 800px) {
+  .record-sheet.congresses .congress-head { display: none; }
+
+  .record-sheet.congresses .congress-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2px;
+    padding-block: 16px;
+  }
+
+  .record-sheet.congresses .congress-row .arrow-link {
+    justify-self: start;
+    white-space: normal;
+  }
+}
