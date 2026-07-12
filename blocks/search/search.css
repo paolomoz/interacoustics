@@ -1,0 +1,107 @@
+/*
+ * search — site search UI (input + results). Scoped .search.
+ */
+
+.search { padding-block: 40px var(--section-padding); }
+
+.search .search-form {
+  display: flex;
+  gap: 12px;
+  max-width: 640px;
+  margin-bottom: var(--spacing-l);
+}
+
+.search .search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 18px;
+  height: 52px;
+  font-size: 17px;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--card, #fff);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md, 8px);
+  transition: border-color var(--dur-state) var(--ease-snap), box-shadow var(--dur-state) var(--ease-snap);
+}
+
+.search .search-input::placeholder { color: var(--ink-muted); }
+
+.search .search-input:focus-visible {
+  outline: none;
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pine) 22%, transparent);
+}
+
+.search .search-submit {
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.search .search-results { max-width: 720px; }
+
+.search .search-state {
+  color: var(--ink-muted);
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.search .search-note {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+}
+
+.search .search-count { margin: 0 0 14px; }
+
+.search .search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search .search-list li { border-top: 1px solid var(--hairline); }
+.search .search-list li:last-child { border-bottom: 1px solid var(--hairline); }
+
+.search .search-hit {
+  display: block;
+  padding-block: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--dur-state) var(--ease-snap);
+}
+
+.search .search-hit:hover { transform: translateX(6px); }
+
+.search .search-hit-title {
+  display: block;
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.search .search-hit:hover .search-hit-title,
+.search .search-hit:focus-visible .search-hit-title { color: var(--pine); }
+
+.search .search-hit-desc {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--body-sm);
+  color: var(--ink-muted);
+}
+
+.search .search-hit-url {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--pine);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (width <= 640px) {
+  .search .search-form { flex-direction: column; }
+  .search .search-submit { width: 100%; }
+}
