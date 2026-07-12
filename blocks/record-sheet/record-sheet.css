@@ -474,3 +474,68 @@
     white-space: normal;
   }
 }
+
+/* ===== syllabus: ordered topic sheet with auto-indexed sequence (canon clinical-diploma) ===== */
+.record-sheet.syllabus .sheet-head {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  column-gap: 28px;
+  padding-block: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.record-sheet.syllabus .sheet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: syllabus;
+}
+
+.record-sheet.syllabus .sheet-list li { border-bottom: 1px solid var(--hairline); }
+
+.record-sheet.syllabus .sheet-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: baseline;
+  padding-block: 18px;
+}
+
+.record-sheet.syllabus .sheet-idx {
+  font-size: var(--heading-lg);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--pine);
+  line-height: 1.35;
+}
+
+.record-sheet.syllabus .sheet-row h3 {
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.record-sheet.syllabus .sheet-sub {
+  margin: 10px 0 0;
+  padding-left: 1.4em;
+  font-size: 16px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.record-sheet.syllabus .sheet-sub li {
+  border-bottom: 0;
+  margin-bottom: 4px;
+}
+
+@media (width <= 640px) {
+  .record-sheet.syllabus .sheet-head,
+  .record-sheet.syllabus .sheet-row {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .record-sheet.syllabus .sheet-idx { font-size: var(--heading-md); }
+}

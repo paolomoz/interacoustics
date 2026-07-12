@@ -418,11 +418,72 @@ function renderCongresses(block) {
   shell.append(sheet);
 }
 
+/* syllabus (canon clinical-diploma course content): ordered topic sheet with
+   auto-generated sequence index and optional sub-topic lists */
+function renderSyllabus(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  let heading = null;
+  const topics = [];
+  rows.forEach((row) => {
+    const h3 = row.querySelector('h3, h4');
+    if (h3) {
+      const subs = row.querySelector('ul, ol');
+      topics.push({ title: h3.cloneNode(true), subs: subs ? subs.cloneNode(true) : null });
+      return;
+    }
+    const h2 = row.querySelector('h1, h2');
+    if (h2) heading = h2;
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  if (heading) {
+    const sh = document.createElement('div');
+    sh.className = 'section-head';
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...heading.childNodes].map((n) => n.cloneNode(true)));
+    sh.append(h2);
+    shell.append(sh);
+  }
+  const sheet = document.createElement('div');
+  sheet.className = 'sheet';
+  sheet.insertAdjacentHTML('beforeend', `
+  <div class="sheet-head" aria-hidden="false">
+    <span class="meta-label">Order</span>
+    <span class="meta-label">Topic</span>
+  </div>`);
+  const ol = document.createElement('ol');
+  ol.className = 'sheet-list';
+  topics.forEach((t, i) => {
+    const li = document.createElement('li');
+    const row = document.createElement('div');
+    row.className = 'sheet-row';
+    row.insertAdjacentHTML('beforeend', `<span class="sheet-idx" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>`);
+    const h3 = document.createElement('h3');
+    h3.replaceChildren(...[...t.title.childNodes].map((n) => n.cloneNode(true)));
+    if (t.subs) {
+      const wrap = document.createElement('div');
+      wrap.append(h3);
+      const ul = t.subs.cloneNode(true);
+      ul.classList.add('sheet-sub');
+      wrap.append(ul);
+      row.append(wrap);
+    } else row.append(h3);
+    li.append(row);
+    ol.append(li);
+  });
+  sheet.append(ol);
+  shell.append(sheet);
+}
+
 export default async function decorate(block) {
   if (block.classList.contains('battery')) { renderBattery(block); return; }
   if (block.classList.contains('doc-list')) { renderDocList(block); return; }
   if (block.classList.contains('timeline')) { renderTimeline(block); return; }
   if (block.classList.contains('congresses')) { renderCongresses(block); return; }
+  if (block.classList.contains('syllabus')) { renderSyllabus(block); return; }
   const rows = [...block.querySelectorAll(':scope > div')];
   const head = { h2: null, intro: [] };
   const units = [];

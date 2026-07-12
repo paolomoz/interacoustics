@@ -1,11 +1,14 @@
 /*
  * bio-sheet -- tutors/presenters ruled rows (canon: workshop presenters,
- * clinical-diploma tutors). Schema: stardust/eds-schema/workshop.json
- * §presenters, diploma.json §tutors.
+ * clinical-diploma tutors, diploma overview). Schema:
+ * stardust/eds-schema/workshop.json §presenters, diploma.json §tutors.
  *
  * Authoring rows (flatten-tolerant):
  *   head row:  [h2 title] | [summary p (e.g. "Presenters: A, B and C.")]
- *   unit rows: [<img> portrait] | h3 name | bio p
+ *   unit rows: [<img> portrait] | h3 name | bio p [| <ul> facts]
+ *
+ * Variant `overview`: units headed by h2 instead of h3; pre-heading images
+ * buffer to the next unit (canon diploma overview circular thumbs).
  */
 
 function collectNodes(block) {
@@ -31,23 +34,36 @@ export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
 
+  const isOverview = block.classList.contains('overview');
+  const unitSel = isOverview ? 'h1, h2, h3, h4' : 'h3, h4';
   let heading = null;
   let summary = null;
   const units = [];
   let cur = null;
+  let pendingImg = null;
 
   nodes.forEach((n) => {
-    const h2 = pick(n, 'h1, h2');
-    if (h2 && !cur) { heading = h2; return; }
-    const h3 = pick(n, 'h3, h4');
-    if (h3) {
-      cur = { name: h3, img: null, bio: null };
+    if (!isOverview) {
+      const h2 = pick(n, 'h1, h2');
+      if (h2 && !cur) { heading = h2; return; }
+    }
+    const hUnit = pick(n, unitSel);
+    if (hUnit) {
+      cur = {
+        name: hUnit, img: pendingImg, bio: null, list: null,
+      };
+      pendingImg = null;
       units.push(cur);
       return;
     }
     const media = pick(n, 'picture, img');
     if (media) {
       if (cur) cur.img = media;
+      else pendingImg = media;
+      return;
+    }
+    if (n.matches?.('ul, ol')) {
+      if (cur) cur.list = n;
       return;
     }
     if (!cur && text(n) && !heading) { summary = n; return; }
@@ -84,13 +100,19 @@ export default async function decorate(block) {
     }
     const body = document.createElement('div');
     body.className = 'bio-body';
-    const h3 = document.createElement('h3');
-    h3.replaceChildren(...[...u.name.childNodes].map((n) => n.cloneNode(true)));
-    body.append(h3);
+    const tag = isOverview ? 'h2' : 'h3';
+    const h = document.createElement(tag);
+    h.replaceChildren(...[...u.name.childNodes].map((n) => n.cloneNode(true)));
+    body.append(h);
     if (u.bio) {
       const p = document.createElement('p');
       p.replaceChildren(...[...u.bio.childNodes].map((n) => n.cloneNode(true)));
       body.append(p);
+    }
+    if (u.list) {
+      const ul = u.list.cloneNode(true);
+      ul.classList.add('fact-rule');
+      body.append(ul);
     }
     li.append(body);
     list.append(li);

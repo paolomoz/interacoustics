@@ -64,6 +64,28 @@
   max-width: 76ch;
 }
 
+.bio-sheet .bio-body .fact-rule {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bio-sheet .bio-body .fact-rule li {
+  padding: 8px 0;
+  border-top: 1px solid var(--hairline);
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+
+.bio-sheet .bio-body .fact-rule li:last-child { border-bottom: 1px solid var(--hairline); }
+
+/* overview variant: h2 units, smaller circular thumbs */
+.bio-sheet.overview .bio-body h2 {
+  font-size: var(--heading-xl);
+  font-weight: 400;
+  margin: 0 0 var(--spacing-md);
+}
+
 @media (width <= 640px) {
   .bio-sheet .bio-list li {
     grid-template-columns: minmax(0, 1fr);
