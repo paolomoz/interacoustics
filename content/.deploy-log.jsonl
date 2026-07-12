@@ -1,3 +1,34 @@
 {"t":"2026-07-11T16:43:59.725Z","path":"/contact","step":"verify","ok":true}
 {"t":"2026-07-11T16:43:59.755Z","path":"/index","step":"verify","ok":true}
 {"t":"2026-07-11T16:43:59.880Z","path":"/solutions","step":"verify","ok":true}
+{"t":"2026-07-11T18:25:33.918Z","path":"/blog/why-rem","step":"verify","ok":true}
+{"t":"2026-07-11T18:39:48.226Z","path":"/magazine","step":"verify","ok":true}
+{"t":"2026-07-11T18:40:08.222Z","path":"/audiometers","step":"verify","ok":false,"why":"about:error in delivered html"}
+{"t":"2026-07-11T18:45:26.488Z","path":"/audiometers","step":"verify","ok":false,"why":"about:error in delivered html"}
+{"t":"2026-07-11T18:47:59.828Z","path":"/audiometers","step":"verify","ok":true}
+{"t":"2026-07-11T19:25:23.600Z","path":"/audiometers/ad629","step":"verify","ok":true}
+{"t":"2026-07-11T19:59:55.160Z","path":"/product-support","step":"verify","ok":true}
+{"t":"2026-07-11T20:40:39.651Z","path":"/our-history","step":"verify","ok":true}
+{"t":"2026-07-12T07:57:04.963Z","path":"/customer-stories","step":"verify","ok":true}
+{"t":"2026-07-12T07:57:05.485Z","path":"/about","step":"verify","ok":true}
+{"t":"2026-07-12T07:57:05.767Z","path":"/careers","step":"verify","ok":true}
+{"t":"2026-07-12T07:57:06.723Z","path":"/sustainability","step":"verify","ok":true}
+{"t":"2026-07-12T08:14:18.149Z","path":"/academy","step":"verify","ok":true}
+{"t":"2026-07-12T10:34:11.568Z","path":"/academy/clinical-diploma","step":"verify","ok":true}
+{"t":"2026-07-12T10:34:11.741Z","path":"/academy","step":"verify","ok":true}
+{"t":"2026-07-12T10:34:24.214Z","path":"/activities","step":"verify","ok":true}
+{"t":"2026-07-12T10:34:25.350Z","path":"/activities/vestibular-diagnostics-clinical-and-practical-workshop","step":"verify","ok":true}
+{"t":"2026-07-12T10:34:42.489Z","path":"/research","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:06.527Z","path":"/audiometers/ad629","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:08.212Z","path":"/about","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:19.539Z","path":"/audiometers","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:20.446Z","path":"/blog/why-rem","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:30.289Z","path":"/contact","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:31.070Z","path":"/careers","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:40.634Z","path":"/customer-stories","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:42.630Z","path":"/index","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:53.535Z","path":"/magazine","step":"verify","ok":true}
+{"t":"2026-07-12T10:36:55.778Z","path":"/our-history","step":"verify","ok":true}
+{"t":"2026-07-12T10:37:07.670Z","path":"/product-support","step":"verify","ok":true}
+{"t":"2026-07-12T10:37:09.135Z","path":"/solutions","step":"verify","ok":true}
+{"t":"2026-07-12T10:37:18.426Z","path":"/sustainability","step":"verify","ok":true}

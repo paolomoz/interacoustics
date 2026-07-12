@@ -1,9 +1,108 @@
 {
+  "/academy/clinical-diploma": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:33:58.578Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/academy": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:33:58.578Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/activities/vestibular-diagnostics-clinical-and-practical-workshop": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:34:11.571Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/activities": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:34:11.741Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/research": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:34:24.215Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/about": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:35:55.070Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ad629": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:35:55.071Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/audiometers": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:06.530Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/blog/why-rem": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:08.213Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/careers": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:19.541Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
   "/contact": {
     "status": "live",
     "attempts": 1,
-    "ts": "2026-07-11T16:43:39.794Z",
-    "put": 201,
+    "ts": "2026-07-12T10:36:20.447Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/customer-stories": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:30.291Z",
+    "put": 200,
     "preview": 200,
     "live": 200,
     "verify": "ok"
@@ -11,7 +110,34 @@
   "/index": {
     "status": "live",
     "attempts": 1,
-    "ts": "2026-07-11T16:43:39.794Z",
+    "ts": "2026-07-12T10:36:31.070Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/magazine": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:40.634Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/our-history": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:42.630Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/product-support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:36:53.537Z",
     "put": 200,
     "preview": 200,
     "live": 200,
@@ -20,8 +146,17 @@
   "/solutions": {
     "status": "live",
     "attempts": 1,
-    "ts": "2026-07-11T16:43:39.794Z",
-    "put": 201,
+    "ts": "2026-07-12T10:36:55.779Z",
+    "put": 200,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/sustainability": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-12T10:37:07.671Z",
+    "put": 200,
     "preview": 200,
     "live": 200,
     "verify": "ok"
