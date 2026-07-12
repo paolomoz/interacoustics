@@ -212,6 +212,30 @@ main .section:empty { display: none; }
 main .section > .default-content,
 main .section > .block-content { display: block; }
 
+/* default-content containment (mirrors .shell) */
+main .section > .default-content-wrapper {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 56px);
+  padding-block: var(--section-padding);
+}
+
+main .section > .default-content-wrapper h2 { margin-bottom: var(--spacing-md); }
+
+main .section > .default-content-wrapper p {
+  max-width: 70ch;
+  margin-block: 0 var(--spacing-md);
+}
+
+main .section > .default-content-wrapper ul,
+main .section > .default-content-wrapper ol {
+  max-width: 70ch;
+  padding-left: 1.5em;
+  margin-block: 0 var(--spacing-md);
+}
+
+main .section > .default-content-wrapper li { margin-bottom: 6px; }
+
 main > div,
 .has-template,
 div[data-status] { display: none; }
