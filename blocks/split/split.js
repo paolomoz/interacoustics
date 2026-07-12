@@ -227,9 +227,105 @@ function renderStudents(block, nodes) {
   grid.append(fig);
 }
 
+/* process: research-to-product pipeline (canon research): h2+lede head,
+   hero photo left + icon/h3/p step rows right, closing copy */
+function renderProcess(block, nodes) {
+  const head = { h2: null, lede: null };
+  let heroImg = null;
+  const steps = [];
+  const closing = [];
+  let cur = null;
+
+  nodes.forEach((n) => {
+    const h = pick(n, 'h1, h2, h3, h4');
+    if (h && (h.matches('h1') || h.matches('h2')) && !head.h2 && !steps.length) {
+      head.h2 = h; return;
+    }
+    if (h && (h.matches('h3') || h.matches('h4'))) {
+      cur = { h3: h, img: null, body: null };
+      steps.push(cur);
+      return;
+    }
+    const media = pick(n, 'picture, img');
+    if (media) {
+      if (cur) cur.img = media;
+      else if (!heroImg && head.h2) heroImg = media;
+      return;
+    }
+    const t = text(n);
+    if (!t) return;
+    if (!head.h2) return;
+    if (!head.lede && !steps.length) { head.lede = n; return; }
+    if (cur && !cur.body) { cur.body = n; return; }
+    if (steps.length) closing.push(n);
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+  const sh = document.createElement('div');
+  sh.className = 'process-head';
+  if (head.h2) {
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...head.h2.childNodes].map((c) => c.cloneNode(true)));
+    sh.append(h2);
+  }
+  if (head.lede) {
+    const p = document.createElement('p');
+    p.className = 'lede';
+    p.replaceChildren(...[...head.lede.childNodes].map((c) => c.cloneNode(true)));
+    sh.append(p);
+  }
+  shell.append(sh);
+  const grid = document.createElement('div');
+  grid.className = 'process-grid';
+  if (heroImg) {
+    const media = document.createElement('div');
+    media.className = 'process-media';
+    media.append(heroImg.cloneNode(true));
+    grid.append(media);
+  }
+  const ol = document.createElement('ol');
+  ol.className = 'steps';
+  steps.forEach((s) => {
+    const li = document.createElement('li');
+    if (s.img) li.append(s.img.cloneNode(true));
+    const div = document.createElement('div');
+    if (s.h3) {
+      const h3 = document.createElement('h3');
+      h3.replaceChildren(...[...s.h3.childNodes].map((c) => c.cloneNode(true)));
+      div.append(h3);
+    }
+    if (s.body) {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...s.body.childNodes].map((c) => c.cloneNode(true)));
+      div.append(p);
+    }
+    li.append(div);
+    ol.append(li);
+  });
+  grid.append(ol);
+  shell.append(grid);
+  if (closing.length) {
+    const close = document.createElement('div');
+    close.className = 'process-close';
+    closing.forEach((c) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...c.childNodes].map((n2) => n2.cloneNode(true)));
+      close.append(p);
+    });
+    shell.append(close);
+  }
+}
+
 export default async function decorate(block) {
   const nodes = collectNodes(block);
   if (!nodes.length) return;
+  if (block.classList.contains('process')) {
+    renderProcess(block, nodes);
+    return;
+  }
   if (block.classList.contains('students')) {
     renderStudents(block, nodes);
     return;

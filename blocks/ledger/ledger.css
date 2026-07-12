@@ -349,3 +349,53 @@
   .ledger.directory .dir-row { column-gap: 16px; }
   .ledger.directory .dir-arr { font-size: 20px; }
 }
+
+/* meadow: typographic link index on green band (canon research dig-deeper) */
+.ledger.meadow {
+  background: var(--meadow);
+}
+
+.ledger.meadow .group-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.ledger.meadow .group-rail {
+  position: static;
+  margin-bottom: var(--spacing-lg);
+}
+
+.ledger.meadow .group-rail h2 {
+  color: var(--forest);
+}
+
+.ledger.meadow .dir {
+  border-color: rgb(0 0 0 / 15%);
+}
+
+.ledger.meadow .dir li {
+  border-color: rgb(0 0 0 / 15%);
+}
+
+.ledger.meadow .dir-row {
+  color: var(--forest);
+}
+
+.ledger.meadow .dir-row h3 {
+  color: var(--forest);
+  font-size: var(--heading-lg);
+}
+
+.ledger.meadow .dir-arr {
+  color: var(--forest);
+}
+
+.ledger.meadow .dir-row:hover h3,
+.ledger.meadow .dir-row:focus-visible h3 {
+  color: var(--ink);
+}
+
+.ledger.meadow .dir-row:hover .dir-arr,
+.ledger.meadow .dir-row:focus-visible .dir-arr {
+  color: var(--ink);
+}
