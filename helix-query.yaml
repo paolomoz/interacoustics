@@ -90,8 +90,8 @@ indices:
         value: |
           attribute(el, 'content')
       tags:
-        select: head > meta[name="tags"]
-        value: |
+        select: head > meta[property="article:tag"]
+        values: |
           attribute(el, 'content')
       lastModified:
         select: none

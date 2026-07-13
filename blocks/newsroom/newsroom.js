@@ -50,7 +50,7 @@ async function loadBlogIndex(url) {
         imgSrc: r.image || '',
         dateTs: Number(r.date) || 0,
         dateLabel: fmtDate(Number(r.date), r.publishedLabel),
-        tags: (r.tags || '').split(',').map((t) => t.trim()).filter(Boolean),
+        tags: (Array.isArray(r.tags) ? r.tags : (r.tags || '').split(',')).map((t) => String(t).trim()).filter(Boolean),
       }));
   } catch { return null; }
 }
