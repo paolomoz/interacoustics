@@ -15,6 +15,26 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* dynamic events (Phase 3): status line + group heads + empty state */
+.record-sheet.dynamic .events-status {
+  margin: 0 0 var(--spacing-md);
+  color: var(--ink-muted);
+}
+
+.record-sheet.dynamic .events-group-head {
+  margin: var(--spacing-l) 0 var(--spacing-sm);
+  font-size: var(--heading-md);
+  font-weight: 500;
+}
+
+.record-sheet.dynamic .events-group-head:first-of-type { margin-top: 0; }
+
+.record-sheet.dynamic .events-empty {
+  padding-block: var(--spacing-l);
+  color: var(--ink-muted);
+  font-size: 17px;
+}
+
 .record-sheet .sheet {
   margin: 0 0 var(--spacing-md);
   font-variant-numeric: tabular-nums;

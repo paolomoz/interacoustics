@@ -206,7 +206,155 @@ function buildGroup(grid, parsed, isIndex, isDir, isCourses) {
   grid.append(body);
 }
 
+/* ---- dynamic academy area listing (Phase 3) ------------------------------- *
+ * `ledger courses flat dynamic` fetches /academy/query-index.json, filters to
+ * the current clinical area (read from <meta name="area"> or the authored
+ * <code> anchor's second token), and renders a facet-filtered flat list
+ * (All / Course / Reading / Video). The authored static units are the graceful
+ * fallback when the index is unreachable/empty. aria-live on results. One block
+ * serves all 67 academy area pages — the area comes from page metadata.          */
+
+const FACETS = [
+  { key: '', label: 'All' },
+  { key: 'course', label: 'Course' },
+  { key: 'reading', label: 'Reading' },
+  { key: 'video', label: 'Video' },
+];
+
+async function loadAcademyIndex(url, area) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const json = await res.json();
+    const rows = Array.isArray(json.data) ? json.data : [];
+    return rows
+      .filter((r) => r.path && r.path !== window.location.pathname)
+      .filter((r) => !/noindex/i.test(r.robots || ''))
+      .filter((r) => r.format) // items carry a format; area LISTING pages do not
+      .filter((r) => !area || (r.area || '').toLowerCase() === area)
+      .map((r) => ({
+        title: r.title || r.path,
+        href: r.path,
+        level: r.level || '',
+        format: (r.format || '').toLowerCase(),
+      }));
+  } catch { return null; }
+}
+
+async function renderCoursesDynamic(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const parsed = parseGroup(rows);
+  const codeTokens = (parsed.head.anchor || '').split(/\s+/).filter(Boolean);
+  const [anchorId, areaToken] = codeTokens;
+  const areaMeta = document.querySelector('meta[name="area"]');
+  const area = ((areaMeta && areaMeta.content) || areaToken || '').toLowerCase();
+  const indexUrl = '/academy/query-index.json';
+
+  // set the section anchor (subnav / hero-CTA target) from the <code> token
+  if (anchorId) {
+    const section = block.closest('.section');
+    const existing = document.getElementById(anchorId);
+    if (existing && existing !== section && /^H[1-6]$/.test(existing.tagName)) existing.removeAttribute('id');
+    if (section && !document.getElementById(anchorId)) { section.id = anchorId; }
+  }
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell group-grid';
+  block.append(shell);
+
+  const rail = document.createElement('div');
+  rail.className = 'group-rail';
+  if (parsed.head.h2) {
+    const h2 = document.createElement('h2');
+    h2.replaceChildren(...[...parsed.head.h2.childNodes].map((n) => n.cloneNode(true)));
+    rail.append(h2);
+  }
+  parsed.head.intro.forEach((t) => rail.insertAdjacentHTML('beforeend', `<p class="intro">${esc(t)}</p>`));
+  shell.append(rail);
+
+  const body = document.createElement('div');
+  shell.append(body);
+
+  const indexed = await loadAcademyIndex(indexUrl, area);
+  const fallback = parsed.units.map((u) => ({
+    title: u.name,
+    href: u.href,
+    level: (u.desc.match(/level\s*:\s*(.+)/i) || [])[1] || '',
+    format: '',
+  }));
+  const items = indexed && indexed.length ? indexed : fallback;
+  const live = !!(indexed && indexed.length);
+
+  // facet bar — only the facets that have items (plus All)
+  let activeFacet = '';
+  const facetBar = document.createElement('div');
+  facetBar.className = 'courses-facets';
+  facetBar.setAttribute('role', 'group');
+  facetBar.setAttribute('aria-label', 'Filter by format');
+  const counts = items.reduce((m, i) => { m[i.format] = (m[i.format] || 0) + 1; return m; }, {});
+  const shownFacets = live ? FACETS.filter((f) => !f.key || counts[f.key]) : [FACETS[0]];
+  if (shownFacets.length > 1) body.append(facetBar);
+
+  const status = document.createElement('p');
+  status.className = 'courses-status meta-label';
+  status.setAttribute('aria-live', 'polite');
+  body.append(status);
+
+  const ul = document.createElement('ul');
+  ul.className = 'dir flat';
+  body.append(ul);
+
+  const render = () => {
+    const list = activeFacet ? items.filter((i) => i.format === activeFacet) : items;
+    ul.textContent = '';
+    if (!list.length) {
+      status.textContent = 'No resources yet';
+      ul.innerHTML = '<li class="courses-empty">No resources in this format yet. Check back soon.</li>';
+      return;
+    }
+    list.forEach((i) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.className = 'dir-row';
+      a.setAttribute('href', i.href);
+      const copy = document.createElement('span');
+      copy.className = 'dir-copy';
+      copy.insertAdjacentHTML('beforeend', `<h3>${esc(i.title)}</h3>`);
+      const meta = [i.format && live ? i.format.replace(/\b\w/, (c) => c.toUpperCase()) : '', i.level].filter(Boolean).join(' · ');
+      if (meta) copy.insertAdjacentHTML('beforeend', `<span class="dir-meta meta-label">${esc(meta)}</span>`);
+      a.append(copy);
+      a.insertAdjacentHTML('beforeend', '<span class="dir-arr" aria-hidden="true">→</span>');
+      li.append(a);
+      ul.append(li);
+    });
+    status.textContent = `${list.length} resource${list.length === 1 ? '' : 's'}${activeFacet ? ` · ${activeFacet}` : ''}`;
+  };
+
+  shownFacets.forEach((f) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'courses-facet';
+    btn.textContent = f.key ? `${f.label} (${counts[f.key] || 0})` : `All (${items.length})`;
+    btn.setAttribute('aria-pressed', f.key === activeFacet ? 'true' : 'false');
+    btn.addEventListener('click', () => {
+      activeFacet = f.key;
+      [...facetBar.children].forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      render();
+    });
+    facetBar.append(btn);
+  });
+
+  render();
+}
+
 export default async function decorate(block) {
+  // dynamic academy area listing (Phase 3) — index-driven, facet-filtered
+  if (block.classList.contains('dynamic') && block.classList.contains('courses')) {
+    await renderCoursesDynamic(block);
+    return;
+  }
   const rows = [...block.querySelectorAll(':scope > div')];
   const isIndex = block.classList.contains('index');
   const grouped = block.classList.contains('grouped');

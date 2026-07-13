@@ -1,0 +1,249 @@
+## helix-query.yaml — interacoustics EDS query indexes (Phase 3 dynamic engine)
+##
+## The aem.live indexer runs these definitions against the RENDERED HTML <head>
+## of every previewed/published page and emits one query-index.json per `target`.
+## Client-side listing/search blocks fetch those JSONs and filter/sort/paginate.
+##
+## Columns come from page metadata (the `metadata` block → <meta> tags):
+##   Title       -> <meta property="og:title">      (brand suffix stripped here)
+##   Description -> <meta name="description">
+##   image       -> <meta property="og:image">       (first authored image)
+##   Publication Date -> <meta name="publication-date">
+##   Tags        -> <meta name="tags">   (comma-separated)
+##   Area / Format / Level / Credits / Category / Subtype / Type / Location /
+##   Start Date  -> <meta name="{key}">  (lowercased, hyphenated)
+##
+## Per-template required metadata is documented in ../stardust/eds-conversion-log.md
+## (Phase 3 section) so Phase-1 clones emit these columns automatically.
+##
+## Only ~23 pages exist in DA today, so the lists are short — correct. The engine
+## scales automatically as Phase-1 clones the long tail (they carry the same meta).
+
+version: 1
+
+indices:
+
+  ## ---- global index: powers site search (title + description + path) ----------
+  interacoustics:
+    target: /query-index.json
+    include:
+      - '/**'
+    exclude:
+      - '/drafts/**'
+      - '/fragments/**'
+      - '/tools/**'
+      - '/nav'
+      - '/footer'
+      - '/404'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          replace(attribute(el, 'content'), ' | Interacoustics', '')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          attribute(el, 'content')
+      category:
+        select: head > meta[name="category"]
+        value: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  ## ---- blog / news: date, title, description, image, tags ----------------------
+  blog:
+    target: /blog/query-index.json
+    include:
+      - '/blog/**'
+    exclude:
+      - '/blog'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          replace(attribute(el, 'content'), ' | Interacoustics', '')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          attribute(el, 'content')
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          parseTimestamp(attribute(el, 'content'), 'YYYY-MM-DD')
+      publishedLabel:
+        select: head > meta[name="publication-date"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[name="tags"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  ## ---- academy: area, format (course|reading|video), credits, level ------------
+  academy:
+    target: /academy/query-index.json
+    include:
+      - '/academy/**'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          replace(attribute(el, 'content'), ' | Interacoustics', '')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          attribute(el, 'content')
+      area:
+        select: head > meta[name="area"]
+        value: |
+          attribute(el, 'content')
+      format:
+        select: head > meta[name="format"]
+        value: |
+          attribute(el, 'content')
+      level:
+        select: head > meta[name="level"]
+        value: |
+          attribute(el, 'content')
+      credits:
+        select: head > meta[name="credits"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  ## ---- events / activities: startDate, location, type (course|congress) --------
+  activities:
+    target: /activities/query-index.json
+    include:
+      - '/activities/**'
+    exclude:
+      - '/activities'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          replace(attribute(el, 'content'), ' | Interacoustics', '')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      type:
+        select: head > meta[name="type"]
+        value: |
+          attribute(el, 'content')
+      location:
+        select: head > meta[name="location"]
+        value: |
+          attribute(el, 'content')
+      startDate:
+        select: head > meta[name="start-date"]
+        value: |
+          parseTimestamp(attribute(el, 'content'), 'YYYY-MM-DD')
+      startLabel:
+        select: head > meta[name="start-label"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  ## ---- products: category, subtype, image (category listings, optional dynamic)-
+  products:
+    target: /products/query-index.json
+    include:
+      - '/audiometers/**'
+      - '/abr-equipment/**'
+      - '/oae-devices/**'
+      - '/tympanometers/**'
+      - '/hearing-aid-fitting/**'
+      - '/balance-testing-equipment/**'
+      - '/rehabilitation-equipment/**'
+    exclude:
+      - '/audiometers'
+      - '/abr-equipment'
+      - '/oae-devices'
+      - '/tympanometers'
+      - '/hearing-aid-fitting'
+      - '/balance-testing-equipment'
+      - '/rehabilitation-equipment'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          replace(attribute(el, 'content'), ' | Interacoustics', '')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          attribute(el, 'content')
+      category:
+        select: head > meta[name="category"]
+        value: |
+          attribute(el, 'content')
+      subtype:
+        select: head > meta[name="subtype"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  ## ---- customer stories: same shape as blog (low volume) -----------------------
+  customer-stories:
+    target: /customer-stories/query-index.json
+    include:
+      - '/customer-stories/**'
+    exclude:
+      - '/customer-stories'
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: |
+          replace(attribute(el, 'content'), ' | Interacoustics', '')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          attribute(el, 'content')
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          parseTimestamp(attribute(el, 'content'), 'YYYY-MM-DD')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')

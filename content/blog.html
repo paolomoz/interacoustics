@@ -21,12 +21,16 @@
       </div>
     </div>
     <div>
-      <div class="newsroom stories">
+      <div class="newsroom stories dynamic">
         <div><div><h2>Latest posts</h2></div></div>
-        <!-- PHASE 3 (dynamic): representative STATIC list of the captured blog posts.
-             Phase 3 replaces this with a query-index-backed newsroom feed +
-             pagination (the live index paginates 1..12) + tag filtering + the
-             per-tag "Similar Topic" rail (migration-plan.md section 4 #4). -->
+        <div><div><p><code>/blog/query-index.json</code></p></div></div>
+        <!-- PHASE 3 (dynamic, BUILT): the newsroom feed is driven by
+             /blog/query-index.json (see helix-query.yaml). The block fetches the
+             index, renders newsroom cards, paginates 12/page, filters by tag and
+             sorts by date (migration-plan.md section 4 #4). The STATIC units below
+             are the graceful FALLBACK when the index is unreachable; they also seed
+             the local no-pipeline harness. As Phase-1 clones publish more blog
+             posts the feed grows automatically. -->
         <div>
           <div><img src="https://content.da.live/paolomoz/interacoustics/media/blog/jason-smalley-equinox-evo-testimonial-483x283.webp" alt="Pediatric audiology testing with the Equinox Evo audiometer at Nottingham University Hospitals"></div>
           <div><p>30 June 2026</p><h3><a href="https://www.interacoustics.com/blog/customer-story-getting-closer-in-pediatric-audiology-with-the-equinox-evo">Customer story: Getting closer in pediatric audiology with the Equinox Evo</a></h3><p>Nottingham University Hospitals NHS Trust has recently introduced six Equinox Evo audiometers across its pediatric&hellip;</p><p><a href="https://www.interacoustics.com/blog/customer-story-getting-closer-in-pediatric-audiology-with-the-equinox-evo">Read more</a></p></div>

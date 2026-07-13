@@ -75,6 +75,22 @@
 
 .search .search-hit:hover { transform: translateX(6px); }
 
+@media (prefers-reduced-motion: reduce) {
+  .search .search-hit { transition: none; }
+  .search .search-hit:hover { transform: none; }
+}
+
+.search .search-hit-crumb {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.search .search-more { margin-top: 22px; }
+
 .search .search-hit-title {
   display: block;
   font-size: var(--heading-md);

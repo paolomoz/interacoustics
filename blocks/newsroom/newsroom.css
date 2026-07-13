@@ -16,6 +16,52 @@
 
 .newsroom .blog-head h2 { margin: 0; }
 
+/* ---- dynamic listing controls (Phase 3: tag filter + sort + pagination) ---- */
+.newsroom .newsroom-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.newsroom .newsroom-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.newsroom .newsroom-filter .meta-label { margin: 0; }
+
+.newsroom .newsroom-filter select {
+  min-width: 200px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--card, #fff);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md, 8px);
+}
+
+.newsroom .newsroom-filter select:focus-visible {
+  outline: none;
+  border-color: var(--pine);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pine) 22%, transparent);
+}
+
+.newsroom .newsroom-status {
+  margin: 0 0 var(--spacing-md);
+  color: var(--ink-muted);
+}
+
+.newsroom .newsroom-empty {
+  padding-block: var(--spacing-l);
+  color: var(--ink-muted);
+  font-size: 17px;
+}
+
+.newsroom .newsroom-more { margin-top: var(--spacing-l); }
+
 .newsroom .newsroom-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);

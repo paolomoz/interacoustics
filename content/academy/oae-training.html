@@ -5,6 +5,7 @@
       <div class="metadata">
         <div><div>Title</div><div>Otoacoustic emission (OAE) training | Interacoustics</div></div>
         <div><div>Description</div><div>Take a deep dive into all there is to know about otoacoustic emission (OAE) testing in this OAE training hub by the Interacoustics Academy.</div></div>
+        <div><div>Area</div><div>oae</div></div>
       </div>
     </div>
     <div>
@@ -22,15 +23,17 @@
       </div>
     </div>
     <div>
-      <div class="ledger courses flat">
-        <div><div><p><code>courses</code></p></div></div>
+      <div class="ledger courses flat dynamic">
+        <div><div><p><code>courses oae</code></p></div></div>
         <div><div><h2>Courses &amp; articles</h2></div></div>
         <div><div><p>Explore courses, reading and video across the OAE clinical area.</p></div></div>
-        <!-- PHASE 3 (dynamic): this is the representative STATIC list authored from
-             the captured OAE-area items. The dynamic query-index-backed listing with
-             the All / Course / Reading / Video facet filter + sort replaces it in
-             Phase 3 (migration-plan.md section 4 #5). One block then serves all 67
-             academy area pages. -->
+        <!-- PHASE 3 (dynamic, BUILT): index-driven. The block reads the current
+             clinical area from <meta name="area"> (fallback: the second <code>
+             token "oae"), fetches /academy/query-index.json, filters to this area,
+             and renders a facet-filtered flat list (All / Course / Reading / Video)
+             — see helix-query.yaml + migration-plan.md section 4 #5. ONE block
+             serves all 67 academy area pages; only the page's area metadata differs.
+             The STATIC units below are the graceful FALLBACK / harness seed. -->
         <div><div><h3><a href="/academy/oae-training/mastering-transient-evoked-otoacoustic-emissions-teoaes">Mastering Transient Evoked Otoacoustic Emissions (TEOAEs)</a></h3><p>Level: Intermediate</p></div></div>
         <div><div><h3><a href="https://www.interacoustics.com/academy/oae-training/mastering-distortion-product-otoacoustic-emissions-dpoaes">Mastering Distortion Product Otoacoustic Emissions (DPOAEs)</a></h3><p>Level: Intermediate</p></div></div>
         <div><div><h3><a href="https://www.interacoustics.com/academy/oae-training/distortion-product-otoacoustic-emissions-dpoae-interpretation-protocol-for-infants-and-children">Distortion Product Otoacoustic Emissions (DPOAE) Interpretation Protocol for Infants and Children</a></h3><p>Level: Advanced</p></div></div>

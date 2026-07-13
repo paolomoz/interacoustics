@@ -478,7 +478,162 @@ function renderSyllabus(block) {
   shell.append(sheet);
 }
 
+/* ---- dynamic events listing (Phase 3) ------------------------------------- *
+ * `record-sheet dynamic` (activities) fetches /activities/query-index.json,
+ * keeps events with startDate >= today, sorts ascending (soonest first) so past
+ * events drop off automatically, and splits type=course vs type=congress into
+ * separate sub-sheets when both are present. The authored static rows are the
+ * graceful fallback if the index is unreachable/empty. aria-live on results.      */
+
+async function loadEventsIndex(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const json = await res.json();
+    const rows = Array.isArray(json.data) ? json.data : [];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayTs = today.getTime() / 1000;
+    return rows
+      .filter((r) => r.path && Number(r.startDate) > 0)
+      .filter((r) => !/noindex/i.test(r.robots || ''))
+      .filter((r) => Number(r.startDate) >= todayTs)
+      .map((r) => ({
+        date: r.startLabel || new Date(Number(r.startDate) * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        startTs: Number(r.startDate),
+        title: r.title || r.path,
+        href: r.path,
+        loc: r.location ? `Location: ${r.location}` : '',
+        type: (r.type || 'course').toLowerCase(),
+      }))
+      .sort((a, b) => a.startTs - b.startTs);
+  } catch { return null; }
+}
+
+function eventSheet(units, colLabel) {
+  const sheet = document.createElement('div');
+  sheet.className = 'sheet';
+  sheet.insertAdjacentHTML('beforeend', `
+    <div class="sheet-head" aria-hidden="false">
+      <span class="meta-label sh-date">Date</span>
+      <span class="meta-label">${esc(colLabel)}</span>
+      <span class="sh-empty"></span>
+    </div>`);
+  const ul = document.createElement('ul');
+  ul.className = 'sheet-list';
+  units.forEach((u) => {
+    const li = document.createElement('li');
+    const row = document.createElement('div');
+    row.className = 'sheet-row';
+    const { dd, dm } = splitDate(u.date);
+    row.insertAdjacentHTML('beforeend', `
+      <div class="sheet-date">
+        <span class="sr-only">${esc(u.date)}</span>
+        <span class="dd" aria-hidden="true">${esc(dd)}</span>
+        <span class="dm" aria-hidden="true">${esc(dm)}</span>
+      </div>`);
+    if (u.loc) {
+      const mid = document.createElement('div');
+      mid.insertAdjacentHTML('beforeend', `<h3>${esc(u.title)}</h3>`);
+      mid.insertAdjacentHTML('beforeend', `<p class="loc">${esc(u.loc)}</p>`);
+      row.append(mid);
+    } else {
+      row.insertAdjacentHTML('beforeend', `<h3>${esc(u.title)}</h3>`);
+    }
+    const btn = document.createElement('a');
+    btn.className = 'btn btn-secondary';
+    btn.setAttribute('href', u.href);
+    btn.innerHTML = `Sign up<span class="sr-only">: ${esc(u.title)}</span>`;
+    row.append(btn);
+    li.append(row);
+    ul.append(li);
+  });
+  sheet.append(ul);
+  return sheet;
+}
+
+async function renderEventsDynamic(block) {
+  const rows = [...block.querySelectorAll(':scope > div')];
+  const head = { h2: null, intro: [] };
+  let foot = null;
+  const fallback = [];
+  rows.forEach((row) => {
+    const h3 = row.querySelector('h3, h4');
+    if (h3) {
+      const a = row.querySelector('a');
+      const loc = [...row.querySelectorAll('p')].map(text).find((t) => /^location\s*:/i.test(t)) || '';
+      const date = [...row.querySelectorAll(':scope > div')].map(text)
+        .find((t) => t && t !== text(h3) && (!a || t !== text(a))) || '';
+      fallback.push({
+        date, title: text(h3), href: a ? a.getAttribute('href') : '#', loc, type: 'course',
+      });
+      return;
+    }
+    [...row.querySelectorAll(':scope > div')].forEach((cell) => {
+      const kids = [...cell.children].length ? [...cell.children] : [cell];
+      kids.forEach((n) => {
+        const h2 = pick(n, 'h1, h2');
+        if (h2) { head.h2 = h2; return; }
+        const a = pick(n, 'a');
+        if (a && fallback.length) { foot = a; return; }
+        if (text(n)) head.intro.push(n);
+      });
+    });
+  });
+
+  block.textContent = '';
+  const shell = document.createElement('div');
+  shell.className = 'shell';
+  block.append(shell);
+
+  if (head.h2 || head.intro.length) {
+    const sh = document.createElement('div');
+    sh.className = 'section-head';
+    if (head.h2) {
+      const h2 = document.createElement('h2');
+      h2.replaceChildren(...[...head.h2.childNodes].map((n) => n.cloneNode(true)));
+      sh.append(h2);
+    }
+    head.intro.forEach((n) => {
+      const p = document.createElement('p');
+      p.replaceChildren(...[...n.childNodes].map((c) => c.cloneNode(true)));
+      sh.append(p);
+    });
+    shell.append(sh);
+  }
+
+  const status = document.createElement('p');
+  status.className = 'events-status meta-label';
+  status.setAttribute('aria-live', 'polite');
+  shell.append(status);
+
+  const indexed = await loadEventsIndex('/activities/query-index.json');
+  const items = indexed && indexed.length ? indexed : fallback;
+
+  if (!items.length) {
+    status.textContent = 'No upcoming events';
+    shell.insertAdjacentHTML('beforeend', '<p class="events-empty">No upcoming events are scheduled right now. Check back soon.</p>');
+    return;
+  }
+
+  const courses = items.filter((i) => i.type !== 'congress');
+  const congresses = items.filter((i) => i.type === 'congress');
+  status.textContent = `${items.length} upcoming event${items.length === 1 ? '' : 's'}`;
+
+  if (courses.length && congresses.length) {
+    shell.insertAdjacentHTML('beforeend', '<h3 class="events-group-head">Courses &amp; workshops</h3>');
+    shell.append(eventSheet(courses, 'Course or workshop'));
+    shell.insertAdjacentHTML('beforeend', '<h3 class="events-group-head">Congresses &amp; tradeshows</h3>');
+    shell.append(eventSheet(congresses, 'Congress'));
+  } else {
+    shell.append(eventSheet(items, 'Course or webinar'));
+  }
+
+  if (foot) shell.append(makeArrowLink(foot));
+}
+
 export default async function decorate(block) {
+  if (block.classList.contains('dynamic')) { await renderEventsDynamic(block); return; }
   if (block.classList.contains('battery')) { renderBattery(block); return; }
   if (block.classList.contains('doc-list')) { renderDocList(block); return; }
   if (block.classList.contains('timeline')) { renderTimeline(block); return; }

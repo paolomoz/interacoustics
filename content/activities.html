@@ -18,6 +18,7 @@
         <div><div><h1>Courses and events</h1></div></div>
         <div><div><p>Are you looking for new inspiration or ways to upgrade your qualifications in audiology and balance? Then find your next course below.</p></div></div>
         <div><div><p><a href="/media/video/event-loop-v4.mp4">event-loop-v4.mp4</a></p></div></div>
+        <div><div><img src="https://content.da.live/paolomoz/interacoustics/media/video-posters/event-loop-v4.jpg" alt="Visitors at the Interacoustics booth during a congress event"></div></div>
         <div><div><p><strong>Next course</strong></p></div></div>
         <div><div><p>Date: Jul 14, 2026 - 9:00 am</p></div></div>
         <div><div><h2>Vestibular Diagnostics: A Clinical and Practical Workshop</h2></div></div>
@@ -26,7 +27,14 @@
       </div>
     </div>
     <div>
-      <div class="record-sheet">
+      <div class="record-sheet dynamic">
+        <div><div><h2>Upcoming courses &amp; events</h2></div></div>
+        <!-- PHASE 3 (dynamic, BUILT): index-driven. Fetches /activities/query-index.json
+             (see helix-query.yaml), keeps events with start-date >= today, sorts
+             ascending so past events drop off, and splits course vs congress when
+             both are present (migration-plan.md section 4 #6). The STATIC rows below
+             are the graceful FALLBACK / harness seed; congress tradeshows remain in
+             the separate static record-sheet.congresses below (external links). -->
         <div>
           <div>Jul 22, 2026 - 12:00 pm</div>
           <div><h3>Webinar ACT - Audible Contrast Threshold Test <em>Die Herausforderung Sprachverst&auml;ndlichkeit im L&auml;rm zu messen.</em></h3><p>Location: Online</p></div>

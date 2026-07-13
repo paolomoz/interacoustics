@@ -17,11 +17,11 @@
     <div>
       <div class="search">
         <div><div><p>Search products, courses, articles and more</p></div></div>
-        <!-- PHASE 3 (dynamic): the entries below are a representative AUTHORED SAMPLE
-             so the input is a working stub. Phase 3 swaps the sample for a
-             client-side index over the published query-index.json (title /
-             description / path, ~2k pages) &mdash; see search.js header + migration-plan
-             section 4 #1. DOM/states/a11y are final; only the data source changes. -->
+        <!-- PHASE 3 (dynamic, BUILT): the search block fetches the published
+             /query-index.json (title / description / path, ~2k-page ceiling) and
+             filters it client-side &mdash; see search.js + helix-query.yaml +
+             migration-plan section 4 #1. The AUTHORED SAMPLE below is the graceful
+             FALLBACK when the index is unreachable, and seeds the local harness. -->
         <div><div><h3><a href="/solutions">Solutions</a></h3><p>Explore our full range of diagnostic audiology and balance equipment across seven product families.</p></div></div>
         <div><div><h3><a href="/audiometers">Audiometers</a></h3><p>Clinical and screening audiometers with 50+ years of expertise.</p></div></div>
         <div><div><h3><a href="/audiometers/ad629">AD629 Clinical Audiometer</a></h3><p>A full two-channel clinical audiometer with a complete test battery.</p></div></div>
