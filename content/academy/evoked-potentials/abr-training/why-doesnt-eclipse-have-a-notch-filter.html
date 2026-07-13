@@ -1,0 +1,73 @@
+<body>
+  <header></header>
+  <main>
+    <div>
+      <div class="metadata">
+        <div><div>Title</div><div>Why Doesn't Eclipse Have a Notch Filter? | Interacoustics</div></div>
+        <div><div>Area</div><div>evoked-potentials</div></div>
+        <div><div>Format</div><div>reading</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero immersive article">
+        <div><div><p><a href="/">Home</a> / <a href="/academy">Academy</a> / <a href="https://www.interacoustics.com/academy/evoked-potentials">Evoked Potentials</a> / Why Doesn't Eclipse Have a Notch Filter?</p></div></div>
+        <div><div><p>Academy &middot; Evoked Potentials</p></div></div>
+        <div><div><h1>Why Doesn't Eclipse Have a Notch Filter?</h1></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="announcement-rail">
+        <div><div><p>Subscribe to the Interacoustics Academy newsletter for updates and priority access to online events</p></div></div>
+        <div><div><p><a href="#newsletter">Sign up to Academy</a></p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="article academy">
+        <div><div>
+          <p>No, the Eclipse does not have a notch (i.e. band-stop) filter. A challenge of these tools is that the line noise is only selectively eliminated with very steep slopes (sharp cut-offs) on either side of the notch. When you have a sharp cut-off, it almost always introduces distortions to the waveform. The severity of a distortion will range from mild to severe depending on the impulse response of the filter and the waveform in question, but it is not desirable at all to use them and notch filters should always be used with extreme caution.</p>
+        </div></div>
+        <div><div>
+          <p>An alternative is to have a notch with a more gradual roll-on and roll-off, but then a lot of useful signal comes into the range of the filter and so would be attenuated. In the case of ABR with a notch filter centred on 50 Hz or 60 Hz and with gradual roll-on/off, we would attenuate the all-important wave V as it has a lot of energy around the 100 Hz region.</p>
+        </div></div>
+        <div><div>
+          <p>Below is a typical notch filter with a gradual slope, and below that is a schematic of the spectral content of the ABR. The large peak that at 100 Hz is driven by wave V, so you can see that the upper range of a notch filter would attenuate wave V in an ABR. The lower ranges of a notch filter would attenuate ALRs/AMLRs which is relevant for paediatric sound field corticals, for example and for objective threshold estimation in adults.</p>
+        </div></div>
+        <div><div>
+          <p>Fig .1 The negative effects of a notch filter</p>
+        </div></div>
+        <div><div>
+          <p>Instead the approach of the Eclipse to manage line noise is to have a feature known as &ldquo;minimize interference&rdquo;</p>
+        </div></div>
+        <div><div>
+          <p>This feature inserts random silent gaps into the stimulus train every few stimulus presentations. This means that stimuli are presented aperiodically so the averaging process can never become entrained with a periodic electrical interference (not just 50/60 Hz but any other periodic frequency, or harmonic). Without that synchronisation, periodic noise will not appear in the averaged trace.</p>
+        </div></div>
+        <div><div>
+          <p>So, the Eclipse applies a method of prevention whereas the notch filter is a method of cure.</p>
+        </div></div>
+        <div><div>
+          <p>The minimize interference approach does not risk any phase distortion or attenuation of the time-locked signal of interest. It does not have to be used with caution like the notch filter, because if the minimize interference feature was left on even when it was not strictly needed there would be no adverse consequences. So the tester does not have to worry and a source of human error is removed. Another indirect benefit of adding randomised silent gaps in the sound presentation is that it helps minimise adaptation effects if you are measuring cortical responses, whereas the notch filter has no bearing on this.</p>
+        </div></div>
+        <div><div>
+          <p>Of course, under very acutely challenging recording conditions then recording good quality traces may still be a challenge (either with notch filters or minimize interference). Therefore the Eclipse also comes with a dedicated grounding clip to attach to beds or whatever the patient is on that is acting as an antennae. We also have a wide-ranging set of guidelines covering various strategies of electrical noise interference to help further under challenging conditions. Also note, interference from any stimulus-synchronised noise sources (e.g. the transducer artefact) will not be removed by either a notch filter or minimise interference method. However, shielded transducers (either inserts or supra-aural) and use of insert phones (to allow no-sound trials, introduction of tube delay between artefact and response, and physically more remote positioning in relation to the electrodes) are all options to approach this challenge.</p>
+        </div></div>
+        <div><div><p><code>rail</code></p></div></div>
+        <div><div>
+          <h3>Course details</h3>
+          <ul>
+            <li>Format: Reading</li>
+            <li>Clinical area: Evoked Potentials</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+    <div>
+      <div class="newsletter">
+        <div><div><h2>Get priority access to training</h2></div></div>
+        <div><div><p>Sign up to the Interacoustics Academy newsletter to be the first to hear about our latest updates and get priority access to our online events.</p></div></div>
+        <div><div><p>By signing up, I accept to receive newsletter e-mails from Interacoustics. I can withdraw my consent at any time by using the &lsquo;unsubscribe&rsquo;-function included in each e-mail.</p></div></div>
+        <div><div><p><a href="https://www.interacoustics.com/privacy-policy">Read our privacy notice</a>, if you want to know more about how we treat and protect your personal data.</p></div></div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>

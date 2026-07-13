@@ -1,0 +1,188 @@
+<body>
+  <header></header>
+  <main>
+    <div>
+      <div class="metadata">
+        <div><div>Title</div><div>Measuring torsional eye movements | Interacoustics</div></div>
+        <div><div>Description</div><div>In this video, you'll learn how to understand and interpret the data plots when recording torsional eye movements and about their importance in BPPV....</div></div>
+        <div><div>Area</div><div>balance</div></div>
+        <div><div>Format</div><div>reading</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero immersive article">
+        <div><div><p><a href="/">Home</a> / <a href="/academy">Academy</a> / <a href="https://www.interacoustics.com/academy/balance-testing-training">Balance</a> / Measuring torsional eye movements</p></div></div>
+        <div><div><p>Academy &middot; Balance</p></div></div>
+        <div><div><h1>Measuring torsional eye movements</h1></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="announcement-rail">
+        <div><div><p>Subscribe to the Interacoustics Academy newsletter for updates and priority access to online events</p></div></div>
+        <div><div><p><a href="#newsletter">Sign up to Academy</a></p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="article academy">
+        <div><div>
+          <p>In this video, you'll learn how to understand and interpret the data plots when recording torsional eye movements and about their importance in BPPV....</p>
+        </div></div>
+        <div><div>
+          <p>In this video, you will learn about the measurement of torsional eye movements with VNG. You will learn how to understand and interpret the data plots when recording torsional movements of the eyes. The importance of utilizing torsional eye movements in BPPV will be discussed.</p>
+        </div></div>
+        <div><div>
+          <p>You can read the full transcript below.</p>
+        </div></div>
+        <div><div>
+          <p>Hello everyone. I am excited to have a few minutes to chat with you about torsional movements and the algorithms and the hardware that we have implemented into VisualEyes&trade; to help us make better assessments.</p>
+        </div></div>
+        <div><div>
+          <p>Today we're going to be talking particularly about torsional movements in BPPV.</p>
+        </div></div>
+        <div><div>
+          <p>So we've been measuring eye movements in the software for many, many years now, right? So horizontal and vertical eye movements by tracking the pupil. But torsion is more complicated than that. And we need to look at the pattern all around the iris. And so it takes more detail into account. And we are very fortunate to have an opportunity to work with people at Johns Hopkins to develop these new algorithms.</p>
+        </div></div>
+        <div><div>
+          <p>So now, we can measure, right, quantify this torsional eye movement and some other parameters that we're not used to looking at also, which is, you know, how fast what's the velocity of that torsional, what was the latency, how long before that portion started or how long you know, the duration, how long did it take before that torsional eye movement slowed down again.</p>
+        </div></div>
+        <div><div>
+          <p>Here in this video you can see this is a typical BPPV patient and you can see that torsional eye movement, right? And so, yes, I can see it. I can see the slow phases and the fast phases, so pretty sure that it's there. But what I can't see is how fast was it? Was it 20 degrees per second or was it 40 degrees per second? And how long did it take before it got back to zero? And what did that pattern look like? Did it did it peak and quickly come down or did it slow down over time?</p>
+        </div></div>
+        <div><div>
+          <p>So this additional information, I think, is very valuable. And I think that we're finding out now that having this information is helping us to make much more objective determinations of whether the patient is having BPPV and/or a central vestibular impairment.</p>
+        </div></div>
+        <div><div>
+          <p>So let's take a second to understand how this is plotted in the software so that we know what we're looking at. So nystagmus has two phases, right? So it always has a slow phase and then it's correct with a fast phase back to center of the eye. Right.</p>
+        </div></div>
+        <div><div>
+          <p>So the eyes are going to move in the socket, can't move any further, and that's going to center back. For the slow phases, the vestibular system is driving the eye. And the fast phase is the correction from the central nervous system to bring the eye back to center.</p>
+        </div></div>
+        <div><div>
+          <p>And we can see that here on the graph. Right. So the blue is the left eye, the red is the right eye. And we see the slanting the slow phase and then this very fast drop back down to recenter the eyes. And again, so fast phase.</p>
+        </div></div>
+        <div><div>
+          <p>Another thing that we can notice here with these yellow lines is that the slow phase takes a long time because it's slow, right? It takes a long time. But the fast phase happens very quickly to bring the eyes back to the center.</p>
+        </div></div>
+        <div><div>
+          <p>And I did a video for you here in slow motion to help so that we can see that. Right. So we see the slow drift in this case to the right and then a fast correction to the left to slow drift to the right, fast correction to the left, slow left to the right, fast correction to the left. So still left beating horizontal nystagmus.</p>
+        </div></div>
+        <div><div>
+          <p>When we're looking at the horizontal eye movements, the graphs look the same. We still have a slow phase and a fast phase, but in that portion now we have that bigger circle though, because it's tracking that portion so similar and that we have a slow phase in one direction and a fast phase in the other direction.</p>
+        </div></div>
+        <div><div>
+          <p>We're going to call this from my point of view, right? I'm the clinician looking at the patient, so I'm going to call whether this is right portion or left portion or clockwise or counterclockwise. From my perspective, how I am looking at the patient. And again, I have another video here, a very slow motion for you. So hopefully we can see. Right. You can see that the eyes slow, slowly moving to the right and then quickly back to the left. Right.</p>
+        </div></div>
+        <div><div>
+          <p>So it has a slow phase to the right and then a quick walk back to center. So slow phases are going to the right in this counterclockwise fashion, taking up some time and then a very quick, fast phase in the left direction, clockwise to bring the eye back to the middle of the orbit.</p>
+        </div></div>
+        <div><div>
+          <p>Before we can collect towards eye movements, we have to do a calibration. We have to let the software know for the iris that we're looking at. So here first I'm going to center the eye view, which is attached to the goggles to make sure the patient's head is centered.</p>
+        </div></div>
+        <div><div>
+          <p>And then I'm just getting out the software, all the tech the software is really good at just finding the right space and the right amount of iris that it needs. So you can just hit auto detect. The cover has to be on. The eyes are open to the dark. So you could see that the pupils have dilated after a couple of seconds.</p>
+        </div></div>
+        <div><div>
+          <p>Once they've dilated, then I had auto detect, and I lock that in and then just hit set reference. Then I'm ready to go.</p>
+        </div></div>
+        <div><div>
+          <p>There are times when the eye might be droopy, the eyelashes in the way that maybe things going on where the auto detect doesn't work for me. So here I'm just squinting my eyes a little bit and then showing you that I can use these tracking area bars to reduce the size of that circle.</p>
+        </div></div>
+        <div><div>
+          <p>It is not optimal by any means, but sometimes it's better than all I can do, right? So if there's eyelids or something in the way, I can't get anything. I'm going to reduce that area and try to at least get as much data as I can without getting a flat line.</p>
+        </div></div>
+        <div><div>
+          <p>So the only time that you really want to adjust those thresholds is if you absolutely cannot get good tracking with the auto detect.</p>
+        </div></div>
+        <div><div>
+          <p>All right, so what am I looking at here in the software? There's a lot of different things going on, on this page. So let me show them to you first. We see up here the eyes, right? So the torsional eye tracker, we can tell that it's on because there's that big white circle with the big white crosshairs.</p>
+        </div></div>
+        <div><div>
+          <p>When we're tracking, again, just horizontal and vertical, we just see a tiny cross here inside the pupil. But while we're tracking for torsion, we see the large white circles. And then up here we see this is an eye position graph, right?</p>
+        </div></div>
+        <div><div>
+          <p>So position of the eyes for the horizontal eye movement to the first box in the middle, we see the vertical at the bottom, we see the torsional eye movements and then things that go up forward on the graph in the horizontal box.</p>
+        </div></div>
+        <div><div>
+          <p>That means that the movement up to the right, the things that are coming down, mean that that's I move it to the left vertical box is pretty straight forward. Things that are going up are upping things that are going down or down, being in the vertical channel.</p>
+        </div></div>
+        <div><div>
+          <p>And then for the torsion, again, things that are going up are to the right. But this time in that clockwise counterclockwise plane, right?</p>
+        </div></div>
+        <div><div>
+          <p>So we're looking here. So things that go to the right to me, the examiner would look like they were counterclockwise and things that are going down or to the left that would look like a clockwise direction for me.</p>
+        </div></div>
+        <div><div>
+          <p>So this is the position. The eyes are moving over here. We see the slow phase of the torsion. Right. So remember, there's those two phases, right? So there's the slow phase, which is driven by the vestibular system. And then that quick central reflex.</p>
+        </div></div>
+        <div><div>
+          <p>When I do my analysis, I really care about the slow phases called torsion, SPV, torsion slope phase, velocity, right? So the right slow phases going up and the left slow phases going down. And then here I see the head position. Where was the head according to that sensor that's attached to the goggle?</p>
+        </div></div>
+        <div><div>
+          <p>So what type of nystagmus do I see here? So if I could start the video first. So it looks like the fast phases are going towards the left shoulder. We see that with the downward arrow here and then we see some beating.</p>
+        </div></div>
+        <div><div>
+          <p>And then for the original component again, remember that on this side we see what we see with our eyes. So here we're looking at the fast phases and this side we're analyzing the slow phase of the vestibular part of it, right?</p>
+        </div></div>
+        <div><div>
+          <p>So the slow phases are going to the right. The fast phases have to be going to the left. And so here we see a left beating, clockwise rotation.</p>
+        </div></div>
+        <div><div>
+          <p>So let's look at the video again and then maybe a little difficult to see. So here I try to blow it up and slow it down. Notice that that white circle is closer to the pupil. That's just for the viewing of this, right? That's not the ideal place. Much rather have it larger in slow motion. Can you see now why it's easier to see here?</p>
+        </div></div>
+        <div><div>
+          <p>So the slow phases are going to the right and the correct fast phases are back to the left.</p>
+        </div></div>
+        <div><div>
+          <p>So again, a little bit of a recap, but for a lot of people, this is the first time that they're seeing this. I'm going to recap it here for us. So when I'm interpreting the torsional eye movements and I'm looking at the graph, right, red is the right eye, blue is the left eye.</p>
+        </div></div>
+        <div><div>
+          <p>The slow phases of this green arrow going up, the slow phases, that's the vestibular component, right? If it's going up, it's to the right. So in this case, the slow phase is going up, so we have right counterclockwise, slow phases, but the fast phase, what we can see with our eyes is going to the left. So we have the left clockwise, fast phase. So hopefully that makes sense right now.</p>
+        </div></div>
+        <div><div>
+          <p>Let's do one more time and another graph. So in the middle graphs, which is this part, here are the eye position graphs, right? And so here you see a slow phase of the horizontal channel going up and a fast phase going down, down to the last of left beating.</p>
+        </div></div>
+        <div><div>
+          <p>And then the vertical plane, we see the slow phases coming down in this case. Slow phase is coming down, fast phases are going up. So it starts off up beating. There is some down beating. Later on the patients get back up, but predominantly what we're seeing here is up beating phases.</p>
+        </div></div>
+        <div><div>
+          <p>And then in the torsional graph, slow phases going up. So slow phases to the right and then the fast phase is coming down. So we're seeing left clockwise, right.</p>
+        </div></div>
+        <div><div>
+          <p>So looking here and the torsion, if the so the eye position graph, what we're looking at are calling out the fast phases. So this is a left clockwise. So we're going to look over in the torsion graph, the second green box for the right slow phases.</p>
+        </div></div>
+        <div><div>
+          <p>And then there's a few other parameters that I think are important. Now. One is how big is the nystagmus peak, or maybe better said how fast this is velocity? So how fast were the eyes moving? What was the slow phase velocity at maximum point and latency?</p>
+        </div></div>
+        <div><div>
+          <p>So from the time I lay the head back, BPPV doesn't start at times zero. Right. This little delay. So how long is that delay? And then I want to look at the duration. How long did it last? Right.</p>
+        </div></div>
+        <div><div>
+          <p>So by 20 seconds it was back to zero and all over. There's probably some good information on the slope here, too, of how fast it went from peak to zero. And I'm sure research now that we have these parameters, we'll start to look at that.</p>
+        </div></div>
+        <div><div>
+          <p>And then this is the reverse. So now the patient sits up and then we see again another peak, but in the opposite direction. And then what was the duration?</p>
+        </div></div>
+        <div><div>
+          <p>So a lot of exciting new information to look at and a lot more research now going on as we now have these objective measures. Maybe we could find out a little bit more about how to get a better assessment of BPPV.</p>
+        </div></div>
+        <div><div><p><code>rail</code></p></div></div>
+        <div><div>
+          <h3>Course details</h3>
+          <ul>
+            <li>Format: Reading</li>
+            <li>Clinical area: Balance</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+    <div>
+      <div class="newsletter">
+        <div><div><h2>Get priority access to training</h2></div></div>
+        <div><div><p>Sign up to the Interacoustics Academy newsletter to be the first to hear about our latest updates and get priority access to our online events.</p></div></div>
+        <div><div><p>By signing up, I accept to receive newsletter e-mails from Interacoustics. I can withdraw my consent at any time by using the &lsquo;unsubscribe&rsquo;-function included in each e-mail.</p></div></div>
+        <div><div><p><a href="https://www.interacoustics.com/privacy-policy">Read our privacy notice</a>, if you want to know more about how we treat and protect your personal data.</p></div></div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
