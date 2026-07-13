@@ -4950,5 +4950,189 @@
     "put": 201,
     "preview": 200,
     "verify": "ok"
+  },
+  "/audiometers/ac40/support/accessing-saved-client-records": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:12.926Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/audiometer-overview": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:12.927Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/common-settings": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:12.927Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/how-to-adjust-monitor-settings": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:12.927Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/hughson-westlake-procedure": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:15.612Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/load-user-settings": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:15.612Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/saving-client-records": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:15.690Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/setup-menu": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:15.891Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/speech-display-screen-and-function-keys": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:17.977Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/speech-settings": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:18.058Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/synching-test-results-to-diagnostic-suite": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:18.086Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/ac40/support/tone-display-screen-and-testing-functions": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:18.498Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/as608/support/as608-how-to-install-and-use-diagnostic-suite-with-your-as608": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:20.289Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/as608/support/how-to-operate-the-as608-screening-audiometer": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:20.291Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/as608/support/how-to-print-without-a-database": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:20.330Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/audiometers/equinox/support/bkb-sin": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:20.732Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/hearing-aid-fitting/affinity-compact/support/fm-transparency-verification": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:22.457Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/hearing-aid-fitting/affinity-compact/support/frequency-lowering-verification": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:22.482Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/hearing-aid-fitting/affinity-compact/support/unboxing-affinity-compact-how-to-set-up-and-install-affinity-compact": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:22.638Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/tympanometers/aa222/support/how-to-print-without-a-database": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:22.851Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/tympanometers/aa222/support/switching-the-probe-tip": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:24.622Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/tympanometers/at235/support/how-to-print-without-a-database": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:24.694Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/tympanometers/at235/support/probe-tip-cleaning": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-13T06:29:25.200Z",
+    "put": 201,
+    "preview": 200,
+    "verify": "ok"
   }
 }
