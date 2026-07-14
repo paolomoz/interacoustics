@@ -1,10 +1,68 @@
 {
-  "/otoaccess/api": {
+  "/academy/audiometry-training/advanced-tests/act-test-anleitung-und-hintergrunde": {
     "status": "previewed",
     "attempts": 1,
-    "ts": "2026-07-13T17:36:10.131Z",
+    "ts": "2026-07-14T05:11:35.430Z",
     "put": 200,
     "preview": 200,
     "verify": "ok"
+  },
+  "/academy/audiometry-training/advanced-tests/advanced-tests-in-audiometry-part-1": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:35.431Z",
+    "put": 200,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/academy/audiometry-training/advanced-tests/applications-of-ten-test-quicksin-anl": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:35.431Z",
+    "put": 200,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-1-brad": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:35.431Z",
+    "put": 200,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-2-janet": {
+    "status": "previewed",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:35.431Z",
+    "put": 200,
+    "preview": 200,
+    "verify": "ok"
+  },
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-3-scott": {
+    "status": "pending",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:35.431Z",
+    "put": 200
+  },
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-introduction": {
+    "status": "pending",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:39.631Z"
+  },
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-test": {
+    "status": "pending",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:39.816Z"
+  },
+  "/academy/audiometry-training/advanced-tests/automated-audiometry": {
+    "status": "pending",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:39.884Z"
+  },
+  "/academy/audiometry-training/advanced-tests/prueba-de-umbral-de-contraste-audible-act": {
+    "status": "pending",
+    "attempts": 1,
+    "ts": "2026-07-14T05:11:39.928Z"
   }
 }
