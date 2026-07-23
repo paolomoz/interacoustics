@@ -429,6 +429,11 @@
     gap: 28px;
   }
 
+  /* grid/flex children default to min-width:auto and won't shrink below their
+     content (a long course title) — blows out the row on narrow viewports */
+  .ledger .group-grid > *,
+  .ledger .ledger-row > * { min-width: 0; overflow-wrap: anywhere; }
+
   .ledger .products-rail,
   .ledger .group-rail { position: static; }
 
