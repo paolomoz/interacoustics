@@ -5118,3 +5118,5 @@
 {"t":"2026-07-23T05:47:21.021Z","path":"/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-3-scott","step":"verify","ok":true}
 {"t":"2026-07-23T05:47:21.026Z","path":"/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-1-brad","step":"verify","ok":true}
 {"t":"2026-07-23T05:47:21.038Z","path":"/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-2-janet","step":"verify","ok":true}
+{"t":"2026-07-23T11:06:01.751Z","path":"/academy","step":"verify","ok":true}
+{"t":"2026-07-23T11:06:02.919Z","path":"/solutions","step":"verify","ok":true}

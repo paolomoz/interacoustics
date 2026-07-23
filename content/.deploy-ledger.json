@@ -1,26 +1,17 @@
 {
-  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-1-brad": {
+  "/academy": {
     "status": "live",
     "attempts": 1,
-    "ts": "2026-07-23T05:47:14.792Z",
+    "ts": "2026-07-23T11:05:55.745Z",
     "put": 200,
     "preview": 200,
     "live": 200,
     "verify": "ok"
   },
-  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-2-janet": {
+  "/solutions": {
     "status": "live",
     "attempts": 1,
-    "ts": "2026-07-23T05:47:14.792Z",
-    "put": 200,
-    "preview": 200,
-    "live": 200,
-    "verify": "ok"
-  },
-  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-3-scott": {
-    "status": "live",
-    "attempts": 1,
-    "ts": "2026-07-23T05:47:14.792Z",
+    "ts": "2026-07-23T11:05:55.751Z",
     "put": 200,
     "preview": 200,
     "live": 200,

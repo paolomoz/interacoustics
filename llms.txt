@@ -1,0 +1,71 @@
+# Interacoustics
+
+> Interacoustics is a global manufacturer of equipment for diagnostic audiology and balance assessment — audiometers, ABR/OAE systems, tympanometers, hearing aid fitting systems, balance testing and rehabilitation equipment — plus the Interacoustics Academy training library for hearing and balance professionals.
+
+## Products
+
+- [Audiometers with 50+ Years of Expertise](https://interacoustics.stardust.style/audiometers)
+- [Browse our ABR solutions](https://interacoustics.stardust.style/abr-equipment): Interacoustics supplies solutions for ABR, ASSR, automated ABR and VEMP testing. Choose between PC-based, true hybrid or standalone solution
+- [Otoacoustic emission (OAE) equipment](https://interacoustics.stardust.style/oae-devices): Browse our range of solutions for otoacoustic emission (OAE) testing. Choose between distortion product OAE (DPOAE) and transient evoked OAE
+- [Tympanometers](https://interacoustics.stardust.style/tympanometers): Interacoustics offers clinical tympanometers, diagnostic tympanometers and screening tympanometers for assessment of middle-ear function. Br
+- [Hearing aid fitting systems](https://interacoustics.stardust.style/hearing-aid-fitting): Discover our line of hearing aid fitting systems, including real ear measurement equipment, hearing aid test boxes, and more.
+- [Balance testing equipment](https://interacoustics.stardust.style/balance-testing-equipment): Discover our balance portfolio for assessment of vertigo and dizziness or to provide vestibular rehabilitation.
+- [Rehabilitation equipment](https://interacoustics.stardust.style/rehabilitation-equipment): Discover our range of rehabilitation equipment, including virtual reality rehabilitation devices, BPPV repositioning chairs, and more. Reque
+- [Audiological and balance testing solutions](https://interacoustics.stardust.style/solutions)
+
+## Key products
+
+- [Aided Cortical module for the Eclipse](https://interacoustics.stardust.style/abr-equipment/aided-cortical-module): Aided benefit made clear! With the Eclipse&rsquo;s Aided Cortical module, you can now validate hearing device fittings in infants and in pat
+- [Learn about the CE-Chirp&reg; stimulus](https://interacoustics.stardust.style/abr-equipment/ce-chirp): The clinical utility of the CE-Chirp&reg; surpasses clicks and tone bursts for auditory brainstem response (ABR) testing. Learn more about t
+- [Eclipse | Evoked potentials device](https://interacoustics.stardust.style/abr-equipment/eclipse): Eclipse is a complete solution for evoked potentials, offering auditory brainstem response (ABR), auditory steady-state response (ASSR), VEM
+- [Sera&trade; | Newborn hearing screening device](https://interacoustics.stardust.style/abr-equipment/sera): Sera&trade; is the ideal choice for any newborn hearing screening program. Combine your own package of otoacoustic emissions (OAE) and autom
+- [AC40 | Clinical audiometer](https://interacoustics.stardust.style/audiometers/ac40): AC40 is a two-channel audiometer that includes the threshold equalizing noise (TEN) test, high-frequency audiometry up to 20 kHz and more. L
+- [AD226 | Diagnostic audiometer](https://interacoustics.stardust.style/audiometers/ad226): AD226 is a lightweight diagnostic audiometer. AD226 features air and bone conduction, the Stenger test and more. Choose between two test bat
+- [AD528 | Diagnostic audiometer](https://interacoustics.stardust.style/audiometers/ad528): AD528 is a diagnostic audiometer that includes the Stenger test and the modified Hughson-Westlake procedure.
+- [AD629 | Diagnostic audiometer](https://interacoustics.stardust.style/audiometers/ad629): AD629 is a diagnostic audiometer with two test batteries. AD629 features the Stenger test, an optional threshold-equalizing noise (TEN) test
+- [AS608 | Screening audiometer](https://interacoustics.stardust.style/audiometers/as608): AS608 is a screening audiometer for quick hearing screening at schools, industrial workplaces or at your clinic.
+- [Equinox Evo | Clinical audiometer](https://interacoustics.stardust.style/audiometers/equinox-evo): Is it time to upgrade your audiometer? Then explore the Equinox Evo clinical audiometer and step into the future of audiometry! Read more ab
+- [Luna | Portable screening audiometer](https://interacoustics.stardust.style/audiometers/luna): Tired of carrying your audiometer across test sites for screening audiometry? Then check out Luna, powered by USB and built into a headset.
+- [PA5 | Handheld pediatric audiometer](https://interacoustics.stardust.style/audiometers/pa5): PA5 is a free field audiometer for pediatric audiology. PA5 is a simple solution for testing hearing in newborns, infants and school-aged ch
+- [VRA](https://interacoustics.stardust.style/audiometers/vra): VRA201, VRA Screen and VRA Pure are visual reinforcement audiometry (VRA) solutions for pediatric hearing testing.
+- [Air Fx | Air caloric irrigator](https://interacoustics.stardust.style/balance-testing-equipment/air-fx): The Air Fx caloric irrigator can provide cool and warm air stimuli and can be integrated with the VisualEyes&trade; videonystagmography (VNG
+- [Aqua Stim | Water caloric irrigator](https://interacoustics.stardust.style/balance-testing-equipment/aqua-stim): The Aqua Stim caloric irrigator offers 30-degree cold and 44-degree warm water stimuli and can be integrated with VisualEyes&trade; videonys
+- [Virtual reality (VR) rehabilitation devices](https://interacoustics.stardust.style/balance-testing-equipment/balance-rehabilitation-systems): We provide virtual reality (VR) rehabilitation devices for balance assessments, training, and rehabilitation. Browse our VR rehabilitation d
+- [BalanceVR](https://interacoustics.stardust.style/balance-testing-equipment/balancevr): Vestibular rehabilitation made immersive! With BalanceVR, you can assess and train balance and vestibular disorder with immersive VR experie
+- [EyeSeeCam vHIT | vHIT system and goggles](https://interacoustics.stardust.style/balance-testing-equipment/eyeseecam-vhit): The EyeSeeCam vHIT system provides a goggle and software for objective assessment of the vestibular-ocular reflex (VOR). Learn more.
+- [MotionVR](https://interacoustics.stardust.style/balance-testing-equipment/motionvr): MotionVR combines VR with a dynamic, 360-degree force plate for computerized dynamic posturography (CDP) and full balance stimulation.
+- [Orion | Vestibular rotary chairs](https://interacoustics.stardust.style/balance-testing-equipment/orion-rotary-chairs): Click here to learn about our Orion vestibular rotary chairs. Choose between Orion Auto-Traverse, Comprehensive and Reclining.
+- [StaticVR | Balance force plates](https://interacoustics.stardust.style/balance-testing-equipment/staticvr): StaticVR combines VR with static posturography force plates for functional balance assessments and training with objective balance control d
+- [TRV Chair | BPPV diagnosis and treatment](https://interacoustics.stardust.style/balance-testing-equipment/trv-chair): The TRV Chair is an ideal solution for diagnosing and treating patients with benign paroxysmal positional vertigo (BPPV). Learn more.
+- [VisualEyes&trade;](https://interacoustics.stardust.style/balance-testing-equipment/visualeyes): VisualEyes&trade; combines videonystagmography (VNG), rotary chair testing and the video head impulse test (vHIT) in one integrated system. 
+- [Affinity Compact | Modular fitting solution](https://interacoustics.stardust.style/hearing-aid-fitting/affinity-compact): Searching for a hearing aid fitting solution? Affinity Compact provides audiometry, HIT, REM and visible speech mapping in one compact packa
+- [Affinity Compact | Modular fitting solution](https://interacoustics.stardust.style/hearing-aid-fitting/affinity): Searching for a hearing aid fitting solution? Affinity Compact provides audiometry, HIT, REM and visible speech mapping in one compact packa
+
+## Academy (training library)
+
+- [Discover our Academy learning environment](https://interacoustics.stardust.style/academy)
+- [Audiometry training](https://interacoustics.stardust.style/academy/audiometry-training): All you need to know about audiometry in one place. Learn about pure tone audiometry, speech audiometry, visual reinforcement audiometry (VR
+- [Balance testing training](https://interacoustics.stardust.style/academy/balance-testing-training): Balance testing includes both diagnostics and rehabilitation. Get your fill on the caloric test, vHIT, VNG and much more in this training hu
+- [Clinical Diploma VNG](https://interacoustics.stardust.style/academy/clinical-diploma-vng): The VNG Clinical Diploma will give you theoretical and practical training for the assessment of eye movement in patients with suspected vest
+- [Clinical Diploma in Newborn Hearing Assessment](https://interacoustics.stardust.style/academy/clinical-diploma): Gain practical skills in newborn hearing assessment with the online Clinical Diploma from Interacoustics Academy. Ideal for new and experien
+- [Free Online Audiology Courses](https://interacoustics.stardust.style/academy/courses): Take on-demand, online audiology courses within ABR, audiometry, balance, hearing aid fitting, and tympanometry. Free of charge. Certificate
+- [Evoked potentials training](https://interacoustics.stardust.style/academy/evoked-potentials): Click here to access evoked potentials learning materials by the Interacoustics Academy. Learn about ABR, ASSR, VEMP and more.
+- [Hearing aid fitting training](https://interacoustics.stardust.style/academy/hearing-aid-fitting-training): Click here to access our free online hearing aid fitting training. Ideal for hearing aid dispensers, audiologists, and others involved with 
+- [Otoacoustic emission (OAE) training](https://interacoustics.stardust.style/academy/oae-training): Take a deep dive into all there is to know about otoacoustic emission (OAE) testing in this OAE training hub by the Interacoustics Academy.
+- [Tympanometry training](https://interacoustics.stardust.style/academy/tympanometry-training): Access our tympanometry training hub, where you can learn about acoustic reflexes, traditional tympanometry, wideband tympanometry (WBT) and
+- [Diagnose patients in our virtual clinic](https://interacoustics.stardust.style/academy/virtual-clinic): Earn CPD/CEU points by completing tasks in our virtual clinic, where you will get to diagnose virtual patients and their hearing and balance
+
+## Blog & news
+
+- [Blog &amp; News](https://interacoustics.stardust.style/blog)
+- [Why should you perform real-ear measurement (REM)?](https://interacoustics.stardust.style/blog/why-rem): Dennis Mistry explains why real-ear measurement (REM) matters in hearing aid fitting, balancing objective targets, client feedback and couns
+
+## Company
+
+- [Read about our vision and values](https://interacoustics.stardust.style/about)
+- [Contact our offices or distributors](https://interacoustics.stardust.style/contact)
+- [Our History](https://interacoustics.stardust.style/our-history)
+- [Doing Business Sustainably](https://interacoustics.stardust.style/sustainability)
+- [What is it like to work at Interacoustics? | Vacancies](https://interacoustics.stardust.style/careers)
+- [Virtual, Hybrid and Physical Events](https://interacoustics.stardust.style/activities)
+- [Product support](https://interacoustics.stardust.style/product-support)
