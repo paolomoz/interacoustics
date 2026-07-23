@@ -168,12 +168,14 @@
 }
 
 @media (width <= 1024px) {
-  .article .article-grid {
-    grid-template-columns: 1fr;
+  .article .article-grid,
+  .article .article-grid.article-solo {
+    grid-template-columns: minmax(0, 1fr);
     gap: 48px;
   }
 
   .article .article-rail { max-width: 70ch; }
+  .article .article-body { max-width: 100%; }
 }
 
 @media (width <= 640px) {
