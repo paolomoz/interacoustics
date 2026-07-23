@@ -1,0 +1,4808 @@
+{
+  "/de/abr-systeme/aided-cortical-modul/support/eclipse-aided-cortical-modul": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:03.001Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/aided-cortical-modul/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:03.001Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/aided-cortical-modul": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:03.001Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/ce-chirp": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:03.001Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support/assr-testen-mit-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:03.001Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support/cvemp-tests-mit-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:03.001Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support/eabr-mit-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:07.744Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support/grundlegendes-ecochg-testen-mit-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:07.865Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support/mikrophonpotential-cm": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:07.873Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support/ovemp-testen-mit-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:07.960Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:08.039Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:08.606Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/sera/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:12.261Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme/sera": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:12.273Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/abr-systeme": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:12.347Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/act/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:12.587Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/act": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:12.752Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ac40/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:13.548Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ac40": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:16.786Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ad226/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:17.016Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ad226": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:17.034Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ad528/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:17.062Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ad528": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:17.708Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ad629/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:18.093Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/ad629": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:21.122Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/as608/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:21.292Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/as608": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:21.510Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/equinox/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:21.762Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/equinox-evo/pediatric-module": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:22.470Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/equinox-evo/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:22.615Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/equinox-evo": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:25.296Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/equinox": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:25.339Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/luna/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:25.429Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/luna": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:25.849Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/pa5/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:26.529Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/pa5": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:27.094Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/vra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:29.752Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/vra-pure/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:29.812Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:30.102Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer/vra201/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:30.181Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer-keyboard/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:30.848Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:31.569Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/audiometer": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:34.015Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/certification": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:34.191Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/cookie-richtlinie": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:34.490Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/datenschutzerklarungen": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:34.823Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/diagnostic-suite/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:35.416Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/diagnostic-suite": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:35.732Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/forschung/act-forschung": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:38.325Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/forschung/interacoustics-research-unit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:38.393Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/forschung": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:38.609Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/air-fx/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:39.145Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/air-fx": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:40.515Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/aqua-stim/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:40.633Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/aqua-stim": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:42.234Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/balancevr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:42.521Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/balancevr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:42.785Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/eyeseecam-vhit/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:43.751Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/eyeseecam-vhit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:44.600Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/motionvr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:44.982Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/motionvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:46.194Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/orion-rotary-chairs/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:46.569Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/orion-rotary-chairs": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:47.058Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/staticvr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:48.328Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/staticvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:48.873Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/systeme-zur-wiederherstellung-des-gleichgewichts": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:49.181Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/trv-chair/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:50.580Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/trv-chair": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:51.593Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/visualeyes/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:52.260Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/visualeyes/vorteq": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:53.139Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik/visualeyes": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:53.588Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/gleichgewichts-diagnostik": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:54.642Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity/support/real-ear-to-coupler-difference": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:54.989Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity/support/ten-hl-test-in-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:55.837Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:56.882Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity-compact/support/real-ear-to-coupler-difference": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:57.155Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity-compact/support/ten-hl-test-in-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:58.435Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity-compact/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:58.818Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity-compact": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:39:59.467Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/affinity": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:00.355Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/callisto/support/real-ear-to-coupler-difference": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:01.259Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/callisto/support/ten-hl-test-in-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:01.366Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/callisto/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:03.179Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/callisto": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:03.210Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/tbs10/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:04.158Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/tbs10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:05.241Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/tbs25/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:05.547Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung/tbs25": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:06.037Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/horgerateanpassung": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:07.561Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/kontakt": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:08.006Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/nachhaltigkeit-im-bereich-der-umwelt": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:08.665Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/nachhaltigkeit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:09.467Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/oae-gerate/lyra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:10.049Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/oae-gerate/lyra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:10.529Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/oae-gerate/otoread/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:11.571Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/oae-gerate/otoread": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:11.861Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/oae-gerate": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:13.007Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess/api/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:13.516Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess/api": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:14.398Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess/database/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:14.925Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess/database": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:15.887Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess/worklist-hl7/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:16.149Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess/worklist-hl7": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:17.354Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/otoaccess": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:17.875Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/patient-manager/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:18.750Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/patient-manager": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:19.413Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/produkte/forschungssysteme": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:19.927Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/produkte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:20.371Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/produktsupport": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:21.637Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/reha-gerate/physiovr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:22.020Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/reha-gerate/physiovr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:22.437Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/reha-gerate": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:23.426Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/sprache-andern": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:23.919Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/teleaudiologie": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:24.160Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/touch-keyboard/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:25.907Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/touch-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:26.043Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/aa222/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:27.147Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/aa222": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:27.798Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/at235/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:28.073Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/at235": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:28.098Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/mt10/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:30.354Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/mt10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:30.679Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/titan/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:31.829Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer/titan": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:31.902Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/tympanometer": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:32.174Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/uber-uns": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:32.435Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/unsere-geschichte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:34.754Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/viot/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:34.994Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/viot": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:35.975Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/vra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:36.248Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/vra-2/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:36.522Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/vra-2": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:36.544Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:39.031Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/de": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:40.146Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/act/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:40.717Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/act": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:41.257Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometer-keyboard/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:41.370Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometer-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:41.546Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ac40/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:43.489Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ac40": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:44.149Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ad226/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:45.072Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ad226": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:45.777Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ad528/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:45.931Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ad528": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:45.989Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ad629/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:48.034Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/ad629": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:48.307Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/as608/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:49.534Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/as608": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:50.036Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/equinox/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:50.552Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/equinox-evo/pediatric-module": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:50.642Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/equinox-evo/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:52.178Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/equinox-evo": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:52.390Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/equinox": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:53.425Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/luna/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:54.399Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/luna": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:54.669Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/pa5/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:55.644Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/pa5": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:56.280Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/vra/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:56.766Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/vra-pure/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:58.277Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:58.759Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros/vra201/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:58.803Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/audiometros": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:40:59.606Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/cambiar-idioma": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:00.303Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/certification": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:01.036Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/contacto": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:02.762Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/diagnostic-suite/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:02.928Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/diagnostic-suite": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:03.049Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/dispositivos-oae/lyra/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:04.553Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/dispositivos-oae/lyra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:04.622Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/dispositivos-oae/otoread/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:05.653Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/dispositivos-oae/otoread": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:06.943Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/dispositivos-oae": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:06.970Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/air-fx/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:07.906Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/air-fx": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:09.024Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/aqua-stim/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:09.099Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/aqua-stim": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:10.124Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/balancevr/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:10.758Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/balancevr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:11.679Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/eyeseecam-vhit/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:12.085Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/eyeseecam-vhit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:13.206Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/motionvr/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:13.217Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/motionvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:14.505Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/orion-rotary-chairs/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:15.005Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/orion-rotary-chairs": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:15.658Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/sistemas-de-rehabilitacion-del-equilibrio": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:16.061Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/staticvr/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:17.436Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/staticvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:18.207Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/trv-chair/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:18.925Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/trv-chair": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:19.257Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/visualeyes/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:20.030Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/visualeyes/vorteq": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:22.149Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio/visualeyes": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:22.251Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equilibrio": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:22.614Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/ce-chirp": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:23.434Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte/eabr-con-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:23.441Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte/microfonico-coclear-cm": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:23.806Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte/pruebas-assr-con-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:26.421Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte/pruebas-basicas-de-ecochg-con-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:26.497Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte/pruebas-cvemp-con-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:26.601Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte/pruebas-de-ovemp-con-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:27.394Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:27.725Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:27.911Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/modulo-aided-cortical/soporte/el-modulo-aided-cortical-para-el-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:30.730Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/modulo-aided-cortical/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:30.783Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/modulo-aided-cortical": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:30.969Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/sera/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:31.639Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr/sera": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:32.108Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipo-de-respuesta-auditiva-abr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:33.122Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity/soporte/diferencia-entre-oido-real-y-acoplador": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:34.845Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity/soporte/prueba-de-ten-hl-en-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:35.171Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:35.276Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity-compact/soporte/diferencia-entre-oido-real-y-acoplador": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:36.168Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity-compact/soporte/prueba-de-ten-hl-en-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:36.827Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity-compact/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:37.125Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity-compact": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:38.884Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/affinity": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:39.042Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/callisto/soporte/diferencia-entre-oido-real-y-acoplador": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:39.433Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/callisto/soporte/prueba-de-ten-hl-en-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:40.251Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/callisto/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:41.056Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/callisto": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:41.394Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/tbs10/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:43.114Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/tbs10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:43.477Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/tbs25/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:43.773Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion/tbs25": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:44.155Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-adaptacion": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:44.817Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-rehabilitacion/physiovr/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:45.527Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-rehabilitacion/physiovr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:47.206Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/equipos-de-rehabilitacion": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:47.572Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/investigacion/investigacion-de-act": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:48.126Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/investigacion/unidad-de-investigacion": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:48.531Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/investigacion": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:48.755Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/nuestra-historia": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:49.935Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess/api/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:51.163Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess/api": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:51.350Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess/database/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:51.812Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess/database": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:52.107Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess/worklist-hl7/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:52.571Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess/worklist-hl7": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:54.142Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/otoaccess": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:55.003Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/patient-manager/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:55.193Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/patient-manager": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:56.145Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/politica-de-cookies": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:56.693Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/politica-de-privacidad": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:57.436Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/quienes-somos": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:58.595Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/soluciones/sistemas-de-investigacion": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:59.154Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/soluciones": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:41:59.343Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:00.197Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/sostenibilidad-medioambiental": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:00.748Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/sustentabilidad": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:01.457Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/teleaudiologia": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:02.737Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/aa222/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:03.587Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/aa222": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:03.724Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/at235/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:04.133Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/at235": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:04.345Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/mt10/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:05.569Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/mt10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:06.465Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/titan/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:08.188Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros/titan": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:08.371Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/timpanometros": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:08.638Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/touch-keyboard/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:08.679Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/touch-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:09.837Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/viot/soporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:10.339Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/viot": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:12.351Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/vra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:12.572Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/vra-2/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:12.622Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/vra-2": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:13.296Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:14.232Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/es": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:14.899Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/a-propos": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:16.541Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/act/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:16.551Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/act": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:16.758Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity/support/difference-entre-l-oreille-reelle-et-le-coupleur": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:18.111Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity/support/test-ten-hl-dans-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:18.812Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:18.899Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity-compact/support/difference-entre-l-oreille-reelle-et-le-coupleur": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:20.294Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity-compact/support/test-ten-hl-dans-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:20.547Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity-compact/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:21.334Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity-compact": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:22.756Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/affinity": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:22.797Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/callisto/support/difference-entre-l-oreille-reelle-et-le-coupleur": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:23.023Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/callisto/support/test-ten-hl-dans-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:24.507Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/callisto/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:24.551Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/callisto": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:25.213Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/tbs10/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:27.046Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/tbs10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:27.085Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/tbs25/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:27.323Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives/tbs25": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:28.600Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/adaptation-des-aides-auditives": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:29.277Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/appareils-oae/lyra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:30.784Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/appareils-oae/lyra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:31.234Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/appareils-oae/otoread/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:31.317Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/appareils-oae/otoread": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:31.882Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/appareils-oae": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:32.885Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometer-keyboard/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:33.291Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometer-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:35.020Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ac40/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:35.221Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ac40": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:35.670Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ad226/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:35.686Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ad226": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:36.919Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ad528/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:37.223Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ad528": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:39.244Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ad629/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:39.414Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/ad629": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:39.813Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/as608/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:41.021Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/as608": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:41.319Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/equinox/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:41.386Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/equinox-evo/pediatric-module": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:43.154Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/equinox-evo/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:43.458Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/equinox-evo": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:43.752Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/equinox": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:44.921Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/luna/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:45.539Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/luna": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:45.624Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/pa5/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:47.733Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/pa5": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:47.752Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/vra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:47.854Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/vra-pure/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:49.178Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:49.502Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres/vra201/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:49.598Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/audiometres": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:51.643Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/certificats": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:51.763Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/changer-de-langue": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:51.965Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/contact": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:53.276Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/diagnostic-suite/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:53.671Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/diagnostic-suite": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:53.681Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/durabilite-environnementale": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:55.294Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/durabilite": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:55.556Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/air-fx/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:55.868Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/air-fx": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:57.151Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/aqua-stim/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:57.671Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/aqua-stim": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:58.746Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/balancevr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:59.004Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/balancevr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:59.241Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/eyeseecam-vhit/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:42:59.824Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/eyeseecam-vhit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:01.583Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/motionvr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:01.914Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/motionvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:03.267Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/orion-rotary-chairs/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:03.320Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/orion-rotary-chairs": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:03.416Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/staticvr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:04.766Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/staticvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:05.998Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/systemes-de-reeducation-de-lequilibre": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:06.388Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/trv-chair/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:07.425Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/trv-chair": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:07.684Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/visualeyes/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:07.982Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/visualeyes/vorteq": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:09.285Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre/visualeyes": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:10.201Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equilibre": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:11.024Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/ce-chirp": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:11.688Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support/cvemp-test-avec-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:11.914Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support/eabr-avec-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:11.968Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support/microphonique-cochleaire-cm": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:13.969Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support/test-assr-avec-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:14.924Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support/test-ovemp-avec-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:15.566Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support/tests-ecochg-de-base-avec-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:15.652Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:16.392Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:16.445Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/module-pea-corticaux-en-champ-libre/support/le-module-pea-corticaux-en-champ-libre-de-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:18.184Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/module-pea-corticaux-en-champ-libre/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:19.823Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/module-pea-corticaux-en-champ-libre": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:20.029Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/sera/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:20.377Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea/sera": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:20.546Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/equipements-pea": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:20.940Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/materiel-de-reeducation/physiovr/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:23.208Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/materiel-de-reeducation/physiovr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:24.132Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/materiel-de-reeducation": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:24.379Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/notre-histoire": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:24.515Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess/api/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:24.766Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess/api": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:25.038Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess/database/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:27.290Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess/database": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:28.302Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess/worklist-hl7/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:28.389Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess/worklist-hl7": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:28.585Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/otoaccess": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:28.661Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/patient-manager/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:28.927Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/patient-manager": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:31.237Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/politique-cookies": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:32.032Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/politique-de-confidentialite": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:32.818Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/recherche/recherche-sur-act": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:32.863Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/recherche/unite-de-recherche": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:32.868Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/recherche": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:33.187Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/solutions/systemes-de-recherche": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:35.191Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/solutions": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:35.779Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/support-produit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:36.562Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/teleaudiologie": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:36.679Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/touch-keyboard/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:36.744Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/touch-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:37.296Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/aa222/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:39.100Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/aa222": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:39.298Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/at235/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:40.465Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/at235": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:40.563Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/mt10/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:40.620Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/mt10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:41.952Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/titan/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:43.082Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres/titan": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:43.340Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/tympanometres": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:44.771Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/viot/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:44.816Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/viot": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:45.286Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/vra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:46.208Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/vra-2/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:47.526Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/vra-2": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:47.579Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:48.758Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/fr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:48.769Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/act/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:49.570Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/act": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:50.363Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity/suporte/diferenca-entre-a-orelha-real-e-o-acoplador": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:51.710Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity/suporte/teste-ten-hl-em-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:52.016Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:52.758Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity-compact/suporte/diferenca-entre-a-orelha-real-e-o-acoplador": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:52.792Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity-compact/suporte/teste-ten-hl-em-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:53.779Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity-compact/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:55.197Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/affinity-compact": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:55.956Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/callisto/suporte/diferenca-entre-a-orelha-real-e-o-acoplador": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:56.359Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/callisto/suporte/teste-ten-hl-em-ac440": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:56.602Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/callisto/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:56.976Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/callisto": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:57.792Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/tbs10/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:43:59.555Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/tbs10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:00.672Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/tbs25/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:00.848Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos/tbs25": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:01.007Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/adaptacao-de-aparelhos-auditivos": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:01.068Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometer-keyboard/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:01.915Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometer-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:04.015Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ac40/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:04.858Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ac40": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:05.006Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ad226/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:05.488Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ad226": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:05.545Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ad528/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:05.962Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ad528": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:08.110Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ad629/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:09.705Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/ad629": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:09.770Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/as608/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:09.981Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/as608": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:10.037Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/equinox/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:10.678Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/equinox-evo/pediatric-module": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:12.710Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/equinox-evo/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:13.961Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/equinox-evo": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:14.188Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/luna/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:14.247Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/luna": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:14.491Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/pa5/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:14.646Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/pa5": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:17.321Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/vra/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:18.389Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/vra-pure/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:18.559Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:18.627Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros/vra201/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:18.840Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/audiometros": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:19.130Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/certificacoes": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:21.462Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/contato": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:22.714Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/diagnostic-suite/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:23.212Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/diagnostic-suite": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:23.268Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-eoa/lyra/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:23.379Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-eoa/lyra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:23.526Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-eoa/otoread/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:25.657Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-eoa/otoread": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:26.834Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-eoa": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:26.959Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/air-fx/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:27.109Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/air-fx": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:27.356Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/aqua-stim/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:27.937Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/aqua-stim": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:29.809Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/balancevr/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:30.619Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/balancevr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:30.967Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/eyeseecam-vhit/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:31.288Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/eyeseecam-vhit": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:31.460Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/motionvr/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:31.794Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/motionvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:33.909Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/orion-rotary-chairs/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:34.931Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/orion-rotary-chairs": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:34.957Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/sistemas-de-reabilitacao-do-equilibrio": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:35.347Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/staticvr/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:36.161Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/staticvr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:36.663Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/trv-chair/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:38.080Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/trv-chair": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:39.513Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/visualeyes/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:40.177Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/visualeyes/vorteq": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:40.664Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio/visualeyes": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:41.349Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-equilibrio": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:41.484Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/ce-chirp": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:43.042Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte/eabr-com-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:43.709Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte/microfonico-coclear-cm": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:43.995Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte/teste-assr-com-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:44.899Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte/teste-cvemp-com-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:45.687Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte/teste-ecochg-basico-com-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:46.045Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte/teste-ovemp-com-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:47.188Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:48.273Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:48.572Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/modulo-cortical-com-protese/suporte/modulo-cortical-com-protese-do-eclipse": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:49.047Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/modulo-cortical-com-protese/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:49.725Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/modulo-cortical-com-protese": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:50.882Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/sera/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:51.800Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate/sera": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:52.695Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-peate": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:52.811Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-reabilitacao/physiovr/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:53.004Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-reabilitacao/physiovr": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:53.502Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/equipamentos-de-reabilitacao": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:54.989Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/nossa-historia": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:56.176Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess/api/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:56.345Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess/api": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:57.220Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess/database/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:57.333Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess/database": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:57.961Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess/worklist-hl7/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:44:58.561Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess/worklist-hl7": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:00.068Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/otoaccess": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:00.152Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/patient-manager/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:01.405Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/patient-manager": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:01.486Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/pesquisa/act-pesquisa": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:02.724Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/pesquisa/unidade-de-pesquisa-interacoustics": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:03.294Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/pesquisa": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:04.518Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/politica-de-cookies": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:04.777Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/politica-de-privacidade": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:05.307Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/selecionar-idioma": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:05.742Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/sobre-nos": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:07.066Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/solucoes/sistema-de-pesquisa": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:07.127Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/solucoes": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:08.358Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:08.596Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/sustentabilidade-ambiental": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:09.346Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/sustentabilidade": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:09.806Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/teleaudiologia": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:11.180Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/aa222/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:11.272Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/aa222": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:12.056Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/at235/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:12.844Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/at235": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:13.734Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/mt10/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:14.289Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/mt10": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:14.851Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/titan/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:15.296Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros/titan": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:16.523Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/timpanometros": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:16.870Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/touch-keyboard/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:18.192Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/touch-keyboard": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:18.550Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/viot/suporte": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:18.970Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/viot": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:19.598Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/vra/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:21.154Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/vra-2/support": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:21.177Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/vra-2": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:22.456Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt/vra": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:22.690Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  },
+  "/pt": {
+    "status": "live",
+    "attempts": 1,
+    "ts": "2026-07-14T15:45:22.922Z",
+    "put": 201,
+    "preview": 200,
+    "live": 200,
+    "verify": "ok"
+  }
+}

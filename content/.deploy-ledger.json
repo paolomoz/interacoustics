@@ -1,26 +1,29 @@
 {
-  "/academy/audiometry-training/advanced-tests/advanced-tests-in-audiometry-part-1": {
-    "status": "previewed",
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-1-brad": {
+    "status": "live",
     "attempts": 1,
-    "ts": "2026-07-14T05:51:49.511Z",
+    "ts": "2026-07-23T05:47:14.792Z",
     "put": 200,
     "preview": 200,
+    "live": 200,
     "verify": "ok"
   },
-  "/blog/apta-csm-conference": {
-    "status": "previewed",
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-2-janet": {
+    "status": "live",
     "attempts": 1,
-    "ts": "2026-07-14T05:51:49.511Z",
+    "ts": "2026-07-23T05:47:14.792Z",
     "put": 200,
     "preview": 200,
+    "live": 200,
     "verify": "ok"
   },
-  "/blog/breaking-the-stereotypes-of-being-a-female-engineer": {
-    "status": "previewed",
+  "/academy/audiometry-training/advanced-tests/audible-contrast-threshold-case-study-3-scott": {
+    "status": "live",
     "attempts": 1,
-    "ts": "2026-07-14T05:51:49.511Z",
+    "ts": "2026-07-23T05:47:14.792Z",
     "put": 200,
     "preview": 200,
+    "live": 200,
     "verify": "ok"
   }
 }
