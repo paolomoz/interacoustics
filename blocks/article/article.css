@@ -16,7 +16,7 @@
 
 .article .article-grid.article-solo { grid-template-columns: minmax(0, 70ch); }
 
-.article .article-body { max-width: 70ch; }
+.article .article-body { max-width: 70ch; overflow-wrap: break-word; }
 .article .article-body h2 { margin-top: var(--spacing-xl); }
 .article .article-body h2:first-child { margin-top: 0; }
 
